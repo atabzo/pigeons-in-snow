@@ -47,7 +47,7 @@ script/source = "extends Node2D
 func _ready() -> void:
 	$AnimatedSprite2D.play(\"default\")
 	await $AnimatedSprite2D.animation_finished	
-	get_tree().change_scene_to_file(\"res://copy_main_scene.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/copy_main_scene.tscn\")
 	pass # Replace with function body.
 
 
