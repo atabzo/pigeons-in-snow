@@ -42,10 +42,19 @@
 [sub_resource type="GDScript" id="GDScript_0vva0"]
 script/source = "extends Node2D
 
+@onready var label = $Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.play(\"default\")
+	await get_tree().create_timer(2).timeout
+	label.text = \"pigeons migrated as they wished\"
+	await get_tree().create_timer(1.5).timeout
+	label.text = \"bound only by the strength in their wings.\"
+	await get_tree().create_timer(2).timeout
+	label.text = \"Until, a terrible snowstorm hit..\"
+	await get_tree().create_timer(1.5).timeout
+	label.text = \"Many were trapped in the snow, but one managed to set themselves free.\"
 	await $AnimatedSprite2D.animation_finished	
 	get_tree().change_scene_to_file(\"res://scenes/copy_main_scene.tscn\")
 	pass # Replace with function body.
@@ -259,3 +268,19 @@ position = Vector2(640, 360)
 sprite_frames = SubResource("SpriteFrames_q5srj")
 frame = 60
 frame_progress = 1.0
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 664.0
+offset_right = 1280.0
+offset_bottom = 706.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.3494754, 0.550232, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Once upon a time.."
+horizontal_alignment = 1

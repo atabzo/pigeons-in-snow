@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://scqs11vrolqr"]
+
+[ext_resource type="Script" uid="uid://bhfmqfdisu57b" path="res://log_bench.gd" id="1_r8bb8"]
+[ext_resource type="Texture2D" uid="uid://cbtebv3ttmfkc" path="res://assets/MDrawnAssets/Decorations/FallenTree.png" id="2_rbvwf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tloge"]
+radius = 23.999891
+height = 80.0
+
+[node name="LogBench" type="StaticBody2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_r8bb8")
+
+[node name="FallenTree" type="Sprite2D" parent="."]
+scale = Vector2(0.305, 0.305)
+texture = ExtResource("2_rbvwf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+rotation = -1.5677792
+shape = SubResource("CapsuleShape2D_tloge")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.305, 0.305)
+polygon = PackedVector2Array(82, -70.9, 63, -72.1, 63, -70.8, -8, -61.8, -8, -61.1, -105, -63, -108.9, -63, -114.9, -56, -116.3, -56, -128.3, -31, -129.5, -31, -132, -22.300003, -132, -19.099998, -133.7, -18, -135.5, -18, -139, -5.300003, -139, -1.5999985, -145, 9.599998, -145, 44.699997, -141, 53.300003, -141, 56.899994, -127, 69.899994, -127, 71.5, -99, 80.399994, -99, 81.899994, -80.1, 83, -45.9, 83, 11.100006, 79, 12.199997, 79, 49.399994, 71, 55.399994, 71, 76, 63.399994, 76, 62.800003, 120.100006, 60, 124.79999, 60, 134.70001, 51, 136.6, 51, 140.5, 35, 142.1, 35, 141, 4.9000015, 141, -2.300003, 130, -40.3, 130, -43.9, 117, -55, 117, -57, 89.100006, -57, 82, -68.6)

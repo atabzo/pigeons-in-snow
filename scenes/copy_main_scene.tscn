@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dfqs2b855xwsv"]
+[gd_scene load_steps=21 format=3 uid="uid://dfqs2b855xwsv"]
 
 [ext_resource type="Texture2D" uid="uid://dci1vgsovxr3d" path="res://assets/BG/bg1.jpg" id="1_jv07x"]
 [ext_resource type="Texture2D" uid="uid://dce0ny6i0l6si" path="res://assets/Winter/spritesheet.png" id="2_2e83c"]
@@ -7,12 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://bb47kinxsbn0l" path="res://assets/MDrawnAssets/Decorations/BirdOnTree.png" id="5_vpljj"]
 [ext_resource type="Texture2D" uid="uid://cbtebv3ttmfkc" path="res://assets/MDrawnAssets/Decorations/FallenTree.png" id="6_vwrih"]
 [ext_resource type="Texture2D" uid="uid://bkuo413otoxd5" path="res://assets/MDrawnAssets/Decorations/Light.png" id="7_fggts"]
-[ext_resource type="Texture2D" uid="uid://dvgapjlelk3qc" path="res://assets/MDrawnAssets/Decorations/Snowman.png" id="8_mhkk2"]
-[ext_resource type="Texture2D" uid="uid://vm6ti56h4hjq" path="res://assets/MDrawnAssets/Decorations/Tree.png" id="9_7mneu"]
+[ext_resource type="PackedScene" uid="uid://yppms6y8mhk4" path="res://objects/snowman.tscn" id="9_uq3fv"]
 [ext_resource type="PackedScene" uid="uid://coytmnnqpcdj0" path="res://scenes/pigeon.tscn" id="10_6fm5q"]
 [ext_resource type="PackedScene" uid="uid://d1c78oowevwob" path="res://scenes/npc_1_bird.tscn" id="11_sb3u3"]
 [ext_resource type="PackedScene" uid="uid://b2r36u8kixoin" path="res://objects/tree.tscn" id="12_2e83c"]
+[ext_resource type="PackedScene" uid="uid://v1e5teahjfrl" path="res://objects/feathers.tscn" id="12_ools2"]
 [ext_resource type="PackedScene" uid="uid://b8isr7xyibt0o" path="res://objects/penguin.tscn" id="13_awbhv"]
+[ext_resource type="PackedScene" uid="uid://scqs11vrolqr" path="res://objects/log_bench.tscn" id="15_uq3fv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gubc5"]
 size = Vector2(6243.463, 224.5)
@@ -1787,40 +1788,36 @@ position = Vector2(237, 278)
 scale = Vector2(0.3053435, 0.3053435)
 texture = ExtResource("5_vpljj")
 
-[node name="FallenTree" type="Sprite2D" parent="Design/Additional"]
-position = Vector2(1832, 616)
-texture = ExtResource("6_vwrih")
-
 [node name="Light" type="Sprite2D" parent="Design/Additional"]
 position = Vector2(-1120, 1248)
 texture = ExtResource("7_fggts")
-
-[node name="Snowman" type="Sprite2D" parent="Design/Additional"]
-position = Vector2(1504, 232)
-scale = Vector2(1, 0.907)
-texture = ExtResource("8_mhkk2")
-
-[node name="Tree2" type="Sprite2D" parent="Design/Additional"]
-position = Vector2(-792, 520)
-texture = ExtResource("9_7mneu")
-
-[node name="Tree" type="Sprite2D" parent="Design/Additional"]
-position = Vector2(2032, -344)
-texture = ExtResource("9_7mneu")
 
 [node name="FallenTree2" type="Sprite2D" parent="Design/Additional"]
 position = Vector2(-1368, 1416)
 texture = ExtResource("6_vwrih")
 
-[node name="Tree3" type="Sprite2D" parent="Design/Additional"]
-position = Vector2(-1176, -1992)
-texture = ExtResource("9_7mneu")
+[node name="Snowman3" parent="Design/Additional" instance=ExtResource("9_uq3fv")]
+position = Vector2(2176, -2208)
+scale = Vector2(4, 4)
 
-[node name="Tree" type="Sprite2D" parent="Design/Additional/Tree3"]
-position = Vector2(2072, 496)
-texture = ExtResource("9_7mneu")
+[node name="Snowman2" parent="Design/Additional" instance=ExtResource("9_uq3fv")]
+position = Vector2(-464, -1016)
+scale = Vector2(4, 4)
+
+[node name="Area2D" parent="Design/Additional" instance=ExtResource("12_2e83c")]
+position = Vector2(2104, -344)
+
+[node name="Area2D2" parent="Design/Additional" instance=ExtResource("12_2e83c")]
+position = Vector2(960, -1496)
+
+[node name="Area2D3" parent="Design/Additional" instance=ExtResource("12_2e83c")]
+position = Vector2(-1104, -1992)
+
+[node name="Area2D4" parent="Design/Additional" instance=ExtResource("12_2e83c")]
+position = Vector2(-664, 536)
 
 [node name="Pigeon" parent="." instance=ExtResource("10_6fm5q")]
+z_index = 1
 position = Vector2(300, 315)
 
 [node name="Camera2D" type="Camera2D" parent="Pigeon"]
@@ -1829,6 +1826,11 @@ position = Vector2(300, 315)
 
 [node name="Npc1Bird" parent="." instance=ExtResource("11_sb3u3")]
 position = Vector2(656, -543.99994)
+
+[node name="Feathers" parent="." instance=ExtResource("12_ools2")]
+position = Vector2(1440, 600)
+scale = Vector2(0.4, 0.4)
+collision_layer = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -1857,3 +1859,7 @@ position = Vector2(1136, 280)
 
 [node name="Penguin" parent="." instance=ExtResource("13_awbhv")]
 position = Vector2(-832, 288)
+
+[node name="LogBench" parent="." instance=ExtResource("15_uq3fv")]
+position = Vector2(1824, 576)
+scale = Vector2(3.5, 3.5)

@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://v1e5teahjfrl"]
+
+[ext_resource type="Texture2D" uid="uid://ba26tm1ks6q06" path="res://assets/MDrawnAssets/Decorations/feather.png" id="1_pscwh"]
+[ext_resource type="Texture2D" uid="uid://dhidme4y7obgg" path="res://assets/MDrawnAssets/Decorations/transBlueFeather.png" id="2_2sarh"]
+
+[sub_resource type="GDScript" id="GDScript_4t3hx"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$Feather.play(\"flashing\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_body_entered(body: Node2D) -> void:
+	$Label.visible = true
+
+func _on_body_exited(body: Node2D) -> void:
+	await get_tree().create_timer(2).timeout
+	$Label.visible = false
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5t1s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pscwh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pscwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2sarh")
+}],
+"loop": true,
+"name": &"flashing",
+"speed": 5.0
+}]
+
+[node name="Feathers" type="Area2D"]
+script = SubResource("GDScript_4t3hx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(56, -126.2, 56, -123.8, 50.100006, -117, 48.799988, -117, 15, -54.5, 15, -51.700012, -2, -29.700012, -2, -27.799988, -41, 15.200012, -41, 17, -74.899994, 49, -76.29999, 49, -89, 75.5, -89, 80, -101, 91.100006, -112.3, 95, -116.600006, 95, -129.5, 103, -133.7, 103, -138.7, 107, -142, 107, -147, 114, -149, 114, -149, 120.79999, -140.8, 129, -133.3, 129, -128, 125, -128, 124.399994, -117.7, 121, -112.5, 121, -90, 110.29999, -90, 109.5, -87.899994, 109, -85.399994, 109, -75.399994, 113, -64.5, 113, -56.5, 109, -51.399994, 109, -21.399994, 89, -18.299988, 89, -4.299988, 77, -2.2000122, 77, 42.799988, 34, 44.100006, 34, 59.100006, 11, 60.299988, 11, 71.29999, -13, 72.5, -13, 83.5, -52, 85, -52, 85, -87.3, 81, -99.3, 81, -109.7, 71, -122.7, 71, -124.8)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(153, 57.899994, 153, 59.200012, 131.70001, 62, 112.20001, 62, 95, 77.100006, 88, 75.5, 88, 73.79999, 76.79999, 75, 74.100006, 75, 64.100006, 87, 62.799988, 87, 51, 110.5, 51, 112.100006, 29.299988, 131, 27, 131, 27, 140.79999, 31.200012, 145, 42.600006, 145, 66, 129.1, 118.399994, 129, 140.4, 121, 144.6, 121, 151.6, 116, 153.9, 116, 165.9, 103, 167.4, 103, 176.40002, 77, 178.40002, 77, 177, 68.70001, 177, 64, 173, 61, 173, 59.100006)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(80, 176.70001, 80, 178.09998, 68.79999, 179, 64.5, 179, 32.5, 195, 30.299988, 195, -26.700012, 239, -28.799988, 239, -76, 286.2, -89.3, 291, -93.5, 291, -114.5, 302, -117, 302, -117, 313.2, -113, 315.2, -113, 317, -98.5, 317, -82.5, 309, -74.600006, 309, -41, 293.3, -41, 292.7, -36.700012, 292, -33.600006, 292, -5.700012, 280, -2.5, 280, 62.5, 249, 66.5, 249, 93.5, 233, 96.79999, 233, 107.79999, 222, 109.100006, 222, 117, 208.5, 117, 195.40002, 113, 189.29999, 113, 186.90002, 105, 181.79999, 105, 180.29999)
+
+[node name="Feather" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o5t1s")
+animation = &"flashing"
+frame_progress = 0.6624044
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 64.0
+offset_top = -184.0
+offset_right = 527.0
+offset_bottom = -97.0
+theme_override_colors/font_color = Color(0.078431375, 0.015686275, 0.7019608, 1)
+theme_override_font_sizes/font_size = 40
+text = "- A sign! 
+       Someone must be close"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
