@@ -18,12 +18,43 @@ Pigeon: I’ve never seen one up close…
 Penguin: You shouldn’t have.
 Penguin: We don’t usually let surface birds wander here.
 
-Pigeon: Wait—aren’t birds supposed to help each other?
+Narrator: The penguin tilts its head, waiting.
+
+- Try to reason with it => reason
+- Act tough => tough
+- Stay silent => silent
+
+
+~ reason
+Pigeon: Aren’t birds supposed to help each other?
 Pigeon: We all survived the storm, didn’t we?
 
 Penguin: Help each other?
-Penguin: Oh, no. You misunderstand.
+Penguin: Oh, no.
+Penguin: You misunderstand.
+=> converge
 
+~ tough
+Pigeon: Move aside.
+Pigeon: I’m not afraid of you.
+
+Penguin: Heh.
+Penguin: Confidence from a bird built for breadcrumbs.
+
+=> converge
+
+~ silent
+Narrator: You say nothing.
+Narrator: The wind answers for you.
+
+Penguin: Silent type?
+Penguin: That’s worse.
+
+=> converge
+
+
+
+~ converge
 Penguin: This city is cold now.
 Penguin: Cold cities need order.
 Penguin: And order needs fewer wings.
@@ -35,6 +66,21 @@ Penguin: Some flew away.
 Penguin: Some hid.
 Penguin: Some learned their place.
 
+-> "Demand answers" => demand
+-> "Protect the flock" => protect
+
+
+~ demand
+Pigeon: Tell me where my flock is.
+Pigeon: Now.
+
+Penguin: Straight to the point.
+Penguin: I almost respect that.
+
+=> game_intro
+
+
+~ protect
 Pigeon: I won’t let you touch them.
 Pigeon: They’re my flock.
 
@@ -42,6 +88,10 @@ Penguin: Brave.
 Penguin: Stupid.
 Penguin: Typical pigeon.
 
+=> game_intro
+
+
+~ game_intro
 Narrator: The penguin steps closer.
 Narrator: The air feels heavier. Sharper.
 
@@ -50,12 +100,6 @@ Penguin: Penguins are not your friends.
 
 Narrator: Snow crunches under your feet.
 Narrator: The penguin blocks your path, staring without blinking.
-
-Pigeon: I’m not backing down.
-Pigeon: Tell me where my flock is.
-
-Penguin: Hah.
-Penguin: You pigeons are always so dramatic.
 
 Penguin: Very well.
 Penguin: We’ll settle this the old way.
@@ -70,19 +114,22 @@ Penguin: Simple. Ancient. Final.
 
 Penguin: I place krill.
 Penguin: You place bird seeds.
-
 Penguin: Three in a row wins.
-Penguin: The loser accepts the truth.
+	
+-> "Accept the challenge" => accept
+-> "Refuse (but stay)" => refuse
 
-Pigeon: And what truth is that?
 
-Penguin: That this city belongs to penguins now.
+~ refuse
+Penguin: Refusal is also a move.
+Penguin: Just a bad one.
 
-Pigeon: And if I win?
+=> accept
 
-Penguin: …
-Penguin: Then you walk away as champion.
-Penguin: And I answer your questions.
+
+~ accept
+Pigeon: I don’t need wings to win.
+Pigeon: I just need three in a row.
 
 Narrator: The board lies between you.
 Narrator: Krill glisten dark against the ice.
@@ -91,8 +138,5 @@ Narrator: Bird seeds feel warm in your claws.
 Penguin: Choose carefully, pigeon.
 Penguin: Every move is a mistake…
 
-Pigeon: I don’t need wings to win.
-Pigeon: I just need three in a row.
-
-do GameManager.npc1_finished.emit() 
+do GameManager.npc1_finished.emit()
 => END

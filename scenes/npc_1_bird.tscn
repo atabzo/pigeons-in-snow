@@ -1,33 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1c78oowevwob"]
+[gd_scene format=3 uid="uid://d1c78oowevwob"]
 
 [ext_resource type="Script" uid="uid://d2jq2pfdffi2v" path="res://scripts/npc_1_bird.gd" id="1_c8mpm"]
-[ext_resource type="Texture2D" uid="uid://doo1c3ylsk60e" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_1.png" id="1_mx51a"]
-[ext_resource type="Texture2D" uid="uid://c5o5l8q7dwhxf" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_2.png" id="2_c8mpm"]
-[ext_resource type="Texture2D" uid="uid://b5q8r1mvdjgfh" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_3.png" id="3_teem3"]
-[ext_resource type="Texture2D" uid="uid://bf4but8fcrm5a" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_4.png" id="4_iu74k"]
-[ext_resource type="Texture2D" uid="uid://cg2tdf0niamc2" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_5.png" id="5_rqgut"]
-[ext_resource type="Texture2D" uid="uid://q2t18ai3jowh" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_6.png" id="6_r7gjt"]
+[ext_resource type="Texture2D" uid="uid://bj1nst6l3ddtw" path="res://images/Penguin_1.png" id="2_qf6d0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3hprw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_mx51a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_c8mpm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_teem3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_iu74k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_rqgut")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_r7gjt")
+"texture": ExtResource("2_qf6d0")
 }],
 "loop": true,
 "name": &"default",
@@ -35,21 +15,22 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_untct"]
-radius = 373.0
-height = 746.0
+radius = 119.999985
+height = 299.99997
 
-[node name="Npc1Bird" type="Node2D"]
+[node name="Npc1Bird" type="Node2D" unique_id=731537344]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_c8mpm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=876763836]
+position = Vector2(-7.6293945e-06, 7.6293945e-06)
+scale = Vector2(1.2499999, 1.2499999)
 sprite_frames = SubResource("SpriteFrames_3hprw")
 autoplay = "default"
-frame = 3
 frame_progress = 0.9225566
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1240734543]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5, 85)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=799594218]
+position = Vector2(3.8146973e-06, -1.9073486e-06)
 shape = SubResource("CapsuleShape2D_untct")

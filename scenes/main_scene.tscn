@@ -1868,6 +1868,7 @@ position = Vector2(300, 315)
 
 [node name="Npc1Bird" parent="." unique_id=601024979 instance=ExtResource("11_e1cbu")]
 position = Vector2(656, -543.99994)
+scale = Vector2(0.8, 0.8)
 
 [node name="Feathers" parent="." unique_id=1288692019 instance=ExtResource("13_bcnxi")]
 position = Vector2(1440, 600)
