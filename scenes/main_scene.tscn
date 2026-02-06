@@ -1870,6 +1870,11 @@ position = Vector2(300, 315)
 position = Vector2(656, -543.99994)
 scale = Vector2(0.8, 0.8)
 
+[node name="DialogueMarkers" type="Node2D" parent="Npc1Bird" unique_id=406067565]
+
+[node name="DialogueStartPoint_Pigeon" type="Marker2D" parent="Npc1Bird/DialogueMarkers" unique_id=1060156409]
+position = Vector2(-241.24997, 12.499923)
+
 [node name="Feathers" parent="." unique_id=1288692019 instance=ExtResource("13_bcnxi")]
 position = Vector2(1440, 600)
 scale = Vector2(0.4, 0.4)

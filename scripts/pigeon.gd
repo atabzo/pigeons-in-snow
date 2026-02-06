@@ -13,6 +13,12 @@ var height := 0.0
 @onready var animated_sprite := $AnimatedSprite2D
 
 func _physics_process(delta):
+	
+	#lock the scene if is in the dialogue
+	if GameManager.dialogue_active:
+		velocity = Vector2.ZERO
+		return
+		
 	# TURN (A / D)
 	var turn_input := Input.get_axis("move_left", "move_right")
 	rotation += turn_input * turn_speed * delta
