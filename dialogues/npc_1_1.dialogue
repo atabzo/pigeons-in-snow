@@ -40,7 +40,6 @@ Pigeon: I’m not afraid of you.
 
 Penguin: Heh.
 Penguin: Confidence from a bird built for breadcrumbs.
-
 => converge
 
 ~ silent
@@ -49,7 +48,6 @@ Narrator: The wind answers for you.
 
 Penguin: Silent type?
 Penguin: That’s worse.
-
 => converge
 
 
@@ -66,8 +64,8 @@ Penguin: Some flew away.
 Penguin: Some hid.
 Penguin: Some learned their place.
 
--> "Demand answers" => demand
--> "Protect the flock" => protect
+- Demand answers => demand
+- Protect the flock => protect
 
 
 ~ demand
@@ -116,14 +114,13 @@ Penguin: I place krill.
 Penguin: You place bird seeds.
 Penguin: Three in a row wins.
 	
--> "Accept the challenge" => accept
--> "Refuse (but stay)" => refuse
+- Accept the challenge => accept
+- Refuse but stay => refuse
 
 
 ~ refuse
 Penguin: Refusal is also a move.
 Penguin: Just a bad one.
-
 => accept
 
 

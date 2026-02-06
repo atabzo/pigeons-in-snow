@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://scqs11vrolqr"]
+[gd_scene format=3 uid="uid://scqs11vrolqr"]
 
-[ext_resource type="Script" uid="uid://bhfmqfdisu57b" path="res://log_bench.gd" id="1_r8bb8"]
+[ext_resource type="Script" uid="uid://bhfmqfdisu57b" path="res://scripts/log_bench.gd" id="1_r8bb8"]
 [ext_resource type="Texture2D" uid="uid://cbtebv3ttmfkc" path="res://assets/MDrawnAssets/Decorations/FallenTree.png" id="2_rbvwf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tloge"]

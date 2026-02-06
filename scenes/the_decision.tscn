@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv46gswpwulnc"]
+[gd_scene format=3 uid="uid://dv46gswpwulnc"]
 
-[ext_resource type="Texture2D" uid="uid://djpjn32ioj7wi" path="res://images/backdrop.jpg" id="1_p5xo7"]
-[ext_resource type="Texture2D" uid="uid://bc6fsk7w5yjco" path="res://images/textbg.png" id="2_721po"]
-[ext_resource type="FontFile" uid="uid://cffniahme70vv" path="res://fonts/BitcountPropDoubleInk.ttf" id="2_ynfxc"]
-[ext_resource type="Texture2D" uid="uid://d1bhj0ariykha" path="res://images/peeking.png" id="4_n5jvu"]
-[ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://sound-click.mp3" id="5_fd8ng"]
+[ext_resource type="Texture2D" uid="uid://djpjn32ioj7wi" path="res://images/backdrop.jpg" id="1_8sugj"]
+[ext_resource type="Texture2D" uid="uid://bc6fsk7w5yjco" path="res://images/textbg.png" id="2_3pvsk"]
+[ext_resource type="FontFile" uid="uid://cffniahme70vv" path="res://fonts/BitcountPropDoubleInk.ttf" id="3_h81u7"]
+[ext_resource type="Texture2D" uid="uid://d1bhj0ariykha" path="res://images/peeking.png" id="4_hb88u"]
+[ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://audio/sound-click.mp3" id="5_sd73a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fd8ng"]
 bg_color = Color(0.27245283, 5.698681e-05, 0.99041396, 1)
@@ -19,7 +19,7 @@ shadow_size = 14
 script/source = "extends Button
 
 var tween: Tween
-@onready var click_sound = $\"../SoundClick\"
+@onready var click_sound = $\"../../SoundClick\"
 
 func _ready():
 	pivot_offset = size / 2
@@ -63,7 +63,7 @@ func _on_pressed():
 script/source = "extends Button
 	
 var tween: Tween
-@onready var click_sound = $\"../SoundClick\"
+@onready var click_sound = $\"../../SoundClick\"
 
 # Define the scene you want to switch to
 @export_file(\"*.tscn\") var next_scene: String = \"res://objects/title_animation.tscn\"
@@ -106,57 +106,57 @@ func _on_pressed():
 	get_tree().change_scene_to_file(next_scene)
 "
 
-[node name="the-decision" type="Node2D"]
+[node name="the-decision" type="Node2D" unique_id=733500016]
 
-[node name="background" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="." unique_id=1524181779]
 position = Vector2(646.5, 371.5)
 scale = Vector2(0.6271107, 0.6625)
-texture = ExtResource("1_p5xo7")
+texture = ExtResource("1_8sugj")
 
-[node name="Sprite2D" type="Sprite2D" parent="background"]
+[node name="Sprite2D" type="Sprite2D" parent="background" unique_id=1303917632]
 position = Vector2(-59.798054, -98.86793)
 scale = Vector2(3.4653752, 1.587629)
-texture = ExtResource("2_721po")
+texture = ExtResource("2_3pvsk")
 
-[node name="Label" type="Label" parent="background"]
+[node name="Label" type="Label" parent="background" unique_id=867610781]
 offset_left = -705.61707
 offset_top = -212.07547
 offset_right = 880.38293
 offset_bottom = -43.07547
 theme_override_colors/font_color = Color(0.29887834, 0.0008664979, 0.48657012, 1)
-theme_override_fonts/font = ExtResource("2_ynfxc")
+theme_override_fonts/font = ExtResource("3_h81u7")
 theme_override_font_sizes/font_size = 69
 text = "wait... are you okay with
                           the pigeons dying?"
 
-[node name="Button" type="Button" parent="background"]
+[node name="Button" type="Button" parent="background" unique_id=1194530015]
 offset_left = -940.0254
 offset_top = 204.52832
 offset_right = -40.662598
 offset_bottom = 410.52832
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_ynfxc")
+theme_override_fonts/font = ExtResource("3_h81u7")
 theme_override_font_sizes/font_size = 72
 theme_override_styles/normal = SubResource("StyleBoxFlat_fd8ng")
 text = "well yeah? they're so useless anyway"
 autowrap_mode = 2
 script = SubResource("GDScript_fd8ng")
 
-[node name="Button3" type="Button" parent="background"]
+[node name="Button3" type="Button" parent="background" unique_id=339182328]
 offset_left = 42.257248
 offset_top = 212.07549
 offset_right = 941.62006
 offset_bottom = 418.0755
-theme_override_fonts/font = ExtResource("2_ynfxc")
+theme_override_fonts/font = ExtResource("3_h81u7")
 theme_override_font_sizes/font_size = 69
 theme_override_styles/normal = SubResource("StyleBoxFlat_fd8ng")
 text = "uhm no, it's still a poor soul so we gotta do ts"
 autowrap_mode = 2
 script = SubResource("GDScript_o4frt")
 
-[node name="Peeking" type="Sprite2D" parent="."]
+[node name="Peeking" type="Sprite2D" parent="." unique_id=422709280]
 position = Vector2(1125, 137)
-texture = ExtResource("4_n5jvu")
+texture = ExtResource("4_hb88u")
 
-[node name="SoundClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_fd8ng")
+[node name="SoundClick" type="AudioStreamPlayer" parent="." unique_id=699741795]
+stream = ExtResource("5_sd73a")

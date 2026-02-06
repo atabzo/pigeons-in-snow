@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8ccqoaqpig3t"]
+[gd_scene format=3 uid="uid://b8ccqoaqpig3t"]
 
-[ext_resource type="FontFile" uid="uid://cffniahme70vv" path="res://fonts/BitcountPropDoubleInk.ttf" id="1_olt8n"]
-[ext_resource type="FontFile" uid="uid://dmuvcngp2i13b" path="res://fonts/CaesarDressing-Regular.ttf" id="1_xe7vm"]
-[ext_resource type="Texture2D" uid="uid://djbmb4upyko1a" path="res://images/sun.png" id="2_ktig4"]
-[ext_resource type="Texture2D" uid="uid://b5n8jvxvvjlts" path="res://images/flower.png" id="3_outur"]
-[ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://sound-click.mp3" id="4_fm0op"]
-[ext_resource type="Texture2D" uid="uid://bj355114nkqdk" path="res://images/home-screen/Titletext.png" id="6_gf7oa"]
+[ext_resource type="FontFile" uid="uid://dmuvcngp2i13b" path="res://fonts/CaesarDressing-Regular.ttf" id="1_ked1l"]
+[ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://audio/sound-click.mp3" id="2_b02wa"]
+[ext_resource type="FontFile" uid="uid://cffniahme70vv" path="res://fonts/BitcountPropDoubleInk.ttf" id="3_15ihl"]
+[ext_resource type="Texture2D" uid="uid://djbmb4upyko1a" path="res://images/sun.png" id="4_airqx"]
+[ext_resource type="Texture2D" uid="uid://b5n8jvxvvjlts" path="res://images/flower.png" id="5_ii2s2"]
+[ext_resource type="Texture2D" uid="uid://bj355114nkqdk" path="res://images/home-screen/Titletext.png" id="6_f8xo1"]
 
 [sub_resource type="GDScript" id="GDScript_xe7vm"]
 script/source = "extends Sprite2D
@@ -59,7 +59,7 @@ var tween: Tween
 @onready var click_sound = $\"../SoundClick\"
 
 # Define the scene you want to switch to
-@export_file(\"*.tscn\") var next_scene: String = \"res://the_decision.tscn\"
+@export_file(\"*.tscn\") var next_scene: String = \"res://scenes/the_decision.tscn\"
 
 func _ready():
 	pivot_offset = size / 2
@@ -178,64 +178,64 @@ func _process(delta):
 	# and use: position.y = original_y + bob
 "
 
-[node name="home-screen" type="Node2D"]
+[node name="home-screen" type="Node2D" unique_id=1384278619]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1220393726]
 offset_top = -1.0
 offset_right = 1296.0
 offset_bottom = 735.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1369041254]
 centered = false
 script = SubResource("GDScript_xe7vm")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=261997033]
 visible = false
 offset_left = 422.0
 offset_top = 361.0
 offset_right = 1221.0
 offset_bottom = 521.0
 theme_override_colors/font_color = Color(0.26377144, 0.0001453308, 0.3126142, 1)
-theme_override_fonts/font = ExtResource("1_xe7vm")
+theme_override_fonts/font = ExtResource("1_ked1l")
 theme_override_font_sizes/font_size = 110
 text = "Save the Pigeons!"
 autowrap_mode = 2
 
-[node name="SoundClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_fm0op")
+[node name="SoundClick" type="AudioStreamPlayer" parent="." unique_id=1694119071]
+stream = ExtResource("2_b02wa")
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button2" type="Button" parent="." unique_id=41771514]
 offset_left = 622.0
 offset_top = 562.0
 offset_right = 879.0
 offset_bottom = 642.0
-theme_override_fonts/font = ExtResource("1_olt8n")
+theme_override_fonts/font = ExtResource("3_15ihl")
 theme_override_font_sizes/font_size = 43
 text = "NEVERMIND"
 script = SubResource("GDScript_fm0op")
 
-[node name="Sun" type="Sprite2D" parent="."]
+[node name="Sun" type="Sprite2D" parent="." unique_id=94495204]
 visible = false
 position = Vector2(1115, 184)
 scale = Vector2(0.59650004, 0.6140001)
-texture = ExtResource("2_ktig4")
+texture = ExtResource("4_airqx")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1300348391]
 offset_left = 939.0
 offset_top = 562.0
 offset_right = 1205.0
 offset_bottom = 642.0
-theme_override_fonts/font = ExtResource("1_olt8n")
+theme_override_fonts/font = ExtResource("3_15ihl")
 theme_override_font_sizes/font_size = 43
 text = "LETS GOOO"
 script = SubResource("GDScript_outur")
 
-[node name="Flower" type="Sprite2D" parent="."]
+[node name="Flower" type="Sprite2D" parent="." unique_id=1126175749]
 position = Vector2(1176, 120)
 scale = Vector2(0.38, 0.374)
-texture = ExtResource("3_outur")
+texture = ExtResource("5_ii2s2")
 script = SubResource("GDScript_gf7oa")
 
-[node name="Titletext" type="Sprite2D" parent="."]
+[node name="Titletext" type="Sprite2D" parent="." unique_id=1148812738]
 position = Vector2(640, 360)
-texture = ExtResource("6_gf7oa")
+texture = ExtResource("6_f8xo1")

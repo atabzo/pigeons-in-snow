@@ -22,8 +22,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-music="*res://music.gd"
-Transition="*res://transition.gd"
+music="*res://scripts/music.gd"
+Transition="*res://scripts/transition.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 GameManager="*uid://yb580btmm4yc"
 

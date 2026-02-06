@@ -8,7 +8,7 @@ func _ready():
 	music_player = AudioStreamPlayer.new()
 	add_child(music_player)
 	
-	music_player.stream = load("res://background_music.mp3")
+	music_player.stream = load("res://audio/background_music.mp3")
 	music_player.autoplay = true
 	music_player.volume_db = original_volume
 	music_player.play()

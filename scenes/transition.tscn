@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dsfwgldx4rdxp"]
 
-[ext_resource type="Script" uid="uid://bj26xjc4iqep2" path="res://transition.gd" id="1_2gi1b"]
+[ext_resource type="Script" uid="uid://bj26xjc4iqep2" path="res://scripts/transition.gd" id="1_rerct"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1052886524]
-script = ExtResource("1_2gi1b")
+script = ExtResource("1_rerct")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=593241890]
 self_modulate = Color(1, 1, 1, 0)
