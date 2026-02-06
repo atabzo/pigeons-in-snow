@@ -27,6 +27,10 @@ Transition="*res://transition.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 GameManager="*uid://yb580btmm4yc"
 
+[dialogue_manager]
+
+runtime/balloon_path="res://dialogues/balloon.tscn"
+
 [display]
 
 window/size/viewport_width=1280
