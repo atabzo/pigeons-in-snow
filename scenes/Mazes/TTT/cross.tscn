@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://u01sbmojen1w"]
+
+[ext_resource type="Texture2D" uid="uid://dh4g0lgga1j1u" path="res://assets/images/TTT/ShrimpSeed/shrimp.png" id="1_r5i7o"]
+
+[node name="Cross" type="Sprite2D" groups=["crosses"]]
+scale = Vector2(2, 2)
+texture = ExtResource("1_r5i7o")

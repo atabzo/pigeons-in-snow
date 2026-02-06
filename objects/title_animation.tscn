@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dto64aslje20d"]
+[gd_scene format=3 uid="uid://dto64aslje20d"]
 
 [ext_resource type="Texture2D" uid="uid://dy6lif3e7001x" path="res://assets/TitleAnimation/TitleAnimation-1 2.png" id="1_0vva0"]
 [ext_resource type="Texture2D" uid="uid://bl5wg6mep3ckt" path="res://assets/TitleAnimation/TitleAnimation-2 2.png" id="2_1x614"]
@@ -56,7 +56,7 @@ func _ready() -> void:
 	await get_tree().create_timer(1.5).timeout
 	label.text = \"Many were trapped in the snow, but one managed to set themselves free.\"
 	await $AnimatedSprite2D.animation_finished	
-	get_tree().change_scene_to_file(\"res://scenes/copy_main_scene.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/main_scene.tscn\")
 	pass # Replace with function body.
 
 
@@ -256,20 +256,20 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="TitleAnimation" type="Node2D"]
+[node name="TitleAnimation" type="Node2D" unique_id=789901611]
 script = SubResource("GDScript_0vva0")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=351002755]
 offset_right = 1296.0
 offset_bottom = 736.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=607043208]
 position = Vector2(640, 360)
 sprite_frames = SubResource("SpriteFrames_q5srj")
 frame = 60
 frame_progress = 1.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=212591020]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

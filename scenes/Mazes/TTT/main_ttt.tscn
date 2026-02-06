@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dlyiso6yujnbh"]
+
+[ext_resource type="Script" uid="uid://byw4oi36nd42u" path="res://scripts/Mazes/TTT/main_ttt.gd" id="1_im1p7"]
+[ext_resource type="PackedScene" uid="uid://dljlnbfmp66qs" path="res://scenes/Mazes/TTT/board.tscn" id="1_y11jq"]
+[ext_resource type="PackedScene" uid="uid://diwxxbsnmiut0" path="res://scenes/Mazes/TTT/circle.tscn" id="2_grj33"]
+[ext_resource type="PackedScene" uid="uid://u01sbmojen1w" path="res://scenes/Mazes/TTT/cross.tscn" id="3_lemtf"]
+[ext_resource type="PackedScene" uid="uid://602u8d71pbfe" path="res://scenes/Mazes/TTT/game_over_menu.tscn" id="5_lemtf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grj33"]
+bg_color = Color(0.5882353, 0.7529412, 0.7176471, 1)
+border_width_left = 9
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lemtf"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[node name="MainTTT" type="Node" unique_id=456152474]
+script = ExtResource("1_im1p7")
+circle_scene = ExtResource("2_grj33")
+cross_scene = ExtResource("3_lemtf")
+
+[node name="Board" parent="." unique_id=1204915134 instance=ExtResource("1_y11jq")]
+position = Vector2(302, 301)
+
+[node name="SidePanel" type="Panel" parent="." unique_id=1083862424]
+custom_minimum_size = Vector2(680, 600)
+offset_left = 603.0
+offset_top = -1.0
+offset_right = 1283.0
+offset_bottom = 599.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_grj33")
+
+[node name="PlayerLabel" type="Label" parent="." unique_id=940399277]
+custom_minimum_size = Vector2(300, 67)
+offset_left = 786.0
+offset_top = 131.0
+offset_right = 1086.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 50
+text = "Next Player:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerPanel" type="Panel" parent="." unique_id=1065978134]
+offset_left = 839.0
+offset_top = 228.0
+offset_right = 1039.0
+offset_bottom = 428.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lemtf")
+
+[node name="GameOverMenu" parent="." unique_id=2011800497 instance=ExtResource("5_lemtf")]
+process_mode = 2
+
+[connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]

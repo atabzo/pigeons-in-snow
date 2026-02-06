@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmggo3c8htu4k"]
+
+[ext_resource type="Script" uid="uid://dcd1ohpv853cs" path="res://scripts/Mazes/Jigsaw/board.gd" id="1_lr1fu"]
+[ext_resource type="PackedScene" uid="uid://dcuf1y7k8iwr" path="res://scenes/Mazes/tile.tscn" id="2_o2ukk"]
+
+[node name="Board" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lr1fu")
+tile_scene = ExtResource("2_o2ukk")

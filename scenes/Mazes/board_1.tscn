@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://binb24cwgwuon"]
+
+[ext_resource type="Script" uid="uid://dcd1ohpv853cs" path="res://scripts/Mazes/Jigsaw/board.gd" id="1_vd6fo"]
+[ext_resource type="PackedScene" uid="uid://dcuf1y7k8iwr" path="res://scenes/Mazes/tile.tscn" id="2_ndbtl"]
+
+[node name="Board1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vd6fo")
+tile_scene = ExtResource("2_ndbtl")

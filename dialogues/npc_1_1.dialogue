@@ -1,11 +1,98 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+Narrator: Cold. White. Too quiet.
+Narrator: The snowstorm scattered the flock across the city.
+Narrator: For the first time, you are alone.
+
+Pigeon: …Where is everyone?
+Pigeon: This isn’t our square. This isn’t our sky.
+
+Narrator: A shadow moves against the snow.
+Narrator: Short. Black. Walking instead of flying.
+
+Penguin: Well, well.
+Penguin: A pigeon this far from the rooftops?
+
+Pigeon: A penguin?
+Pigeon: I’ve never seen one up close…
+
+Penguin: You shouldn’t have.
+Penguin: We don’t usually let surface birds wander here.
+
+Pigeon: Wait—aren’t birds supposed to help each other?
+Pigeon: We all survived the storm, didn’t we?
+
+Penguin: Help each other?
+Penguin: Oh, no. You misunderstand.
+
+Penguin: This city is cold now.
+Penguin: Cold cities need order.
+Penguin: And order needs fewer wings.
+
+Pigeon: …You scattered the flock.
+Pigeon: That was you.
+
+Penguin: Some flew away.
+Penguin: Some hid.
+Penguin: Some learned their place.
+
+Pigeon: I won’t let you touch them.
+Pigeon: They’re my flock.
+
+Penguin: Brave.
+Penguin: Stupid.
+Penguin: Typical pigeon.
+
+Narrator: The penguin steps closer.
+Narrator: The air feels heavier. Sharper.
+
+Penguin: Let me teach you something important.
+Penguin: Penguins are not your friends.
+
+Narrator: Snow crunches under your feet.
+Narrator: The penguin blocks your path, staring without blinking.
+
+Pigeon: I’m not backing down.
+Pigeon: Tell me where my flock is.
+
+Penguin: Hah.
+Penguin: You pigeons are always so dramatic.
+
+Penguin: Very well.
+Penguin: We’ll settle this the old way.
+
+Pigeon: …The old way?
+
+Narrator: The penguin pulls a flat board from the snow.
+Narrator: Scratched lines divide it into nine squares.
+
+Penguin: A game.
+Penguin: Simple. Ancient. Final.
+
+Penguin: I place krill.
+Penguin: You place bird seeds.
+
+Penguin: Three in a row wins.
+Penguin: The loser accepts the truth.
+
+Pigeon: And what truth is that?
+
+Penguin: That this city belongs to penguins now.
+
+Pigeon: And if I win?
+
+Penguin: …
+Penguin: Then you walk away as champion.
+Penguin: And I answer your questions.
+
+Narrator: The board lies between you.
+Narrator: Krill glisten dark against the ice.
+Narrator: Bird seeds feel warm in your claws.
+
+Penguin: Choose carefully, pigeon.
+Penguin: Every move is a mistake…
+
+Pigeon: I don’t need wings to win.
+Pigeon: I just need three in a row.
+
+do GameManager.npc1_finished.emit() 
 => END
