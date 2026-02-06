@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://yvbe6adqx6k7"]
+
+[ext_resource type="Texture2D" uid="uid://0ug084lrq34t" path="res://assets/animations/Grass/g1.png" id="1_s8evi"]
+[ext_resource type="Texture2D" uid="uid://c2hbabso7rb1l" path="res://assets/animations/Grass/g2.png" id="2_1fuju"]
+[ext_resource type="Texture2D" uid="uid://s71xe3ik6ifl" path="res://assets/animations/Grass/g3.png" id="3_m4mir"]
+[ext_resource type="Texture2D" uid="uid://ye7yswd3rq16" path="res://assets/animations/Grass/g4.png" id="4_1w4i8"]
+[ext_resource type="Texture2D" uid="uid://dgkstudo3n24d" path="res://assets/animations/Grass/g5.png" id="5_5y4di"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gms4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s8evi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1fuju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m4mir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1w4i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5y4di")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Grass" type="Node2D" unique_id=521156058]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1827372946]
+sprite_frames = SubResource("SpriteFrames_gms4m")
+autoplay = "default"
+frame_progress = 0.82742643

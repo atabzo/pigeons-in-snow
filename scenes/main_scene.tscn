@@ -1,25 +1,26 @@
 [gd_scene format=3 uid="uid://dfqs2b855xwsv"]
 
-[ext_resource type="Texture2D" uid="uid://dci1vgsovxr3d" path="res://assets/BG/bg1.jpg" id="1_jv07x"]
-[ext_resource type="Texture2D" uid="uid://dce0ny6i0l6si" path="res://assets/Winter/spritesheet.png" id="2_2e83c"]
-[ext_resource type="Texture2D" uid="uid://oksi5o3kutsw" path="res://assets/MDrawnAssets/Tiles/Snow.png" id="3_oh5s1"]
-[ext_resource type="Texture2D" uid="uid://b6nj5gi2xe12q" path="res://assets/MDrawnAssets/Tiles/TilesSnow.png" id="4_lwsse"]
-[ext_resource type="Texture2D" uid="uid://bb47kinxsbn0l" path="res://assets/MDrawnAssets/Decorations/BirdOnTree.png" id="5_vpljj"]
-[ext_resource type="Texture2D" uid="uid://cbtebv3ttmfkc" path="res://assets/MDrawnAssets/Decorations/FallenTree.png" id="6_vwrih"]
-[ext_resource type="Texture2D" uid="uid://bkuo413otoxd5" path="res://assets/MDrawnAssets/Decorations/Light.png" id="7_fggts"]
-[ext_resource type="PackedScene" uid="uid://yppms6y8mhk4" path="res://objects/snowman.tscn" id="9_uq3fv"]
-[ext_resource type="PackedScene" uid="uid://coytmnnqpcdj0" path="res://scenes/pigeon.tscn" id="10_6fm5q"]
-[ext_resource type="PackedScene" uid="uid://d1c78oowevwob" path="res://scenes/npc_1_bird.tscn" id="11_sb3u3"]
-[ext_resource type="PackedScene" uid="uid://b2r36u8kixoin" path="res://objects/tree.tscn" id="12_2e83c"]
-[ext_resource type="PackedScene" uid="uid://v1e5teahjfrl" path="res://objects/feathers.tscn" id="12_ools2"]
-[ext_resource type="PackedScene" uid="uid://b8isr7xyibt0o" path="res://objects/penguin.tscn" id="13_awbhv"]
-[ext_resource type="PackedScene" uid="uid://scqs11vrolqr" path="res://objects/log_bench.tscn" id="15_uq3fv"]
+[ext_resource type="Texture2D" uid="uid://dci1vgsovxr3d" path="res://assets/BG/bg1.jpg" id="1_7ykc4"]
+[ext_resource type="Texture2D" uid="uid://dce0ny6i0l6si" path="res://assets/Winter/spritesheet.png" id="2_pu3yx"]
+[ext_resource type="Texture2D" uid="uid://b6nj5gi2xe12q" path="res://assets/MDrawnAssets/Tiles/TilesSnow.png" id="4_6wevv"]
+[ext_resource type="Texture2D" uid="uid://oksi5o3kutsw" path="res://assets/MDrawnAssets/Tiles/Snow.png" id="4_mngbo"]
+[ext_resource type="PackedScene" uid="uid://coytmnnqpcdj0" path="res://scenes/pigeon.tscn" id="4_pu3yx"]
+[ext_resource type="Texture2D" uid="uid://bb47kinxsbn0l" path="res://assets/MDrawnAssets/Decorations/BirdOnTree.png" id="5_c1pb6"]
+[ext_resource type="Texture2D" uid="uid://cbtebv3ttmfkc" path="res://assets/MDrawnAssets/Decorations/FallenTree.png" id="6_6wevv"]
+[ext_resource type="Texture2D" uid="uid://bkuo413otoxd5" path="res://assets/MDrawnAssets/Decorations/Light.png" id="7_e1cbu"]
+[ext_resource type="PackedScene" uid="uid://yppms6y8mhk4" path="res://objects/snowman.tscn" id="8_si52b"]
+[ext_resource type="PackedScene" uid="uid://b2r36u8kixoin" path="res://objects/tree.tscn" id="9_01n6w"]
+[ext_resource type="PackedScene" uid="uid://yvbe6adqx6k7" path="res://objects/grass.tscn" id="10_6u1mn"]
+[ext_resource type="PackedScene" uid="uid://d1c78oowevwob" path="res://scenes/npc_1_bird.tscn" id="11_e1cbu"]
+[ext_resource type="PackedScene" uid="uid://v1e5teahjfrl" path="res://objects/feathers.tscn" id="13_bcnxi"]
+[ext_resource type="PackedScene" uid="uid://b8isr7xyibt0o" path="res://objects/penguin.tscn" id="14_7nt27"]
+[ext_resource type="PackedScene" uid="uid://scqs11vrolqr" path="res://objects/log_bench.tscn" id="15_k6f3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gubc5"]
 size = Vector2(6243.463, 224.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jv07x"]
-texture = ExtResource("4_lwsse")
+texture = ExtResource("4_6wevv")
 29:5/0 = 0
 30:5/0 = 0
 31:5/0 = 0
@@ -125,7 +126,7 @@ texture = ExtResource("4_lwsse")
 51:44/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2e83c"]
-texture = ExtResource("3_oh5s1")
+texture = ExtResource("4_mngbo")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -1197,7 +1198,7 @@ texture = ExtResource("3_oh5s1")
 36:25/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awbhv"]
-texture = ExtResource("2_2e83c")
+texture = ExtResource("2_pu3yx")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1755,7 +1756,7 @@ color = Color(0.7764706, 0.8627451, 0.9647059, 1)
 [node name="Sprite2D" type="Sprite2D" parent="BG" unique_id=173335072]
 position = Vector2(1944.0002, -1112)
 scale = Vector2(5, 5)
-texture = ExtResource("1_jv07x")
+texture = ExtResource("1_7ykc4")
 
 [node name="ColorRect2" type="ColorRect" parent="BG" unique_id=941204386]
 offset_left = -5776.0
@@ -1786,37 +1787,78 @@ layer_0/tile_data = PackedInt32Array(1179637, 393217, 6, 1245173, 393217, 7, 111
 visible = false
 position = Vector2(237, 278)
 scale = Vector2(0.3053435, 0.3053435)
-texture = ExtResource("5_vpljj")
+texture = ExtResource("5_c1pb6")
 
 [node name="Light" type="Sprite2D" parent="Design/Additional" unique_id=1391128865]
 position = Vector2(-1120, 1248)
-texture = ExtResource("7_fggts")
+texture = ExtResource("7_e1cbu")
 
 [node name="FallenTree2" type="Sprite2D" parent="Design/Additional" unique_id=14717543]
 position = Vector2(-1368, 1416)
-texture = ExtResource("6_vwrih")
+texture = ExtResource("6_6wevv")
 
-[node name="Snowman3" parent="Design/Additional" unique_id=1539044677 instance=ExtResource("9_uq3fv")]
+[node name="Snowman3" parent="Design/Additional" unique_id=1539044677 instance=ExtResource("8_si52b")]
 position = Vector2(2176, -2208)
 scale = Vector2(4, 4)
 
-[node name="Snowman2" parent="Design/Additional" unique_id=1413054113 instance=ExtResource("9_uq3fv")]
+[node name="Snowman2" parent="Design/Additional" unique_id=1413054113 instance=ExtResource("8_si52b")]
 position = Vector2(-464, -1016)
 scale = Vector2(4, 4)
 
-[node name="Area2D" parent="Design/Additional" unique_id=637497685 instance=ExtResource("12_2e83c")]
+[node name="Area2D" parent="Design/Additional" unique_id=637497685 instance=ExtResource("9_01n6w")]
 position = Vector2(2104, -344)
 
-[node name="Area2D2" parent="Design/Additional" unique_id=207087539 instance=ExtResource("12_2e83c")]
+[node name="Area2D2" parent="Design/Additional" unique_id=207087539 instance=ExtResource("9_01n6w")]
 position = Vector2(960, -1496)
 
-[node name="Area2D3" parent="Design/Additional" unique_id=535347830 instance=ExtResource("12_2e83c")]
+[node name="Area2D3" parent="Design/Additional" unique_id=535347830 instance=ExtResource("9_01n6w")]
 position = Vector2(-1104, -1992)
 
-[node name="Area2D4" parent="Design/Additional" unique_id=1080931602 instance=ExtResource("12_2e83c")]
+[node name="Area2D4" parent="Design/Additional" unique_id=1080931602 instance=ExtResource("9_01n6w")]
 position = Vector2(-664, 536)
 
-[node name="Pigeon" parent="." unique_id=875535180 instance=ExtResource("10_6fm5q")]
+[node name="Grass" type="Node2D" parent="Design" unique_id=82552552]
+
+[node name="Grass" parent="Design/Grass" unique_id=521156058 instance=ExtResource("10_6u1mn")]
+position = Vector2(548, 610)
+
+[node name="Grass2" parent="Design/Grass" unique_id=1457094340 instance=ExtResource("10_6u1mn")]
+position = Vector2(-173, 381)
+
+[node name="Grass3" parent="Design/Grass" unique_id=835025704 instance=ExtResource("10_6u1mn")]
+position = Vector2(523, 91)
+
+[node name="Grass4" parent="Design/Grass" unique_id=550274093 instance=ExtResource("10_6u1mn")]
+position = Vector2(-1087, -224)
+
+[node name="Grass5" parent="Design/Grass" unique_id=2136496932 instance=ExtResource("10_6u1mn")]
+position = Vector2(-1172, 723)
+
+[node name="Grass6" parent="Design/Grass" unique_id=751455292 instance=ExtResource("10_6u1mn")]
+position = Vector2(-274, 1301)
+
+[node name="Grass7" parent="Design/Grass" unique_id=655461508 instance=ExtResource("10_6u1mn")]
+position = Vector2(963, 1354)
+
+[node name="Grass8" parent="Design/Grass" unique_id=1921018908 instance=ExtResource("10_6u1mn")]
+position = Vector2(2115, 1145)
+
+[node name="Grass9" parent="Design/Grass" unique_id=1521048068 instance=ExtResource("10_6u1mn")]
+position = Vector2(1532, -567)
+
+[node name="Grass10" parent="Design/Grass" unique_id=1047516385 instance=ExtResource("10_6u1mn")]
+position = Vector2(-776, -549)
+
+[node name="Grass11" parent="Design/Grass" unique_id=769798938 instance=ExtResource("10_6u1mn")]
+position = Vector2(-232, -1552)
+
+[node name="Grass12" parent="Design/Grass" unique_id=135006814 instance=ExtResource("10_6u1mn")]
+position = Vector2(706, -1015)
+
+[node name="Grass13" parent="Design/Grass" unique_id=465233897 instance=ExtResource("10_6u1mn")]
+position = Vector2(1845, -1072)
+
+[node name="Pigeon" parent="." unique_id=875535180 instance=ExtResource("4_pu3yx")]
 z_index = 1
 position = Vector2(300, 315)
 
@@ -1824,10 +1866,10 @@ position = Vector2(300, 315)
 
 [node name="CHAGEME" type="Node2D" parent="." unique_id=1342116677]
 
-[node name="Npc1Bird" parent="." unique_id=601024979 instance=ExtResource("11_sb3u3")]
+[node name="Npc1Bird" parent="." unique_id=601024979 instance=ExtResource("11_e1cbu")]
 position = Vector2(656, -543.99994)
 
-[node name="Feathers" parent="." unique_id=1288692019 instance=ExtResource("12_ools2")]
+[node name="Feathers" parent="." unique_id=1288692019 instance=ExtResource("13_bcnxi")]
 position = Vector2(1440, 600)
 scale = Vector2(0.4, 0.4)
 collision_layer = 0
@@ -1854,12 +1896,12 @@ zoom = Vector2(0.1, 0.1)
 points = PackedVector2Array(-5, 0, 248, 0, 248, 248, 0, 248, 0, 0)
 default_color = Color(0.627451, 0.68235296, 0.7764706, 1)
 
-[node name="Area2D" parent="." unique_id=373968215 instance=ExtResource("12_2e83c")]
+[node name="Area2D" parent="." unique_id=373968215 instance=ExtResource("9_01n6w")]
 position = Vector2(1136, 280)
 
-[node name="Penguin" parent="." unique_id=1461057118 instance=ExtResource("13_awbhv")]
+[node name="Penguin" parent="." unique_id=1461057118 instance=ExtResource("14_7nt27")]
 position = Vector2(-832, 288)
 
-[node name="LogBench" parent="." unique_id=1661593144 instance=ExtResource("15_uq3fv")]
+[node name="LogBench" parent="." unique_id=1661593144 instance=ExtResource("15_k6f3i")]
 position = Vector2(1824, 576)
 scale = Vector2(3.5, 3.5)
