@@ -115,15 +115,18 @@ func check_win() -> int:
 
 
 func end_game(text := ""):
-	get_tree().paused = true
-	$GameOverMenu.show()
+	print("start lose")
+	await get_tree().create_timer(1.0).timeout
+	GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "penguin_wins")
 
+	
+	'''$GameOverNew.show()
 	if text != "":
 		$GameOverMenu.get_node("ResultLabel").text = text
 	elif winner == 1:
 		$GameOverMenu.get_node("ResultLabel").text = "Pigeon Wins!"
 	elif winner == -1:
-		$GameOverMenu.get_node("ResultLabel").text = "Penguin Wins!"
+		$GameOverMenu.get_node("ResultLabel").text = "Penguin Wins!"'''
 
 
 func _on_game_over_menu_restart():

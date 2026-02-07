@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://3v0djwj3kwqb"]
+
+[ext_resource type="Texture2D" uid="uid://djpjn32ioj7wi" path="res://images/backdrop.jpg" id="1_7m3ot"]
+[ext_resource type="Texture2D" uid="uid://bc6fsk7w5yjco" path="res://images/textbg.png" id="2_v3hpu"]
+[ext_resource type="FontFile" uid="uid://cffniahme70vv" path="res://fonts/BitcountPropDoubleInk.ttf" id="3_irg28"]
+[ext_resource type="Texture2D" uid="uid://d1bhj0ariykha" path="res://images/peeking.png" id="4_2jtsn"]
+[ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://audio/sound-click.mp3" id="5_8bugq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fd8ng"]
+bg_color = Color(0.27245283, 5.698681e-05, 0.99041396, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0.7137255, 0.69803923)
+shadow_size = 14
+
+[sub_resource type="GDScript" id="GDScript_fd8ng"]
+script/source = "extends Button
+
+var tween: Tween
+@onready var click_sound = $\"../../SoundClick\"
+
+func _ready():
+	pivot_offset = size / 2
+	
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	button_up.connect(_on_button_up)
+	pressed.connect(_on_pressed)
+
+func _on_mouse_entered():
+	if tween:
+		tween.kill()
+	tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", Vector2(1.1, 1.1), 0.3)
+
+func _on_mouse_exited():
+	if tween:
+		tween.kill()
+	tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", Vector2(1.0, 1.0), 0.3)
+
+func _on_button_up():
+	if tween:
+		tween.kill()
+	tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", Vector2(1.1, 1.1), 0.2)
+
+func _on_pressed():
+	print(\"Exiting game...\")
+	
+	if click_sound:
+		click_sound.play()
+		# Wait for sound to finish before exiting
+		await click_sound.finished
+	
+	# Exit the game
+	get_tree().quit()
+"
+
+[sub_resource type="GDScript" id="GDScript_o4frt"]
+script/source = "extends Button
+	
+var tween: Tween
+@onready var click_sound = $\"../../SoundClick\"
+
+# Define the scene you want to switch to
+@export_file(\"*.tscn\") var next_scene: String = \"res://objects/title_animation.tscn\"
+
+func _ready():
+	pivot_offset = size / 2
+	
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	button_up.connect(_on_button_up)
+	pressed.connect(_on_pressed)
+
+func _on_mouse_entered():
+	if tween:
+		tween.kill()
+	tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", Vector2(1.1, 1.1), 0.3)
+
+func _on_mouse_exited():
+	if tween:
+		tween.kill()
+	tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", Vector2(1.0, 1.0), 0.3)
+
+func _on_button_up():
+	if tween:
+		tween.kill()
+	tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, \"scale\", Vector2(1.1, 1.1), 0.2)
+
+func _on_pressed():
+	print(\"Button pressed!\")
+	
+	if click_sound:
+		click_sound.play()
+		# Wait for sound to finish before switching scenes
+		await click_sound.finished
+	
+	# Switch to the defined scene
+	get_tree().change_scene_to_file(next_scene)
+"
+
+[node name="the-decision" type="Node2D" unique_id=733500016]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1524181779]
+position = Vector2(646.5, 371.5)
+scale = Vector2(0.6271107, 0.6625)
+texture = ExtResource("1_7m3ot")
+
+[node name="Sprite2D" type="Sprite2D" parent="background" unique_id=1303917632]
+position = Vector2(-59.798054, -98.86793)
+scale = Vector2(3.4653752, 1.587629)
+texture = ExtResource("2_v3hpu")
+
+[node name="Label" type="Label" parent="background" unique_id=867610781]
+offset_left = -708.8063
+offset_top = -231.69812
+offset_right = 877.1937
+offset_bottom = 23.30188
+theme_override_colors/font_color = Color(0.29887834, 0.0008664979, 0.48657012, 1)
+theme_override_fonts/font = ExtResource("3_irg28")
+theme_override_font_sizes/font_size = 69
+text = "Captain, 
+	               I think we are lost
+                                                            ..."
+
+[node name="Button" type="Button" parent="background" unique_id=1194530015]
+offset_left = -940.0254
+offset_top = 204.52832
+offset_right = -40.662598
+offset_bottom = 410.52832
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_irg28")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxFlat_fd8ng")
+text = "Abandon the ship"
+autowrap_mode = 2
+script = SubResource("GDScript_fd8ng")
+
+[node name="Button3" type="Button" parent="background" unique_id=339182328]
+offset_left = 42.257248
+offset_top = 212.07549
+offset_right = 941.62006
+offset_bottom = 418.0755
+theme_override_fonts/font = ExtResource("3_irg28")
+theme_override_font_sizes/font_size = 69
+theme_override_styles/normal = SubResource("StyleBoxFlat_fd8ng")
+text = "Start the journey again"
+autowrap_mode = 2
+script = SubResource("GDScript_o4frt")
+
+[node name="Peeking" type="Sprite2D" parent="." unique_id=422709280]
+position = Vector2(1125, 137)
+texture = ExtResource("4_2jtsn")
+
+[node name="SoundClick" type="AudioStreamPlayer" parent="." unique_id=699741795]
+stream = ExtResource("5_8bugq")

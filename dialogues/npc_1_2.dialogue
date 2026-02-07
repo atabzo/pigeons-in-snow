@@ -1,0 +1,12 @@
+~ penguin_wins
+
+Pigeon: Wait... I lost?
+Penguin: Victory is mine.
+Penguin: The rooftop belongs to the cold now.
+Pigeon: This is so unfair...
+
+Penguin: Better luck next time, sky racer.
+
+do GameManager.navigate_to_scene_dialogue("game_over")
+
+=> END

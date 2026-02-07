@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dljlnbfmp66qs" path="res://scenes/Mazes/TTT/board.tscn" id="1_y11jq"]
 [ext_resource type="PackedScene" uid="uid://diwxxbsnmiut0" path="res://scenes/Mazes/TTT/circle.tscn" id="2_grj33"]
 [ext_resource type="PackedScene" uid="uid://u01sbmojen1w" path="res://scenes/Mazes/TTT/cross.tscn" id="3_lemtf"]
+[ext_resource type="PackedScene" uid="uid://3v0djwj3kwqb" path="res://scenes/game_over.tscn" id="4_x2mm7"]
 [ext_resource type="PackedScene" uid="uid://602u8d71pbfe" path="res://scenes/Mazes/TTT/game_over_menu.tscn" id="5_lemtf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grj33"]
@@ -22,6 +23,10 @@ border_width_bottom = 5
 script = ExtResource("1_im1p7")
 circle_scene = ExtResource("2_grj33")
 cross_scene = ExtResource("3_lemtf")
+
+[node name="GameOverNew" parent="." unique_id=733500016 instance=ExtResource("4_x2mm7")]
+visible = false
+z_index = 2
 
 [node name="Board" parent="." unique_id=1204915134 instance=ExtResource("1_y11jq")]
 position = Vector2(302, 301)
