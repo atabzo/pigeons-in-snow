@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ylhfrtmnytr4"]
+
+[ext_resource type="Script" uid="uid://bad1180yb25f2" path="res://scripts/Mazes/Match/card.gd" id="1_qo0ug"]
+[ext_resource type="Texture2D" uid="uid://s2iajk1pu231" path="res://assets/images/Match/seed.png" id="1_srwqr"]
+[ext_resource type="Texture2D" uid="uid://dovhltsvsuxph" path="res://assets/images/Match/circle.png" id="2_fxgjq"]
+[ext_resource type="Texture2D" uid="uid://8ehqsioah5x8" path="res://assets/images/Match/cross.png" id="3_afmvs"]
+[ext_resource type="Texture2D" uid="uid://c1so3d401exkt" path="res://assets/images/Match/shrimp.png" id="4_tmlcy"]
+[ext_resource type="Texture2D" uid="uid://yk4tfy2v6e0" path="res://assets/images/Match/Penguin_1.png" id="5_ixy37"]
+[ext_resource type="Texture2D" uid="uid://b5n8jvxvvjlts" path="res://images/flower.png" id="7_ixy37"]
+[ext_resource type="Texture2D" uid="uid://d4shxkbdp1wv" path="res://assets/images/Match/pegion.png" id="7_mji1r"]
+[ext_resource type="Texture2D" uid="uid://blvym3ht1ngu0" path="res://images/lovely flowers (6).png" id="8_mji1r"]
+[ext_resource type="Texture2D" uid="uid://dmj08vplq8fne" path="res://images/lovely flowers (13).png" id="9_tadpj"]
+
+[node name="Card" type="Control" unique_id=1582834616]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qo0ug")
+textures = Array[Texture2D]([ExtResource("2_fxgjq"), ExtResource("3_afmvs"), ExtResource("4_tmlcy"), ExtResource("5_ixy37"), ExtResource("1_srwqr"), ExtResource("7_ixy37"), ExtResource("8_mji1r"), ExtResource("9_tadpj")])
+back_texture = ExtResource("7_mji1r")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1390241731]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
+texture = ExtResource("1_srwqr")
+
+[node name="CollisionShape2D" type="Area2D" parent="." unique_id=546325821]
+scale = Vector2(3, 3)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

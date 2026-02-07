@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://j42j36vsu0de"]
+
+[ext_resource type="Script" uid="uid://bu4iwrilsgbot" path="res://scripts/Mazes/Match/main_match.gd" id="1_btylw"]
+[ext_resource type="PackedScene" uid="uid://ylhfrtmnytr4" path="res://scenes/Mazes/Match/card.tscn" id="2_18kj2"]
+
+[node name="MainMatch" type="Node2D" unique_id=997986996]
+script = ExtResource("1_btylw")
+card_scene = ExtResource("2_18kj2")
+
+[node name="Cards" type="GridContainer" parent="." unique_id=269494910]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
