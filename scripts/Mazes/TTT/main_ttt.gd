@@ -117,8 +117,10 @@ func check_win() -> int:
 func end_game(text := ""):
 	print("start lose")
 	await get_tree().create_timer(1.0).timeout
-	GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "penguin_wins")
-
+	if winner == -1:
+		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "penguin_wins")
+	elif winner == 1:
+		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "pigeon_wins")
 	
 	'''$GameOverNew.show()
 	if text != "":
