@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cp3g4deydtjs6"]
+
+[ext_resource type="Texture2D" uid="uid://cgte42gpbijtq" path="res://assets/images/Find/branch-Photoroom.png" id="1_4jce0"]
+[ext_resource type="Script" uid="uid://ciphdldqnp7vi" path="res://scripts/Mazes/Find/findable_object.gd" id="1_83bqh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_83bqh"]
+radius = 86.0
+height = 280.0
+
+[node name="FindableObject" type="Node2D" unique_id=1916035002]
+script = ExtResource("1_83bqh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1842073128]
+texture = ExtResource("1_4jce0")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1792921025]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=113728354]
+shape = SubResource("CapsuleShape2D_83bqh")

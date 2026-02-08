@@ -26,6 +26,7 @@ music="*res://scripts/music.gd"
 Transition="*res://scripts/transition.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 GameManager="*uid://yb580btmm4yc"
+FindManager="*uid://cx5rqcposi2ey"
 
 [dialogue_manager]
 

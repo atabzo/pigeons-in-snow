@@ -1,6 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dfqs2b855xwsv"]
 
 [ext_resource type="Texture2D" uid="uid://dci1vgsovxr3d" path="res://assets/BG/bg1.jpg" id="1_7ykc4"]
+[ext_resource type="Script" uid="uid://cl73fyqi4yu35" path="res://scripts/main_scene.gd" id="1_bcnxi"]
 [ext_resource type="Texture2D" uid="uid://dce0ny6i0l6si" path="res://assets/Winter/spritesheet.png" id="2_pu3yx"]
 [ext_resource type="Texture2D" uid="uid://b6nj5gi2xe12q" path="res://assets/MDrawnAssets/Tiles/TilesSnow.png" id="4_6wevv"]
 [ext_resource type="Texture2D" uid="uid://oksi5o3kutsw" path="res://assets/MDrawnAssets/Tiles/Snow.png" id="4_mngbo"]
@@ -11,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://d1c78oowevwob" path="res://scenes/npc_1_bird.tscn" id="11_e1cbu"]
 [ext_resource type="PackedScene" uid="uid://v1e5teahjfrl" path="res://objects/feathers.tscn" id="13_bcnxi"]
 [ext_resource type="PackedScene" uid="uid://scqs11vrolqr" path="res://objects/log_bench.tscn" id="15_k6f3i"]
+[ext_resource type="PackedScene" uid="uid://cp3g4deydtjs6" path="res://scenes/Mazes/Find/findable_object.tscn" id="18_7nt27"]
+[ext_resource type="PackedScene" uid="uid://4er6yxt72xl" path="res://scenes/Mazes/Find/ui_overlay_score.tscn" id="18_bcnxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gubc5"]
 size = Vector2(5866.7314, 224.5)
@@ -1702,7 +1705,8 @@ func _physics_process(delta: float) -> void:
 	$Camera2D.position = player.position 
 "
 
-[node name="CopyMainScene" type="Node2D"]
+[node name="CopyMainScene" type="Node2D" unique_id=1064206985]
+script = ExtResource("1_bcnxi")
 
 [node name="Collision Nodes" type="Node" parent="."]
 
@@ -1874,4 +1878,23 @@ position = Vector2(1062, 459)
 [node name="LogBench" parent="." instance=ExtResource("15_k6f3i")]
 position = Vector2(255.00002, 500)
 scale = Vector2(3.5, 3.5)
-script = null
+
+[node name="BranchesFind" type="Node2D" parent="." unique_id=1916225259]
+position = Vector2(383, -220)
+
+[node name="FindableObject" parent="BranchesFind" unique_id=1916035002 groups=["findable"] instance=ExtResource("18_7nt27")]
+position = Vector2(313, 131)
+
+[node name="FindableObject2" parent="BranchesFind" unique_id=1607291044 groups=["findable"] instance=ExtResource("18_7nt27")]
+position = Vector2(-267, 178)
+
+[node name="FindableObject3" parent="BranchesFind" unique_id=290791358 groups=["findable"] instance=ExtResource("18_7nt27")]
+
+[node name="FindableObject4" parent="BranchesFind" unique_id=1282267658 groups=["findable"] instance=ExtResource("18_7nt27")]
+position = Vector2(76, 374)
+
+[node name="FindableObject5" parent="BranchesFind" unique_id=1114482294 groups=["findable"] instance=ExtResource("18_7nt27")]
+position = Vector2(543, 12)
+
+[node name="UiScoreFind" parent="BranchesFind" unique_id=1058494495 instance=ExtResource("18_bcnxi")]
+layer = 2
