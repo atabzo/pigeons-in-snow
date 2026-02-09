@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://yppms6y8mhk4" path="res://objects/snowman.tscn" id="8_si52b"]
 [ext_resource type="PackedScene" uid="uid://b2r36u8kixoin" path="res://objects/tree.tscn" id="9_01n6w"]
 [ext_resource type="PackedScene" uid="uid://yvbe6adqx6k7" path="res://objects/grass.tscn" id="10_6u1mn"]
-[ext_resource type="PackedScene" uid="uid://d1c78oowevwob" path="res://scenes/npc_1_bird.tscn" id="11_e1cbu"]
+[ext_resource type="PackedScene" uid="uid://d1c78oowevwob" path="res://scenes/NPCs/npc_1_bird.tscn" id="11_e1cbu"]
 [ext_resource type="PackedScene" uid="uid://v1e5teahjfrl" path="res://objects/feathers.tscn" id="13_bcnxi"]
 [ext_resource type="PackedScene" uid="uid://scqs11vrolqr" path="res://objects/log_bench.tscn" id="15_k6f3i"]
+[ext_resource type="PackedScene" uid="uid://ctg3g0x5htfs8" path="res://scenes/NPCs/npc_2_owl.tscn" id="15_si52b"]
 [ext_resource type="PackedScene" uid="uid://cp3g4deydtjs6" path="res://scenes/Mazes/Find/findable_object.tscn" id="18_7nt27"]
 [ext_resource type="PackedScene" uid="uid://4er6yxt72xl" path="res://scenes/Mazes/Find/ui_overlay_score.tscn" id="18_bcnxi"]
 
@@ -1898,3 +1899,7 @@ position = Vector2(543, 12)
 
 [node name="UiScoreFind" parent="BranchesFind" unique_id=1058494495 instance=ExtResource("18_bcnxi")]
 layer = 2
+
+[node name="Owl" parent="." unique_id=390668946 instance=ExtResource("15_si52b")]
+position = Vector2(1507, -107)
+scale = Vector2(0.8, 0.8)

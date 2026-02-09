@@ -51,7 +51,7 @@ func _input(event):
 				if check_win() != 0:
 					end_game()
 				elif moves == 9:
-					end_game("It's a Tie!")
+					end_game(true)
 				else:
 					switch_to_bot()
 
@@ -116,8 +116,9 @@ func check_win() -> int:
 	return winner
 
 
-func end_game(text := ""):
-	print("start lose")
+func end_game(tie: bool = false):
+	if tie:
+		GameManager.navigate_to_scene_dialogue("main_match", true, "npc_1_2", "draw")
 	await get_tree().create_timer(1.0).timeout
 	if winner == -1:
 		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
@@ -144,10 +145,11 @@ func get_bots_next_move():
 		if check_win() != 0:
 			end_game()
 		elif moves == 9:
-			end_game("It's a Tie!")
+			end_game(true)
 		else:
 			player = 1
 			temp_marker.queue_free()
 			create_marker(player, player_panel_pos + Vector2i(cell_size / 2, cell_size / 2), true)
 
 	bot_thinking = false
+  

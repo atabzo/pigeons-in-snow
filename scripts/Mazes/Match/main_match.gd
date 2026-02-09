@@ -177,7 +177,7 @@ func game_over():
 	elif bot_score > player_score:
 		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
 	else:
-		GameManager.navigate_to_scene_dialogue("main_match")
+		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "draw")
 
 	# Example hook for dialogue / scene change
 	# GameManager.minigame_finished(player_score, bot_score)

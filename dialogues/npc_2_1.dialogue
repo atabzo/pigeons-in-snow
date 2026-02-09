@@ -1,0 +1,21 @@
+~ start
+Owl: Hallo. Who are you?
+
+- Pigeon.
+- Your brother’s friend.
+- Your brother’s enemy.
+
+Owl: I see. And what brings you here?
+
+- I brought the sticks.
+- I wandered half the world to bring you the sticks.
+
+Owl: Yes. That will do. Put them here.
+
+- *Put*
+
+Owl: Good. Then everything is in order. Goodbye.
+Pigeon: Goodbye.
+
+do GameManager.npc2_finished.emit()
+=> END

@@ -5,20 +5,16 @@ extends Node2D
 var found: = 0
 
 #signals
-signal find_game_finished
+signal find_game_won
 signal found_object
 
 #funcs
 func _ready() -> void:
-	find_game_finished.connect(game_finished)
+	pass
 
 func register_find():
 	found += 1
-	print("FOUND 1 branch")
 	emit_signal("found_object")
 	
 	if(found >= total_to_find):
-		emit_signal("find_game_finished")
-		
-func game_finished():
-	print("You succeded!")
+		emit_signal("find_game_won")

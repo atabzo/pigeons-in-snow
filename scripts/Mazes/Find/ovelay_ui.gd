@@ -18,13 +18,15 @@ func _ready() -> void:
 	timer.timeout.connect(_on_time_tick)
 	
 	FindManager.found_object.connect(_on_found)
-	FindManager.find_game_finished.connect(_on_finish)
+	FindManager.find_game_won.connect(_on_finish)
 	
 	GameManager.lost_minigame.connect(_on_started)
-
+	GameManager.npc2_finished.connect(_on_hide_ui)
+	
 func _on_started():
-		time_left = 20
-		timer.start()
+	GameManager.current_minigame = GameManager.MinigameType.Find
+	time_left = 20
+	timer.start()
 		
 func _on_found():
 	score_label.text = str(FindManager.found)
@@ -37,7 +39,7 @@ func _on_finish():
 	
 	timer.stop()
 	
-	task_label.text = "Good job on collecting the branches. Now give them back to the Penguin"
+	task_label.text = "Good job on collecting the branches. Now give them to Pengiun's bro"
 	
 func _on_time_tick():
 	time_left -= 1
@@ -48,3 +50,6 @@ func _on_time_tick():
 			
 func _on_time_up():
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+
+func _on_hide_ui():
+	$".".visible = false

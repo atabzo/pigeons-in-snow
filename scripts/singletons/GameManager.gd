@@ -15,6 +15,7 @@ const SCENE_MAP = {
 
 #signals 
 signal npc1_finished
+signal npc2_finished
 signal show_game_over
 signal lost_minigame
 

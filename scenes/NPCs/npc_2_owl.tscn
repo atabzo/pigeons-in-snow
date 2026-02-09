@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ctg3g0x5htfs8"]
+
+[ext_resource type="Script" uid="uid://d22hn1ipti1c8" path="res://scripts/NPCs/npc_2_owl.gd" id="1_57q20"]
+[ext_resource type="Texture2D" uid="uid://du2fj83qcgcha" path="res://images/Owl.png" id="1_lel63"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57q20"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lel63")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o2uh"]
+size = Vector2(694, 644)
+
+[node name="Owl" type="Node2D" unique_id=390668946]
+script = ExtResource("1_57q20")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=540772831]
+sprite_frames = SubResource("SpriteFrames_57q20")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2075519265]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1149880840]
+position = Vector2(6, 2)
+shape = SubResource("RectangleShape2D_3o2uh")
