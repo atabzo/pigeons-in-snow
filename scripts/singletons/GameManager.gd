@@ -28,7 +28,7 @@ func position_for_dialogue():
 	var scene = get_tree().current_scene
 	var pigeon = scene.get_node("Pigeon")
 	
-	pigeon.global_position = scene.get_node("Npc1Bird/DialogueMarkers/DialogueStartPoint_Pigeon").global_position
+	pigeon.global_position = scene.get_node("penguin/DialogueMarkers/DialogueStartPoint_Pigeon").global_position
 	pigeon.rotation = 0
 
 func start_dialogue(name: String, trigger: String):
