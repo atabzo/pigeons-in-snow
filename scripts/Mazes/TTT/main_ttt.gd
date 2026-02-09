@@ -22,6 +22,8 @@ var bot_thinking := false
 
 
 func _ready():
+	GameManager.current_minigame = GameManager.MinigameType.TTT
+
 	board_size = $Board.texture.get_width()
 	cell_size = board_size / 3
 	player_panel_pos = $PlayerPanel.position
@@ -118,18 +120,10 @@ func end_game(text := ""):
 	print("start lose")
 	await get_tree().create_timer(1.0).timeout
 	if winner == -1:
-		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "penguin_wins")
+		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
 	elif winner == 1:
 		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "pigeon_wins")
 	
-	'''$GameOverNew.show()
-	if text != "":
-		$GameOverMenu.get_node("ResultLabel").text = text
-	elif winner == 1:
-		$GameOverMenu.get_node("ResultLabel").text = "Pigeon Wins!"
-	elif winner == -1:
-		$GameOverMenu.get_node("ResultLabel").text = "Penguin Wins!"'''
-
 
 func _on_game_over_menu_restart():
 	new_game()

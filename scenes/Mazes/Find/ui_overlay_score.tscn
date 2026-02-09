@@ -253,7 +253,6 @@ frame_progress = 1.0
 [node name="Time" type="Node2D" parent="." unique_id=1361868825]
 
 [node name="Timer" type="Timer" parent="Time" unique_id=479929801]
-one_shot = true
 
 [node name="TimeLabel" type="Label" parent="Time" unique_id=1943485073]
 offset_right = 40.0
@@ -261,3 +260,15 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 37
 text = "Time left:"
+
+[node name="TaskLabel" type="Label" parent="." unique_id=1603335740]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.5
+offset_right = 154.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "You have 20 seconst to find 5 branches. "

@@ -5,32 +5,43 @@ signal time_changed
 
 #vars
 @onready var timer: Timer = $Time/Timer
+@onready var firework: AnimatedSprite2D = $Firework
+@onready var score_label: Label = $Score/ScoreLabel
+@onready var time_label: Label = $Time/TimeLabel
+@onready var task_label: Label = $TaskLabel
+
 var time_left = 20
-var first_find = true
 
 #funcs
 func _ready() -> void:
-	$Firework.visible = false
+	firework.visible = false
 	timer.timeout.connect(_on_time_tick)
+	
 	FindManager.found_object.connect(_on_found)
 	FindManager.find_game_finished.connect(_on_finish)
-
-
-func _on_found():
-	$Score/ScoreLabel.text = str(FindManager.found)
 	
-	if(first_find):
+	GameManager.lost_minigame.connect(_on_started)
+
+func _on_started():
 		time_left = 20
 		timer.start()
-		first_find = false
+		
+func _on_found():
+	score_label.text = str(FindManager.found)
 	
 func _on_finish():
-	$Firework.visible = true
-	$Firework.play("default")
+	firework.visible = true
+	firework.play("default")
+	await firework.animation_finished
+	firework.visible = false
+	
+	timer.stop()
+	
+	task_label.text = "Good job on collecting the branches. Now give them back to the Penguin"
 	
 func _on_time_tick():
 	time_left -= 1
-	$Time/TimeLabel.text = str(time_left)
+	time_label.text = str(time_left)
 	
 	if time_left <= 0 :
 			_on_time_up()

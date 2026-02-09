@@ -3,13 +3,23 @@ extends Node
 #variables
 var dialogue_active := false
 
+	#minigames
+enum MinigameType {TTT, Match, Find}
+# Map
+const SCENE_MAP = {
+	MinigameType.TTT: "Mazes/main_ttt",
+	MinigameType.Match: "Mazes/main_match",
+	MinigameType.Find: "main_scene"
+}
+@export var current_minigame: MinigameType = MinigameType.TTT
+
 #signals 
 signal npc1_finished
 signal show_game_over
+signal lost_minigame
 
 #methods
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
-	print("in lose")
 	get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
 	
 	# Wait until current_scene is no longer null AND matches the target name
@@ -34,3 +44,6 @@ func position_for_dialogue():
 func start_dialogue(name: String, trigger: String):
 	var dialogue_resource = load("res://dialogues/" + name + ".dialogue")
 	DialogueManager.show_dialogue_balloon(dialogue_resource, trigger)
+	
+func restart_minigame():
+	get_tree().change_scene_to_file("res://scenes/" + SCENE_MAP[current_minigame] + ".tscn")
