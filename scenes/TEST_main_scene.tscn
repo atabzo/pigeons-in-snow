@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdfaf3v28p7i5"]
+[gd_scene format=3 uid="uid://cdfaf3v28p7i5"]
 
 [ext_resource type="Texture2D" uid="uid://dci1vgsovxr3d" path="res://assets/BG/bg1.jpg" id="1_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://dce0ny6i0l6si" path="res://assets/Winter/spritesheet.png" id="2_pu3yx"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bkuo413otoxd5" path="res://assets/MDrawnAssets/Decorations/Light.png" id="7_e1cbu"]
 [ext_resource type="Texture2D" uid="uid://dvgapjlelk3qc" path="res://assets/MDrawnAssets/Decorations/Snowman.png" id="8_mngbo"]
 [ext_resource type="Texture2D" uid="uid://vm6ti56h4hjq" path="res://assets/MDrawnAssets/Decorations/Tree.png" id="9_4w45t"]
-[ext_resource type="PackedScene" uid="uid://d1c78oowevwob" path="res://scenes/npc_1_bird.tscn" id="11_e1cbu"]
+[ext_resource type="PackedScene" uid="uid://d1c78oowevwob" path="res://scenes/NPCs/npc_1_bird.tscn" id="11_e1cbu"]
 [ext_resource type="FontFile" uid="uid://cffniahme70vv" path="res://fonts/BitcountPropDoubleInk.ttf" id="13_4w45t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e1cbu"]
@@ -1737,14 +1737,14 @@ func _on_button_pressed():
 	get_tree().change_scene_to_file(next_scene)
 "
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node2D" unique_id=529660265]
 
-[node name="BG" type="Node2D" parent="."]
+[node name="BG" type="Node2D" parent="." unique_id=903690280]
 
-[node name="Sprite2D" type="Sprite2D" parent="BG"]
+[node name="Sprite2D" type="Sprite2D" parent="BG" unique_id=920600650]
 texture = ExtResource("1_7ykc4")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." unique_id=1204356385]
 position = Vector2(0, 6)
 tile_set = SubResource("TileSet_18nlu")
 format = 2
@@ -1754,87 +1754,87 @@ layer_1/tile_data = PackedInt32Array(851966, 1048576, 8, 917502, 1048576, 9, 851
 layer_2/name = "CTilesLevel"
 layer_2/tile_data = PackedInt32Array(1245210, 1835011, 7, 1310746, 1835011, 8, 1114139, 1900547, 5, 1179675, 1900547, 6, 1245211, 1900547, 7, 1310747, 1900547, 8, 1114140, 1966083, 5, 1179676, 1966083, 6, 1245212, 1966083, 7, 1310748, 1966083, 8, 1114141, 2031619, 5, 1179677, 2031619, 6, 1245213, 2031619, 7, 1310749, 2031619, 8, 1114142, 2097155, 5, 1179678, 2097155, 6, 1245214, 2097155, 7, 1310750, 2097155, 8, 1179679, 2162691, 6, 1245215, 2162691, 7, 1310751, 2162691, 8, 1245216, 2228227, 7, 1310752, 2228227, 8, 1245217, 2293763, 7, 1310753, 2293763, 8, 1310754, 2359299, 8, 1245192, 2555907, 7, 1310728, 2555907, 8, 1245193, 2621443, 7, 1310729, 2621443, 8, 1245155, 3407875, 6, 1310691, 3407875, 7, 1245156, 3473411, 6, 1310692, 3473411, 7, 1245157, 3538947, 6, 1310693, 3538947, 7, 1245158, 3604483, 6, 1310694, 3604483, 7, 1245159, 3670019, 6, 1310695, 3670019, 7, 1245160, 3735555, 6, 1310696, 3735555, 7, 1245161, 3801091, 6, 1310697, 3801091, 7, 1376233, 3801091, 8, 1245162, 3866627, 6, 1245163, 3932163, 6, 1179620, 3538947, 5, 1179621, 3604483, 5, 1179622, 3670019, 5, 1179623, 3735555, 5, 1179624, 3801091, 5, 1179625, 3866627, 5, 1179626, 3932163, 5)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=4292800]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1944790761]
 position = Vector2(7, 416.5)
 shape = SubResource("RectangleShape2D_gubc5")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=160066554]
 position = Vector2(808, -216)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_mngbo")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1980477945]
 position = Vector2(-767.99994, -104.00003)
 rotation = -1.5662057
 shape = SubResource("RectangleShape2D_mngbo")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=280417507]
 position = Vector2(32, -392)
 rotation = 0.004590638
 shape = SubResource("RectangleShape2D_mngbo")
 
-[node name="Design" type="Node2D" parent="."]
+[node name="Design" type="Node2D" parent="." unique_id=242637710]
 
-[node name="Additional" type="Node2D" parent="Design"]
+[node name="Additional" type="Node2D" parent="Design" unique_id=279036004]
 
-[node name="BirdOnTree" type="Sprite2D" parent="Design/Additional"]
+[node name="BirdOnTree" type="Sprite2D" parent="Design/Additional" unique_id=1409924952]
 position = Vector2(237, 278)
 scale = Vector2(0.3053435, 0.3053435)
 texture = ExtResource("5_c1pb6")
 
-[node name="FallenTree" type="Sprite2D" parent="Design/Additional"]
+[node name="FallenTree" type="Sprite2D" parent="Design/Additional" unique_id=689768565]
 position = Vector2(-184.00002, 186)
 scale = Vector2(0.23626372, 0.2362637)
 texture = ExtResource("6_6wevv")
 
-[node name="Light" type="Sprite2D" parent="Design/Additional"]
+[node name="Light" type="Sprite2D" parent="Design/Additional" unique_id=1447544923]
 position = Vector2(542.00006, 85)
 scale = Vector2(0.40591398, 0.40591398)
 texture = ExtResource("7_e1cbu")
 
-[node name="Snowman" type="Sprite2D" parent="Design/Additional"]
+[node name="Snowman" type="Sprite2D" parent="Design/Additional" unique_id=555299379]
 position = Vector2(487.125, 127)
 scale = Vector2(0.27150542, 0.24551971)
 texture = ExtResource("8_mngbo")
 
-[node name="Tree3" type="Sprite2D" parent="Design/Additional"]
+[node name="Tree3" type="Sprite2D" parent="Design/Additional" unique_id=684176560]
 position = Vector2(147.33517, -164.66873)
 scale = Vector2(0.0069467016, 0.0069467016)
 texture = ExtResource("9_4w45t")
 
-[node name="Tree2" type="Sprite2D" parent="Design/Additional"]
+[node name="Tree2" type="Sprite2D" parent="Design/Additional" unique_id=279232402]
 position = Vector2(-423.99994, -88)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_4w45t")
 
-[node name="Tree" type="Sprite2D" parent="Design/Additional"]
+[node name="Tree" type="Sprite2D" parent="Design/Additional" unique_id=1770232232]
 position = Vector2(322.3125, 233.91609)
 scale = Vector2(0.28869858, 0.28869858)
 texture = ExtResource("9_4w45t")
 
-[node name="FallenTree2" type="Sprite2D" parent="Design/Additional"]
+[node name="FallenTree2" type="Sprite2D" parent="Design/Additional" unique_id=61552528]
 position = Vector2(-368, -64)
 scale = Vector2(0.23626372, 0.2362637)
 texture = ExtResource("6_6wevv")
 
-[node name="Pigeon" parent="." instance=ExtResource("4_pu3yx")]
+[node name="Pigeon" parent="." unique_id=2071019896 instance=ExtResource("4_pu3yx")]
 position = Vector2(300, 315)
 scale = Vector2(0.3, 0.3)
 
-[node name="Camera2D" type="Camera2D" parent="Pigeon"]
+[node name="Camera2D" type="Camera2D" parent="Pigeon" unique_id=1996944658]
 zoom = Vector2(3, 3)
 
-[node name="CHAGEME" type="Node2D" parent="."]
+[node name="CHAGEME" type="Node2D" parent="." unique_id=1864471159]
 
-[node name="Npc1Bird" parent="." instance=ExtResource("11_e1cbu")]
+[node name="Npc1Bird" parent="." unique_id=2088297838 instance=ExtResource("11_e1cbu")]
 position = Vector2(595, 217)
 
-[node name="Npc1Bird2" parent="." instance=ExtResource("11_e1cbu")]
+[node name="Npc1Bird2" parent="." unique_id=142989840 instance=ExtResource("11_e1cbu")]
 position = Vector2(595, 217)
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=189896739]
 offset_left = 104.0
 offset_top = 208.0
 offset_right = 184.0

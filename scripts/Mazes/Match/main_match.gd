@@ -28,6 +28,8 @@ var bot_score = 0
 var input_locked = false
 
 func _ready():
+	GameManager.current_minigame = GameManager.MinigameType.Match
+	
 	setup_board()
 
 func setup_board():
@@ -171,10 +173,11 @@ func game_over():
 
 	if player_score > bot_score:
 		print("PLAYER WINS")
+		GameManager.navigate_to_scene_dialogue("main_scene")
 	elif bot_score > player_score:
-		print("BOT WINS")
+		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
 	else:
-		print("DRAW")
+		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "draw")
 
 	# Example hook for dialogue / scene change
 	# GameManager.minigame_finished(player_score, bot_score)

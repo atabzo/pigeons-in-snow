@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="pegion-in-snow"
 run/main_scene="uid://b8ccqoaqpig3t"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -26,6 +26,7 @@ music="*res://scripts/music.gd"
 Transition="*res://scripts/transition.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 GameManager="*uid://yb580btmm4yc"
+FindManager="*uid://cx5rqcposi2ey"
 
 [dialogue_manager]
 
@@ -87,7 +88,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/npc_1_1.dialogue", "res://dialogues/npc_1_2.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/npc_1_1.dialogue", "res://dialogues/npc_1_2.dialogue", "res://dialogues/npc_2_1.dialogue")
 
 [layer_names]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d1c78oowevwob"]
 
-[ext_resource type="Script" uid="uid://d2jq2pfdffi2v" path="res://scripts/npc_1_bird.gd" id="1_c8mpm"]
+[ext_resource type="Script" uid="uid://d2jq2pfdffi2v" path="res://scripts/NPCs/npc_1_bird.gd" id="1_c8mpm"]
 [ext_resource type="Texture2D" uid="uid://bj1nst6l3ddtw" path="res://images/Penguin_1.png" id="2_qf6d0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3hprw"]

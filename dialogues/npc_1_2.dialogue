@@ -7,8 +7,6 @@ Pigeon: This is so unfair...
 
 Penguin: Better luck next time, sky racer.
 
-do GameManager.navigate_to_scene_dialogue("game_over")
-
 => END
 
 ~ pigeon_wins
@@ -26,9 +24,30 @@ Pigeon: This rooftop is officially MY kingdom now.
 Penguin: I will return... stronger.
 => END
 
+
 ~ res2
 Pigeon: You fought well. We can share the roof.
 Penguin: ...I did not expect mercy.
 Penguin: Thank you, rival.
 => END
 
+~ draw
+Penguin: You look like you have some wings to flap. 
+Penguin: You were lucky that the match ended in draw. I'll crush you in the next round.
+Penguin: If you are brave enough to handle one more round with me.
+
+- Accept defeat => penguin_wins
+- Continue battling => restart
+
+~ restart
+do GameManager.restart_minigame.emit()
+
+=> END
+
+~ last_chance
+Penguin:  You. I don't like you. But I can give you one last chance.
+Penguin: My bro is very sick. So take your feathered butt and get some super rare, not scatetered acrosss all map branches.
+Penguin: You have 20 mins to do it. I won't repeat. Now shush and get to work.
+
+do GameManager.lost_minigame.emit()
+=> END
