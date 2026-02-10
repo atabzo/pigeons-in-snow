@@ -24,7 +24,6 @@ func _ready() -> void:
 	GameManager.npc2_finished.connect(_on_hide_ui)
 	
 func _on_started():
-	GameManager.current_minigame = GameManager.MinigameType.Find
 	time_left = 20
 	timer.start()
 		
@@ -39,6 +38,7 @@ func _on_finish():
 	
 	timer.stop()
 	
+	GameManager.change_npc.emit(2)
 	task_label.text = "Good job on collecting the branches. Now give them to Pengiun's bro"
 	
 func _on_time_tick():

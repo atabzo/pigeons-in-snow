@@ -20,3 +20,6 @@ Pigeon: Goodbye.
 do GameManager.change_npc.emit(1)
 do GameManager.npc2_finished.emit()
 => END
+
+~ not_dialogue_npc
+Owl: [[Perhaps you could attend to other matters.|  I assume you have responsibilities that require your attention.|  I am not particularly available for conversation at the moment.|  I am currently occupied; we may speak later.|  Surely there is something more productive you should be doing right now.]]

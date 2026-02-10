@@ -149,3 +149,8 @@ Penguin: But this is your last chance.
 do GameManager.restart_minigame()
 
 => END
+
+~ not_dialogue_npc
+Penguin: [[Go mind your business elsewhere.|I know you have your own tasks to complete. |I am NOT in a mood to talk right now.|I am busy, will talk later.|Aren't you supposed to do something else than yapping?]] 
+
+=> END

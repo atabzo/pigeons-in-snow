@@ -49,6 +49,5 @@ Penguin:  You. I don't like you. But I can give you one last chance.
 Penguin: My bro is very sick. So take your feathered butt and get some super rare, not scatetered acrosss all map branches.
 Penguin: You have 20 mins to do it. I won't repeat. Now shush and get to work.
 
-do GameManager.change_npc.emit(2)
 do GameManager.lost_minigame.emit()
 => END

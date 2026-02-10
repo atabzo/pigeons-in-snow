@@ -4,12 +4,11 @@ extends Node
 var dialogue_active := false
 
 	#minigames
-enum MinigameType {TTT, Match, Find}
+enum MinigameType {TTT, Match}
 # Map
 const SCENE_MAP = {
 	MinigameType.TTT: "Mazes/main_ttt",
 	MinigameType.Match: "Mazes/main_match",
-	MinigameType.Find: "main_scene"
 }
 @export var current_minigame: MinigameType = MinigameType.TTT
 var npc_1_dialogue_ind = 1
@@ -20,7 +19,10 @@ signal npc1_finished
 signal npc2_finished
 signal show_game_over
 signal lost_minigame
+signal reload_progress
 signal change_npc(npc:int)
+
+#TODO: sfter the dialogue with penguin ends, user must relocate to the maze once again but ends up in the main scene. FIx the bug.
 
 #methods
 func _ready() -> void:
@@ -29,11 +31,16 @@ func _ready() -> void:
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
 	get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
 	
+	var expected_scene_name = scene_name
+	
 	# Wait until current_scene is no longer null AND matches the target name
 	var scene = get_tree().current_scene
 	while scene == null:
 		await get_tree().process_frame
 		scene = get_tree().current_scene
+		
+	if get_tree().current_scene.scene_file_path != "res://scenes/" + expected_scene_name + ".tscn":
+		return
 	
 	if(is_dialogue):
 		position_for_dialogue()
@@ -51,4 +58,5 @@ func start_dialogue(name: String, trigger: String):
 	DialogueManager.show_dialogue_balloon(dialogue_resource, trigger)
 	
 func restart_minigame():
+	print(str(SCENE_MAP[current_minigame]))
 	get_tree().change_scene_to_file("res://scenes/" + SCENE_MAP[current_minigame] + ".tscn")

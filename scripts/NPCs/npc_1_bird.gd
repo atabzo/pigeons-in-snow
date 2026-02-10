@@ -2,7 +2,7 @@ extends Node2D
 
 #var
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-var DIALOGUE = {1 : "start", 2 : "won_last_chance"}
+var DIALOGUE = {1 : "start", 2 : "last_chance", 3 : "won_last_chance"}
 
 #func
 func _ready() -> void:
@@ -23,8 +23,25 @@ func _on_dialogue_ended(_title):
 	GameManager.dialogue_active = false
 	
 func _on_entered_npc1(body):
-	if body is CharacterBody2D and GameManager.npc_ind == 1:
-		var dialogue_resource = load("res://dialogues/npc_1_1.dialogue")
+	print("Dialogue playing: " + str(GameManager.npc_1_dialogue_ind))
+	if body is not CharacterBody2D:
+		return
+		
+	var dialogue_resource
+	
+	if GameManager.npc_ind != 1:
+		dialogue_resource = load("res://dialogues/npc_1_1.dialogue")
+		DialogueManager.show_dialogue_balloon(dialogue_resource, "not_dialogue_npc")
+		
+	if  GameManager.npc_ind == 1:
+		var dialogue
+		if GameManager.npc_1_dialogue_ind == 2:
+			dialogue = "npc_1_2"
+		else:
+			dialogue = "npc_1_1"
+			
+		dialogue_resource = load("res://dialogues/%s.dialogue" % dialogue)
+
 		var bubble = DIALOGUE[GameManager.npc_1_dialogue_ind]
 		GameManager.position_for_dialogue()
 		DialogueManager.show_dialogue_balloon(dialogue_resource, bubble)
@@ -34,4 +51,8 @@ func _transition_to_ttt():
 	get_tree().change_scene_to_file("res://scenes/Mazes/TTT/main_ttt.tscn")
 	
 func _on_update_dialogue():
+	var temp_ind = GameManager.npc_1_dialogue_ind + 1
+	if temp_ind > DIALOGUE.size():
+		return
+		
 	GameManager.npc_1_dialogue_ind += 1
