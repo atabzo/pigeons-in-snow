@@ -17,5 +17,6 @@ Owl: Yes. That will do. Put them here.
 Owl: Good. Then everything is in order. Goodbye.
 Pigeon: Goodbye.
 
+do GameManager.change_npc.emit(1)
 do GameManager.npc2_finished.emit()
 => END

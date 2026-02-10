@@ -78,7 +78,6 @@ func new_game():
 	get_tree().call_group("crosses", "queue_free")
 
 	create_marker(player, player_panel_pos + Vector2i(cell_size / 2, cell_size / 2), true)
-	$GameOverMenu.hide()
 	get_tree().paused = false
 
 

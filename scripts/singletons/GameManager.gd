@@ -12,14 +12,20 @@ const SCENE_MAP = {
 	MinigameType.Find: "main_scene"
 }
 @export var current_minigame: MinigameType = MinigameType.TTT
+var npc_1_dialogue_ind = 1
+var npc_ind = 1
 
 #signals 
 signal npc1_finished
 signal npc2_finished
 signal show_game_over
 signal lost_minigame
+signal change_npc(npc:int)
 
 #methods
+func _ready() -> void:
+	change_npc.connect(func(npc): npc_ind = npc)
+	
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
 	get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
 	
@@ -27,19 +33,17 @@ func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, d
 	var scene = get_tree().current_scene
 	while scene == null:
 		await get_tree().process_frame
-		scene = get_tree().current_scene	
-	print("lose loaded scene")
+		scene = get_tree().current_scene
 	
 	if(is_dialogue):
 		position_for_dialogue()
 		start_dialogue(dialogue_name, trigger)
-		print("lose loaded dialogue")
 	
 func position_for_dialogue():
 	var scene = get_tree().current_scene
 	var pigeon = scene.get_node("Pigeon")
 	
-	pigeon.global_position = scene.get_node("penguin/DialogueMarkers/DialogueStartPoint_Pigeon").global_position
+	pigeon.global_position = scene.get_node("DialogueMarkers/" + str(npc_ind)).global_position
 	pigeon.rotation = 0
 
 func start_dialogue(name: String, trigger: String):

@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://diwxxbsnmiut0" path="res://scenes/Mazes/TTT/circle.tscn" id="2_grj33"]
 [ext_resource type="PackedScene" uid="uid://u01sbmojen1w" path="res://scenes/Mazes/TTT/cross.tscn" id="3_lemtf"]
 [ext_resource type="PackedScene" uid="uid://3v0djwj3kwqb" path="res://scenes/game_over.tscn" id="4_x2mm7"]
-[ext_resource type="PackedScene" uid="uid://602u8d71pbfe" path="res://scenes/Mazes/TTT/game_over_menu.tscn" id="5_lemtf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grj33"]
 bg_color = Color(0.5882353, 0.7529412, 0.7176471, 1)
@@ -58,8 +57,3 @@ offset_top = 228.0
 offset_right = 1039.0
 offset_bottom = 428.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lemtf")
-
-[node name="GameOverMenu" parent="." unique_id=2011800497 instance=ExtResource("5_lemtf")]
-process_mode = 2
-
-[connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]

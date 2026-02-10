@@ -141,3 +141,11 @@ Penguin: Every move is a mistake…
 
 do GameManager.npc1_finished.emit()
 => END
+
+~ won_last_chance
+Penguin: Ok, only you could've saved my bro and saved him.
+Penguin: But this is your last chance.
+
+do GameManager.restart_minigame()
+
+=> END

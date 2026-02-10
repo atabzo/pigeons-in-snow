@@ -1840,12 +1840,6 @@ position = Vector2(639, 361)
 position = Vector2(705, -697)
 scale = Vector2(0.8, 0.8)
 
-[node name="DialogueMarkers" type="Node2D" parent="penguin" unique_id=1901555095]
-position = Vector2(92.49999, -17.500074)
-
-[node name="DialogueStartPoint_Pigeon" type="Marker2D" parent="penguin/DialogueMarkers" unique_id=463721283]
-position = Vector2(270, 26.250076)
-
 [node name="Feathers" parent="." unique_id=1457425712 instance=ExtResource("13_bcnxi")]
 position = Vector2(1440, 600)
 scale = Vector2(0.4, 0.4)
@@ -1903,3 +1897,13 @@ layer = 2
 [node name="Owl" parent="." unique_id=390668946 instance=ExtResource("15_si52b")]
 position = Vector2(1507, -107)
 scale = Vector2(0.8, 0.8)
+
+[node name="DialogueMarkers" type="Node2D" parent="." unique_id=1901555095]
+position = Vector2(779, -711.00006)
+scale = Vector2(0.8, 0.8)
+
+[node name="1" type="Marker2D" parent="DialogueMarkers" unique_id=463721283]
+position = Vector2(161.25, 8.750078)
+
+[node name="2" type="Marker2D" parent="DialogueMarkers" unique_id=229968966]
+position = Vector2(493.75, 770)

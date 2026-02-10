@@ -15,5 +15,6 @@ func _on_entered_npc2(body):
 		return
 	if body is CharacterBody2D:
 		var dialogue_resource = load("res://dialogues/npc_2_1.dialogue")
+		GameManager.position_for_dialogue()
 		DialogueManager.show_dialogue_balloon(dialogue_resource, "start")
 		
