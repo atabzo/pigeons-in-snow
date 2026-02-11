@@ -173,8 +173,13 @@ func game_over():
 
 	if player_score > bot_score:
 		print("PLAYER WINS")
+		GameManager.last_try = false
 		GameManager.navigate_to_scene_dialogue("main_scene")
 	elif bot_score > player_score:
+		if GameManager.last_try:
+			GameManager.navigate_to_scene_dialogue("game_over")
+			
+		GameManager.last_try = true
 		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
 	else:
 		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "draw")

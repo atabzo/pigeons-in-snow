@@ -119,10 +119,17 @@ func end_game(tie: bool = false):
 	if tie:
 		GameManager.navigate_to_scene_dialogue("main_match", true, "npc_1_2", "draw")
 	await get_tree().create_timer(1.0).timeout
+	
 	if winner == -1:
-		GameManager.npc_1_dialogue_ind = 2
-		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
+		if GameManager.last_try:
+			GameManager.navigate_to_scene_dialogue("game_over")
+		else:
+			GameManager.last_try = true
+			GameManager.npc_1_dialogue_ind = 2
+			GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
+	
 	elif winner == 1:
+		GameManager.last_try = false
 		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "pigeon_wins")
 	
 

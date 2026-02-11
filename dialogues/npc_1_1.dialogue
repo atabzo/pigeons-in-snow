@@ -146,7 +146,7 @@ do GameManager.npc1_finished.emit()
 Penguin: Ok, only you could've saved my bro and saved him.
 Penguin: But this is your last chance.
 
-do GameManager.restart_minigame()
+do GameManager.minigame_restart_requested.emit()
 
 => END
 

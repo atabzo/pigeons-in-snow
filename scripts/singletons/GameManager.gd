@@ -2,13 +2,14 @@ extends Node
 
 #variables
 var dialogue_active := false
+var last_try = false
 
 	#minigames
 enum MinigameType {TTT, Match}
 # Map
 const SCENE_MAP = {
-	MinigameType.TTT: "Mazes/main_ttt",
-	MinigameType.Match: "Mazes/main_match",
+	MinigameType.TTT: "Mazes/TTT/main_ttt",
+	MinigameType.Match: "Mazes/Match/main_match",
 }
 @export var current_minigame: MinigameType = MinigameType.TTT
 var npc_1_dialogue_ind = 1
@@ -19,6 +20,7 @@ signal npc1_finished
 signal npc2_finished
 signal show_game_over
 signal lost_minigame
+signal minigame_restart_requested
 signal reload_progress
 signal change_npc(npc:int)
 
@@ -27,6 +29,7 @@ signal change_npc(npc:int)
 #methods
 func _ready() -> void:
 	change_npc.connect(func(npc): npc_ind = npc)
+	minigame_restart_requested.connect(restart_minigame)
 	
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
 	get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
@@ -58,5 +61,5 @@ func start_dialogue(name: String, trigger: String):
 	DialogueManager.show_dialogue_balloon(dialogue_resource, trigger)
 	
 func restart_minigame():
-	print(str(SCENE_MAP[current_minigame]))
+	print("From Game Manager called restart_minigame on scene: " + str(SCENE_MAP[current_minigame]))
 	get_tree().change_scene_to_file("res://scenes/" + SCENE_MAP[current_minigame] + ".tscn")
