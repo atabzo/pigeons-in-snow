@@ -54,5 +54,5 @@ func _on_time_up():
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func _on_hide_ui():
-	GameManager.quest_ui_enabled.emit(true)
+	GameManager.quest_ui_enable.emit(true)
 	task_overlay_ui.visible = false

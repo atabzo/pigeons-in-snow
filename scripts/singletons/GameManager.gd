@@ -29,7 +29,8 @@ signal change_npc(npc:int)
 signal quest_ui_enable(state:bool)
 signal quest_changed
 
-#TODO: sfter the dialogue with penguin ends, user must relocate to the maze once again but ends up in the main scene. FIx the bug.
+#TODO: GameManager.quest_ui_enable.emit(false) work with this method. 
+
 
 #methods
 func _ready() -> void:
