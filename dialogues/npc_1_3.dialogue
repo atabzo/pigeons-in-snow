@@ -1,3 +1,54 @@
 ~ start
+~ win_questions
+- Why in the middle of summer it is snowy? => snow_qa
+- What do you know about my friends' locations? => friends_qa
+- How did you end up here? => peng_qa
+- I have no more questions left => bye
 
+~ snow_qa
+Penguin: You truly think this is weather?
+Penguin: No. We brought it here.
+Penguin: Ships. Ice cores. Atmospheric triggers.
+Penguin: We turned summer into winter.
+
+- Why?
+Penguin: Snow slows wings.
+Penguin: Snow divides flocks.
+Penguin: Snow makes control… easier. => win_questions
+
+
+~ friends_qa
+Penguin: Your flock is secured.
+
+Pigeon: Secured where?
+
+Penguin: Northern ridge. Beyond the frozen river.
+Penguin: Old observatory grounds.
+
+Pigeon: That’s outside migration territory.
+
+Penguin: Exactly.
+Penguin: Hard to leave.
+Penguin: Harder to be found. => win_questions
+
+
+~ peng_qa
+Penguin: I did not end up here.
+Penguin: I built this.
+
+Pigeon: Built what?
+
+Penguin: The storm.
+Penguin: The relocation.
+Penguin: The new order.
+
+Penguin: Penguins do not wait for seasons anymore. => win_questions
+
+~ bye
+Penguin: Ok. I've ever met you, you've never met me.
+Penguin: Otherwise don't hope that I'll spare your life.
+- Agreed.
+Penguin: Go away then.
+Pigeon: Goodbye.
+=> END
 => END

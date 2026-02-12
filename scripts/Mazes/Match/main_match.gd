@@ -171,16 +171,18 @@ func check_game_over():
 func game_over():
 	input_locked = true
 
+	GameManager.quest_ui_enable.emit(false)
 	if player_score > bot_score:
 		print("PLAYER WINS")
 		GameManager.last_try = false
-		GameManager.navigate_to_scene_dialogue("main_scene")
+		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "pigeon_wins")
 	elif bot_score > player_score:
 		if GameManager.last_try:
 			GameManager.navigate_to_scene_dialogue("game_over")
-			
-		GameManager.last_try = true
-		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
+		else:
+			GameManager.last_try = true
+			GameManager.npc_1_dialogue_ind = 2
+			GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
 	else:
 		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "draw")
 

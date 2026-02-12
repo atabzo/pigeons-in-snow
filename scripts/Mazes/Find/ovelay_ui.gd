@@ -4,13 +4,15 @@ extends CanvasLayer
 signal time_changed
 
 #vars
+var time_left = 20
+
+#components
+@onready var task_overlay_ui: CanvasLayer = $"."
 @onready var timer: Timer = $Time/Timer
 @onready var firework: AnimatedSprite2D = $Firework
 @onready var score_label: Label = $Score/ScoreLabel
 @onready var time_label: Label = $Time/TimeLabel
 @onready var task_label: Label = $TaskLabel
-
-var time_left = 20
 
 #funcs
 func _ready() -> void:
@@ -52,4 +54,5 @@ func _on_time_up():
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func _on_hide_ui():
-	$".".visible = false
+	GameManager.quest_ui_enabled.emit(true)
+	task_overlay_ui.visible = false

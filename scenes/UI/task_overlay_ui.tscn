@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://0kj6f02xbp1c"]
+
+[ext_resource type="Script" uid="uid://duulao7rd5plk" path="res://scripts/UI/task_overlay_ui.gd" id="1_se5if"]
+
+[node name="TaskOverlayUI" type="CanvasLayer" unique_id=1566254443]
+script = ExtResource("1_se5if")
+
+[node name="QuestLabel" type="Label" parent="." unique_id=345975679]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -174.0
+offset_right = 174.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Here will be some directives for user (quests)"

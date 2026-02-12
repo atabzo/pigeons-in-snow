@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dci1vgsovxr3d" path="res://assets/BG/bg1.jpg" id="1_7ykc4"]
 [ext_resource type="Script" uid="uid://cl73fyqi4yu35" path="res://scripts/main_scene.gd" id="1_bcnxi"]
+[ext_resource type="PackedScene" uid="uid://0kj6f02xbp1c" path="res://scenes/UI/task_overlay_ui.tscn" id="2_01n6w"]
 [ext_resource type="Texture2D" uid="uid://dce0ny6i0l6si" path="res://assets/Winter/spritesheet.png" id="2_pu3yx"]
 [ext_resource type="Texture2D" uid="uid://b6nj5gi2xe12q" path="res://assets/MDrawnAssets/Tiles/TilesSnow.png" id="4_6wevv"]
 [ext_resource type="Texture2D" uid="uid://oksi5o3kutsw" path="res://assets/MDrawnAssets/Tiles/Snow.png" id="4_mngbo"]
@@ -1743,6 +1744,10 @@ rotation = -1.575008
 position = Vector2(1247.397, 2045.2719)
 rotation = 0.004590638
 shape = SubResource("RectangleShape2D_gubc5")
+
+[node name="UI" type="Node2D" parent="." unique_id=1537634143]
+
+[node name="TaskOverlayUI" parent="UI" unique_id=1566254443 instance=ExtResource("2_01n6w")]
 
 [node name="background" type="Node2D" parent="." unique_id=710021357]
 position = Vector2(-1104, -2008)

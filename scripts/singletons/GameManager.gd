@@ -18,11 +18,16 @@ var npc_ind = 1
 #signals 
 signal npc1_finished
 signal npc2_finished
+
 signal show_game_over
 signal lost_minigame
-signal minigame_restart_requested
+signal minigame_restart_requested	
 signal reload_progress
+
 signal change_npc(npc:int)
+
+signal quest_ui_enable(state:bool)
+signal quest_changed
 
 #TODO: sfter the dialogue with penguin ends, user must relocate to the maze once again but ends up in the main scene. FIx the bug.
 
@@ -30,6 +35,8 @@ signal change_npc(npc:int)
 func _ready() -> void:
 	change_npc.connect(func(npc): npc_ind = npc)
 	minigame_restart_requested.connect(restart_minigame)
+	DialogueManager.dialogue_started.connect(func(_resource): quest_ui_enable.emit(false))
+	npc2_finished.connect(func(): quest_ui_enable.emit(true))
 	
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
 	get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
@@ -63,3 +70,9 @@ func start_dialogue(name: String, trigger: String):
 func restart_minigame():
 	print("From Game Manager called restart_minigame on scene: " + str(SCENE_MAP[current_minigame]))
 	get_tree().change_scene_to_file("res://scenes/" + SCENE_MAP[current_minigame] + ".tscn")
+	
+	# Wait for the scene to properly load before returning
+	var scene = get_tree().current_scene
+	while scene == null or scene.scene_file_path != "res://scenes/" + SCENE_MAP[current_minigame] + ".tscn":
+		await get_tree().process_frame
+		scene = get_tree().current_scene

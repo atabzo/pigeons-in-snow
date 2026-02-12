@@ -29,6 +29,7 @@ func _on_entered_npc1(body):
 		
 	var dialogue_resource
 	
+	GameManager.quest_ui_enable.emit(false)
 	if GameManager.npc_ind != 1:
 		dialogue_resource = load("res://dialogues/npc_1_1.dialogue")
 		DialogueManager.show_dialogue_balloon(dialogue_resource, "not_dialogue_npc")
