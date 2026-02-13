@@ -1,17 +1,27 @@
 extends Node2D
 
 #vars
-@onready var nodes: Array = $Waypoints.get_children()
+@onready var nodes: Array = []
 
 @onready var navigation_region_2d: NavigationRegion2D = $NavigationRegion2D
-@onready var drawer = $PathDrawer
+@onready var drawer: Node2D = $PathDrawer
 
 var last_positions: Array[Vector2] = []
 var map: RID
 
 #func
 func _ready():
+	print("Started waypoints")
 	await wait_for_navigation_ready()
+	
+	nodes.append(get_node("../Pigeon"))
+	nodes.append_array($Wayponits.get_children())
+	
+	print("Starting iterating")
+	for n in nodes:
+		print(n)
+	print("Finished iterating")
+		
 	map = get_world_2d().navigation_map
 
 	cache_positions()
@@ -26,7 +36,6 @@ func _process(delta):
 func update_path():
 	var path = build_path_through_nodes()
 	drawer.set_path(path)
-
 
 	
 #get path for n nodes

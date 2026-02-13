@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://by5kjppc13v8e"]
 
 [ext_resource type="Texture2D" uid="uid://d12hvj7xl7eak" path="res://images/blue_icon_star__1_-removebg-preview.png" id="1_hnd4f"]
-[ext_resource type="Script" uid="uid://br0awqrifqg5i" path="res://scripts/Test/test_navigation_scene.gd" id="1_tpur7"]
-[ext_resource type="Script" uid="uid://bd2kff4ve0ois" path="res://scripts/Test/navigation_region_2d.gd" id="2_5n3dx"]
+[ext_resource type="Script" uid="uid://br0awqrifqg5i" path="res://scripts/UI/Navigation/navigation_manager.gd" id="1_tpur7"]
 [ext_resource type="Script" uid="uid://drfnj2gqrvoqk" path="res://scripts/Test/test_node_1.gd" id="3_mhxig"]
-[ext_resource type="Script" uid="uid://du5q2l1ibhnn3" path="res://scripts/Test/path_drawer.gd" id="4_d5ncb"]
+[ext_resource type="Script" uid="uid://du5q2l1ibhnn3" path="res://scripts/UI/Navigation/path_drawer.gd" id="4_d5ncb"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_d5ncb"]
 vertices = PackedVector2Array(1599.0391, 966.96875, -447, 961.02344, -447, -280.15625, 1604.9531, -314.8203)
@@ -17,7 +16,6 @@ script = ExtResource("1_tpur7")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=479727423]
 navigation_polygon = SubResource("NavigationPolygon_d5ncb")
 navigation_layers = 15
-script = ExtResource("2_5n3dx")
 
 [node name="Label" type="Label" parent="." unique_id=1857060502]
 anchors_preset = 5
