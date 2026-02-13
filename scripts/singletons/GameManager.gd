@@ -29,7 +29,9 @@ signal change_npc(npc:int)
 signal quest_ui_enable(state:bool)
 signal quest_changed
 
-#TODO: GameManager.quest_ui_enable.emit(false) work with this method. 
+signal chapter_1_finished
+
+#TODO: I have a game where after getting a new quest user must go to location B. I wanna make small stars that navigate the user to the desired location (star path)
 
 
 #methods
@@ -38,6 +40,7 @@ func _ready() -> void:
 	minigame_restart_requested.connect(restart_minigame)
 	DialogueManager.dialogue_started.connect(func(_resource): quest_ui_enable.emit(false))
 	npc2_finished.connect(func(): quest_ui_enable.emit(true))
+	
 	
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
 	get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")

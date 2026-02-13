@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://by5kjppc13v8e"]
+
+[ext_resource type="Texture2D" uid="uid://d12hvj7xl7eak" path="res://images/blue_icon_star__1_-removebg-preview.png" id="1_hnd4f"]
+[ext_resource type="Script" uid="uid://br0awqrifqg5i" path="res://scripts/UI/Navigation/navigation_manager.gd" id="1_tpur7"]
+[ext_resource type="Script" uid="uid://drfnj2gqrvoqk" path="res://scripts/Test/test_node_1.gd" id="3_mhxig"]
+[ext_resource type="Script" uid="uid://du5q2l1ibhnn3" path="res://scripts/UI/Navigation/path_drawer.gd" id="4_d5ncb"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_d5ncb"]
+vertices = PackedVector2Array(1599.0391, 966.96875, -447, 961.02344, -447, -280.15625, 1604.9531, -314.8203)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-457, -290, -457, 971, 1609, 977, 1615, -325)])
+
+[node name="TestNavigationScene" type="Node2D" unique_id=804052010]
+script = ExtResource("1_tpur7")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=479727423]
+navigation_polygon = SubResource("NavigationPolygon_d5ncb")
+navigation_layers = 15
+
+[node name="Label" type="Label" parent="." unique_id=1857060502]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 588.0
+offset_top = 12.0
+offset_right = 783.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "This is a label with a path"
+
+[node name="PathDrawer" type="Node2D" parent="." unique_id=1271432201]
+script = ExtResource("4_d5ncb")
+
+[node name="Waypoints" type="Node2D" parent="." unique_id=171263482]
+
+[node name="TestNode1" type="Node2D" parent="Waypoints" unique_id=786168840]
+position = Vector2(344, 211)
+script = ExtResource("3_mhxig")
+
+[node name="Sprite2D" type="Sprite2D" parent="Waypoints/TestNode1" unique_id=1083386781]
+position = Vector2(-4.999996, 2.9999962)
+scale = Vector2(0.25000006, 0.25000006)
+texture = ExtResource("1_hnd4f")
+
+[node name="TestNode2" type="Node2D" parent="Waypoints" unique_id=715863577]
+position = Vector2(1142, 474)
+script = ExtResource("3_mhxig")
+hor = false
+ver = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Waypoints/TestNode2" unique_id=1112016882]
+position = Vector2(-7, 14)
+scale = Vector2(0.598, 0.598)
+texture = ExtResource("1_hnd4f")
+
+[node name="TestNode3" type="Node2D" parent="Waypoints" unique_id=1097325904]
+position = Vector2(719, 620)
+script = ExtResource("3_mhxig")
+distance = 200.0
+speed = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Waypoints/TestNode3" unique_id=896171837]
+position = Vector2(1.9999847, -2)
+scale = Vector2(0.432, 0.432)
+texture = ExtResource("1_hnd4f")
+
+[node name="TestNode4" type="Node2D" parent="Waypoints" unique_id=896088750]
+position = Vector2(208, 476)
+script = ExtResource("3_mhxig")
+hor = false
+ver = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Waypoints/TestNode4" unique_id=1482256665]
+position = Vector2(-4, -5)
+scale = Vector2(0.429, 0.429)
+texture = ExtResource("1_hnd4f")

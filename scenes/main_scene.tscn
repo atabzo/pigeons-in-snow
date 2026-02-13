@@ -14,8 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://v1e5teahjfrl" path="res://objects/feathers.tscn" id="13_bcnxi"]
 [ext_resource type="PackedScene" uid="uid://scqs11vrolqr" path="res://objects/log_bench.tscn" id="15_k6f3i"]
 [ext_resource type="PackedScene" uid="uid://ctg3g0x5htfs8" path="res://scenes/NPCs/npc_2_owl.tscn" id="15_si52b"]
+[ext_resource type="Script" uid="uid://br0awqrifqg5i" path="res://scripts/UI/Navigation/navigation_manager.gd" id="17_6u1mn"]
 [ext_resource type="PackedScene" uid="uid://cp3g4deydtjs6" path="res://scenes/Mazes/Find/findable_object.tscn" id="18_7nt27"]
 [ext_resource type="PackedScene" uid="uid://4er6yxt72xl" path="res://scenes/Mazes/Find/ui_overlay_score.tscn" id="18_bcnxi"]
+[ext_resource type="Script" uid="uid://du5q2l1ibhnn3" path="res://scripts/UI/Navigation/path_drawer.gd" id="18_k6f3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gubc5"]
 size = Vector2(5866.7314, 224.5)
@@ -1707,6 +1709,11 @@ func _physics_process(delta: float) -> void:
 	$Camera2D.position = player.position 
 "
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xdqt8"]
+vertices = PackedVector2Array(2282.8828, -1949.1094, 2252.1016, 821.03125, -550.10156, 830.96094, -580.8828, -1980.8828)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-591, -1991, -560, 841, 2262, 831, 2293, -1959)])
+
 [node name="CopyMainScene" type="Node2D" unique_id=1064206985]
 script = ExtResource("1_bcnxi")
 
@@ -1912,3 +1919,17 @@ position = Vector2(161.25, 8.750078)
 
 [node name="2" type="Marker2D" parent="DialogueMarkers" unique_id=229968966]
 position = Vector2(493.75, 770)
+
+[node name="PathsToQuests" type="Node2D" parent="." unique_id=666749874]
+script = ExtResource("17_6u1mn")
+
+[node name="Wayponits" type="Node2D" parent="PathsToQuests" unique_id=1021853679]
+
+[node name="Waypoint1" type="Node2D" parent="PathsToQuests/Wayponits" unique_id=2061907415]
+position = Vector2(1229, -1604)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="PathsToQuests" unique_id=876019187]
+navigation_polygon = SubResource("NavigationPolygon_xdqt8")
+
+[node name="PathDrawer" type="Node2D" parent="PathsToQuests" unique_id=1270595748]
+script = ExtResource("18_k6f3i")
