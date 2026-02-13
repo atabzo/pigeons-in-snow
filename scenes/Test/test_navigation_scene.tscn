@@ -31,21 +31,49 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 40
 text = "This is a label with a path"
 
-[node name="TestNode1" type="Node2D" parent="." unique_id=786168840]
-position = Vector2(178, 208)
+[node name="PathDrawer" type="Node2D" parent="." unique_id=1271432201]
+script = ExtResource("4_d5ncb")
+
+[node name="Waypoints" type="Node2D" parent="." unique_id=171263482]
+
+[node name="TestNode1" type="Node2D" parent="Waypoints" unique_id=786168840]
+position = Vector2(344, 211)
 script = ExtResource("3_mhxig")
 
-[node name="Sprite2D" type="Sprite2D" parent="TestNode1" unique_id=1083386781]
+[node name="Sprite2D" type="Sprite2D" parent="Waypoints/TestNode1" unique_id=1083386781]
 position = Vector2(-4.999996, 2.9999962)
 scale = Vector2(0.25000006, 0.25000006)
 texture = ExtResource("1_hnd4f")
 
-[node name="TestNode2" type="Node2D" parent="." unique_id=715863577]
-position = Vector2(991, 572)
+[node name="TestNode2" type="Node2D" parent="Waypoints" unique_id=715863577]
+position = Vector2(1142, 474)
+script = ExtResource("3_mhxig")
+hor = false
+ver = true
 
-[node name="Sprite2D" type="Sprite2D" parent="TestNode2" unique_id=1112016882]
-position = Vector2(-2, 4)
+[node name="Sprite2D" type="Sprite2D" parent="Waypoints/TestNode2" unique_id=1112016882]
+position = Vector2(-7, 14)
+scale = Vector2(0.598, 0.598)
 texture = ExtResource("1_hnd4f")
 
-[node name="PathDrawer" type="Node2D" parent="." unique_id=1271432201]
-script = ExtResource("4_d5ncb")
+[node name="TestNode3" type="Node2D" parent="Waypoints" unique_id=1097325904]
+position = Vector2(719, 620)
+script = ExtResource("3_mhxig")
+distance = 200.0
+speed = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Waypoints/TestNode3" unique_id=896171837]
+position = Vector2(1.9999847, -2)
+scale = Vector2(0.432, 0.432)
+texture = ExtResource("1_hnd4f")
+
+[node name="TestNode4" type="Node2D" parent="Waypoints" unique_id=896088750]
+position = Vector2(208, 476)
+script = ExtResource("3_mhxig")
+hor = false
+ver = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Waypoints/TestNode4" unique_id=1482256665]
+position = Vector2(-4, -5)
+scale = Vector2(0.429, 0.429)
+texture = ExtResource("1_hnd4f")
