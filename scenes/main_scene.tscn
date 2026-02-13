@@ -1912,3 +1912,5 @@ position = Vector2(161.25, 8.750078)
 
 [node name="2" type="Marker2D" parent="DialogueMarkers" unique_id=229968966]
 position = Vector2(493.75, 770)
+
+[node name="StarPath" type="Node2D" parent="." unique_id=2087761234]

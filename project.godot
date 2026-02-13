@@ -27,6 +27,7 @@ Transition="*res://scripts/transition.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 GameManager="*uid://yb580btmm4yc"
 FindManager="*uid://cx5rqcposi2ey"
+NavigationManager="*uid://72vjlrhpl2vy"
 
 [dialogue_manager]
 

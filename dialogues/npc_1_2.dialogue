@@ -82,6 +82,8 @@ Penguin: Otherwise don't hope that I'll spare your life.
 - Agreed.
 Penguin: Go away then.
 Pigeon: Goodbye.
+
+do GameManager.chapter_1_finished.emit()
 => END
 
 
