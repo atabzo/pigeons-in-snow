@@ -15,6 +15,8 @@ const SCENE_MAP = {
 var npc_1_dialogue_ind = 1
 var npc_ind = 1
 
+var quest_ind = 1
+
 #signals 
 signal npc1_finished
 signal npc2_finished
@@ -31,6 +33,8 @@ signal quest_changed
 
 signal chapter_1_finished
 
+signal start_navigation(quest:int)
+
 #TODO: I have a game where after getting a new quest user must go to location B. I wanna make small stars that navigate the user to the desired location (star path)
 
 
@@ -40,6 +44,8 @@ func _ready() -> void:
 	minigame_restart_requested.connect(restart_minigame)
 	DialogueManager.dialogue_started.connect(func(_resource): quest_ui_enable.emit(false))
 	npc2_finished.connect(func(): quest_ui_enable.emit(true))
+	chapter_1_finished.connect(manage_navigation)
+	
 	
 	
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
@@ -80,3 +86,7 @@ func restart_minigame():
 	while scene == null or scene.scene_file_path != "res://scenes/" + SCENE_MAP[current_minigame] + ".tscn":
 		await get_tree().process_frame
 		scene = get_tree().current_scene
+		
+func manage_navigation():
+	start_navigation.emit(quest_ind)
+	quest_ind += 1

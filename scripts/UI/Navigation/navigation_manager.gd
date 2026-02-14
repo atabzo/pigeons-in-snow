@@ -6,22 +6,26 @@ extends Node2D
 @onready var navigation_region_2d: NavigationRegion2D = $NavigationRegion2D
 @onready var drawer: Node2D = $PathDrawer
 
+var QUEST_LOCATION = { 1 : "%Quest1"}
+
 var last_positions: Array[Vector2] = []
 var map: RID
+var is_start: bool = true
 
 #func
 func _ready():
-	print("Started waypoints")
+	GameManager.start_navigation.connect(start_navigating)
+	set_process(false)
+	
+func start_navigating(quest_ind:int):
+	populate_nodes_array(quest_ind)
+	cache_positions() 
+	await wait_for_navigation_ready() 
+	set_process(true)
+	
+func navigate():
 	await wait_for_navigation_ready()
 	
-	nodes.append(get_node("../Pigeon"))
-	nodes.append_array($Wayponits.get_children())
-	
-	print("Starting iterating")
-	for n in nodes:
-		print(n)
-	print("Finished iterating")
-		
 	map = get_world_2d().navigation_map
 
 	cache_positions()
@@ -31,6 +35,7 @@ func _process(delta):
 	if waypoints_changed():
 		update_path()
 		cache_positions()
+		is_start = false
 
 	
 func update_path():
@@ -72,6 +77,7 @@ func wait_for_navigation_ready():
 	
 #check if location of the nodes was changed	
 func waypoints_changed() -> bool:
+	
 	for i in range(nodes.size()):
 		if nodes[i].global_position != last_positions[i]:
 			return true
@@ -82,3 +88,24 @@ func cache_positions():
 	last_positions.clear()
 	for node in nodes:
 		last_positions.append(node.global_position)
+		
+#populate array with nodes to navigate to in quest
+func populate_nodes_array(quest_ind: int):
+	nodes = [] 
+	
+	# 1. Add the base Pigeon node
+	var pigeon = get_node_or_null("../Pigeon")
+	if pigeon:
+		nodes.append(pigeon)
+	
+	# 2. Get the location node from your dictionary
+	# Assuming QUEST_LOCATION[quest_ind] is a NodePath or String
+	var location_node = get_node_or_null(QUEST_LOCATION[quest_ind])
+	
+	if location_node:
+		# add all children of that location to the nodes array
+		nodes.append_array(location_node.get_children())
+	else:
+		push_warning("Quest location not found for ID: ", quest_ind)
+		
+		
