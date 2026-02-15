@@ -15,11 +15,9 @@ func _ready() -> void:
 	
 func _on_entered_findable(body: Node2D):
 	if found or not started:
-		print("already found or not started")
 		return
 		
 	FindManager.register_find()
-	print("found: " + str(FindManager.found) + "; total: " + str(FindManager.total_to_find))
 	found = true
 	queue_free()
 	

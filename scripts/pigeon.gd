@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#var
 @export var move_speed := 350.0
 @export var turn_speed := 3.0
 @export var fly_speed := 150.0
@@ -12,6 +13,7 @@ var height := 0.0
 
 @onready var animated_sprite := $AnimatedSprite2D
 
+#funcs	
 func _physics_process(delta):
 	
 	#lock the scene if is in the dialogue

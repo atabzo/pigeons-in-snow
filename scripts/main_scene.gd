@@ -4,6 +4,7 @@ extends Node2D
 
 #funcs
 func _ready() -> void:
+	GameManager.main_ready.emit()
 	ui_score_find.visible = false
 	GameManager.lost_minigame.connect(_on_start_find)
 
