@@ -3,6 +3,8 @@ extends Node
 #variables
 var dialogue_active := false
 var last_try = false
+var quest_ind = 1
+var first_start: bool = true
 
 	#minigames
 enum MinigameType {TTT, Match}
@@ -19,6 +21,8 @@ var npc_ind = 1
 signal npc1_finished
 signal npc2_finished
 
+signal main_ready
+
 signal show_game_over
 signal lost_minigame
 signal minigame_restart_requested	
@@ -31,15 +35,17 @@ signal quest_changed
 
 signal chapter_1_finished
 
-#TODO: I have a game where after getting a new quest user must go to location B. I wanna make small stars that navigate the user to the desired location (star path)
+signal start_navigation(quest:int)
+signal stop_navigation
 
-
-#methods
+#funcs
 func _ready() -> void:
 	change_npc.connect(func(npc): npc_ind = npc)
 	minigame_restart_requested.connect(restart_minigame)
 	DialogueManager.dialogue_started.connect(func(_resource): quest_ui_enable.emit(false))
 	npc2_finished.connect(func(): quest_ui_enable.emit(true))
+	chapter_1_finished.connect(manage_navigation)
+	main_ready.connect(manage_navigation)
 	
 	
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
@@ -80,3 +86,8 @@ func restart_minigame():
 	while scene == null or scene.scene_file_path != "res://scenes/" + SCENE_MAP[current_minigame] + ".tscn":
 		await get_tree().process_frame
 		scene = get_tree().current_scene
+		
+func manage_navigation():
+	print("Manage navigation was called from GM with quest_ind: "  + str(quest_ind))
+	start_navigation.emit(quest_ind)
+	quest_ind += 1

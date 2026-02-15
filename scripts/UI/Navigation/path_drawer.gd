@@ -9,3 +9,7 @@ func set_path(new_path: PackedVector2Array):
 func _draw():
 	if path.size() > 1:
 		draw_polyline(path, Color.RED, 4.0)
+		
+func clear_all():
+	path.clear()
+	queue_redraw()

@@ -1925,8 +1925,20 @@ script = ExtResource("17_6u1mn")
 
 [node name="Wayponits" type="Node2D" parent="PathsToQuests" unique_id=1021853679]
 
-[node name="Waypoint1" type="Node2D" parent="PathsToQuests/Wayponits" unique_id=2061907415]
-position = Vector2(1229, -1604)
+[node name="Quest1" type="Node2D" parent="PathsToQuests/Wayponits" unique_id=1812847887]
+unique_name_in_owner = true
+
+[node name="Marker2D" type="Marker2D" parent="PathsToQuests/Wayponits/Quest1" unique_id=264325831]
+position = Vector2(809, -709)
+
+[node name="Quest2" type="Node2D" parent="PathsToQuests/Wayponits" unique_id=1210784828]
+unique_name_in_owner = true
+
+[node name="Marker2D" type="Marker2D" parent="PathsToQuests/Wayponits/Quest2" unique_id=1778527773]
+position = Vector2(947, -1571)
+
+[node name="Marker2D2" type="Marker2D" parent="PathsToQuests/Wayponits/Quest2" unique_id=1328042717]
+position = Vector2(1943, -1642)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="PathsToQuests" unique_id=876019187]
 navigation_polygon = SubResource("NavigationPolygon_xdqt8")

@@ -117,10 +117,11 @@ func check_win() -> int:
 
 func end_game(tie: bool = false):
 	GameManager.quest_ui_enable.emit(false)
+	await get_tree().create_timer(1.0).timeout
 	
 	if tie:
-		GameManager.navigate_to_scene_dialogue("main_match", true, "npc_1_2", "draw")
-	await get_tree().create_timer(1.0).timeout
+		#GameManager.navigate_to_scene_dialogue("Mazes/TTT/main_ttt", true, "npc_1_2", "draw")
+		GameManager.navigate_to_scene_dialogue("Mazes/TTT/main_ttt", false)
 	
 	if winner == -1:
 		if GameManager.last_try:

@@ -2,83 +2,114 @@ extends Node2D
 
 #vars
 @onready var nodes: Array = []
-
 @onready var navigation_region_2d: NavigationRegion2D = $NavigationRegion2D
 @onready var drawer: Node2D = $PathDrawer
 
+var QUEST_LOCATION = { 1 : "%Quest1", 2 : "%Quest2"}
+var REMOVE_DISTANCE_TO_NODE = 100.0
+
 var last_positions: Array[Vector2] = []
 var map: RID
+var is_start: bool = true
 
 #func
 func _ready():
-	print("Started waypoints")
-	await wait_for_navigation_ready()
-	
-	nodes.append(get_node("../Pigeon"))
-	nodes.append_array($Wayponits.get_children())
-	
-	print("Starting iterating")
-	for n in nodes:
-		print(n)
-	print("Finished iterating")
-		
-	map = get_world_2d().navigation_map
+	GameManager.start_navigation.connect(start_navigating)
+	set_process(false)
 
+func start_navigating(quest_ind:int):
+	print("THIS EXECUTION CAUSED BY GM's start_navigation")
+	print("NavManager in start_navigating has quest_ind:" + str(quest_ind))
+	populate_nodes_array(quest_ind)
+	cache_positions()
+	await wait_for_navigation_ready()
+	update_path()
+	set_process(true)
+
+func navigate():
+	await wait_for_navigation_ready()
+	map = get_world_2d().navigation_map
 	cache_positions()
 	update_path()
-	
+
 func _process(delta):
 	if waypoints_changed():
 		update_path()
 		cache_positions()
+	is_start = false
 
-	
 func update_path():
 	var path = build_path_through_nodes()
 	drawer.set_path(path)
 
-	
 #get path for n nodes
 func build_path_through_nodes() -> PackedVector2Array:
 	var map = get_world_2d().navigation_map
 	var final_path: PackedVector2Array = PackedVector2Array()
 	
+	if nodes[0].global_position.distance_to(nodes[1].global_position) < REMOVE_DISTANCE_TO_NODE:
+		if nodes.size() <= 2:
+			stop_navigation()
+		nodes.remove_at(1)
+		
 	for i in range(nodes.size() - 1):
 		var segment = NavigationServer2D.map_get_path(
-			map,
-			nodes[i].global_position,
-			nodes[i + 1].global_position,
+			map, 
+			nodes[i].global_position, 
+			nodes[i + 1].global_position, 
 			false
 		)
 		
 		if segment.is_empty():
 			continue
-		
+			
 		# Avoid duplicating joint points
 		if final_path.size() > 0:
 			segment.remove_at(0)
 		
 		final_path.append_array(segment)
-	
+		
 	return final_path
+
+func stop_navigation():
+	drawer.clear_all()
+	GameManager.stop_navigation.emit()
+	set_process(false)
+
 
 #helpers
 #await for load
 func wait_for_navigation_ready():
 	var map = get_world_2d().navigation_map
-	
 	while NavigationServer2D.map_get_regions(map).is_empty():
 		await get_tree().process_frame
-	
-#check if location of the nodes was changed	
+
+#check if location of the nodes was changed
 func waypoints_changed() -> bool:
 	for i in range(nodes.size()):
 		if nodes[i].global_position != last_positions[i]:
 			return true
 	return false
-	
+
 #cache positions for each node
 func cache_positions():
 	last_positions.clear()
 	for node in nodes:
 		last_positions.append(node.global_position)
+
+#populate array with nodes to navigate to in quest
+func populate_nodes_array(quest_ind: int):
+	nodes = []
+	# 1. Add the base Pigeon node
+	var pigeon = get_node_or_null("../Pigeon")
+	if pigeon:
+		nodes.append(pigeon)
+		
+	# 2. Get the location node from your dictionary
+
+	var location_node = get_node_or_null(QUEST_LOCATION[quest_ind])
+	if location_node:
+		# add all children of that location to the nodes array
+		nodes.append_array(location_node.get_children())
+	else:
+		push_warning("Quest location not found for ID: ", quest_ind)
