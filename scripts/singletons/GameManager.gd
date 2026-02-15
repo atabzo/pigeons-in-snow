@@ -4,6 +4,7 @@ extends Node
 var dialogue_active := false
 var last_try = false
 var quest_ind = 1
+var first_start: bool = true
 
 	#minigames
 enum MinigameType {TTT, Match}

@@ -1,10 +1,14 @@
 extends Node2D
 
+#vars
 @onready var ui_score_find: CanvasLayer = $BranchesFind/UiScoreFind
 
 #funcs
 func _ready() -> void:
-	GameManager.main_ready.emit()
+	if GameManager.first_start:
+		GameManager.first_start = false
+		GameManager.main_ready.emit()
+		
 	ui_score_find.visible = false
 	GameManager.lost_minigame.connect(_on_start_find)
 
