@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://l8lv3ifmd74t"]
+
+[ext_resource type="Script" uid="uid://dfl8fleigodvu" path="res://scripts/Chapter2/Npc2/field_of_view.gd" id="1_1v4mj"]
+[ext_resource type="Texture2D" uid="uid://fyndsqit4hfr" path="res://images/Chapter2/fov.png" id="1_c1opf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1v4mj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c1opf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FieldOfView" type="Node2D" unique_id=2111936787]
+script = ExtResource("1_1v4mj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=724510966]
+position = Vector2(258.75, 0)
+scale = Vector2(3.467742, 2.258427)
+sprite_frames = SubResource("SpriteFrames_1v4mj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=390104501]
+position = Vector2(242.75, 9)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=590164261]
+position = Vector2(-31.81596, 13.374971)
+scale = Vector2(3.4543908, 2.2500002)
+polygon = PackedVector2Array(-59, -10, 62.765327, -98.83331, 86.79272, -50.83332, 89, 28, 62.475838, 80.27779)

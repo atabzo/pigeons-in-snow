@@ -18,6 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://cp3g4deydtjs6" path="res://scenes/Mazes/Find/findable_object.tscn" id="18_7nt27"]
 [ext_resource type="PackedScene" uid="uid://4er6yxt72xl" path="res://scenes/Mazes/Find/ui_overlay_score.tscn" id="18_bcnxi"]
 [ext_resource type="Script" uid="uid://du5q2l1ibhnn3" path="res://scripts/UI/Navigation/path_drawer.gd" id="18_k6f3i"]
+[ext_resource type="Texture2D" uid="uid://q5onn6skjcxq" path="res://images/Chapter2/wall.png" id="19_adb74"]
+[ext_resource type="Texture2D" uid="uid://gmj8xo7i5e5i" path="res://images/Chapter2/prison.png" id="20_adb74"]
+[ext_resource type="PackedScene" uid="uid://bc1qrt5i30h4a" path="res://scenes/NPCs/guard.tscn" id="21_to7gp"]
+[ext_resource type="PackedScene" uid="uid://l8lv3ifmd74t" path="res://scenes/Chapter2/field_of_view.tscn" id="22_u0fll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gubc5"]
 size = Vector2(5866.7314, 224.5)
@@ -1782,7 +1786,7 @@ layer_0/tile_data = PackedInt32Array(1179637, 393217, 6, 1245173, 393217, 7, 111
 [node name="Additional" type="Node2D" parent="Design" unique_id=1576428144]
 
 [node name="Snowman3" parent="Design/Additional" unique_id=2137452198 instance=ExtResource("8_si52b")]
-position = Vector2(2176, -2208)
+position = Vector2(419, -2240)
 scale = Vector2(4, 4)
 
 [node name="Snowman2" parent="Design/Additional" unique_id=1893756783 instance=ExtResource("8_si52b")]
@@ -1844,7 +1848,7 @@ position = Vector2(1845, -1072)
 
 [node name="Pigeon" parent="." unique_id=343280671 instance=ExtResource("4_pu3yx")]
 z_index = 1
-position = Vector2(639, 361)
+position = Vector2(2091, -1397)
 
 [node name="Camera2D" type="Camera2D" parent="Pigeon" unique_id=934001579]
 
@@ -1953,3 +1957,47 @@ unique_name_in_owner = true
 
 [node name="OwlMarker" type="Marker2D" parent="PathsToQuests/SideQuests/LoseMinigame" unique_id=1502566381]
 position = Vector2(1176, -104)
+
+[node name="Chapter2" type="Node2D" parent="." unique_id=534891428]
+
+[node name="Decorations" type="Node2D" parent="Chapter2" unique_id=448120453]
+
+[node name="Walls" type="Node2D" parent="Chapter2/Decorations" unique_id=1640167657]
+
+[node name="Wall" type="Sprite2D" parent="Chapter2/Decorations/Walls" unique_id=1056166272]
+position = Vector2(1284.9999, -1484)
+scale = Vector2(0.52734375, 1)
+texture = ExtResource("19_adb74")
+
+[node name="Wall2" type="Sprite2D" parent="Chapter2/Decorations/Walls" unique_id=492646059]
+position = Vector2(2157, -1430)
+scale = Vector2(0.52734375, 1)
+texture = ExtResource("19_adb74")
+
+[node name="Prison" type="Sprite2D" parent="Chapter2/Decorations" unique_id=530752465]
+position = Vector2(1749, -1098)
+scale = Vector2(4, 4)
+texture = ExtResource("20_adb74")
+
+[node name="NPCs" type="Node2D" parent="Chapter2" unique_id=1266560937]
+
+[node name="Guard1" type="Node2D" parent="Chapter2/NPCs" unique_id=1580822976]
+
+[node name="Guard" parent="Chapter2/NPCs/Guard1" unique_id=420835338 instance=ExtResource("21_to7gp")]
+position = Vector2(1005, -1606)
+
+[node name="FieldOfView" parent="Chapter2/NPCs/Guard1" unique_id=2111936787 instance=ExtResource("22_u0fll")]
+position = Vector2(1074, -1608.0001)
+scale = Vector2(1.5, 1.5)
+
+[node name="Guard2" type="Node2D" parent="Chapter2/NPCs" unique_id=1777200192]
+position = Vector2(1390, -148)
+
+[node name="Guard" parent="Chapter2/NPCs/Guard2" unique_id=763271292 instance=ExtResource("21_to7gp")]
+position = Vector2(1044, -1971)
+
+[node name="FieldOfView" parent="Chapter2/NPCs/Guard2" unique_id=1632295102 instance=ExtResource("22_u0fll")]
+position = Vector2(958, -1977)
+rotation = 3.1415927
+scale = Vector2(1.5, 1.5)
+START_LEFT_TO_RIGHT = false
