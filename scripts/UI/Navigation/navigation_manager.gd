@@ -6,6 +6,7 @@ extends Node2D
 @onready var drawer: Node2D = $PathDrawer
 
 var QUEST_LOCATION = { 1 : "%Quest1", 2 : "%Quest2"}
+var SIDEQUSET_LOCATIONS = {1 : "%LoseMinigame", 2 : "%Quest1"}
 var REMOVE_DISTANCE_TO_NODE = 100.0
 
 var last_positions: Array[Vector2] = []
@@ -14,23 +15,24 @@ var is_start: bool = true
 
 #func
 func _ready():
-	GameManager.start_navigation.connect(start_navigating)
 	set_process(false)
+	GameManager.start_navigation.connect(start_navigating)
+	GameManager.start_sidequest_navigation.connect(start_sidequesting)
 
+
+#starter functions
 func start_navigating(quest_ind:int):
-	print("THIS EXECUTION CAUSED BY GM's start_navigation")
-	print("NavManager in start_navigating has quest_ind:" + str(quest_ind))
 	populate_nodes_array(quest_ind)
 	cache_positions()
 	await wait_for_navigation_ready()
 	update_path()
 	set_process(true)
 
-func navigate():
-	await wait_for_navigation_ready()
-	map = get_world_2d().navigation_map
+func start_sidequesting(sidequest_ind:int):
+	populate_nodes_array(sidequest_ind, true)
 	cache_positions()
 	update_path()
+	set_process(true)
 
 func _process(delta):
 	if waypoints_changed():
@@ -47,10 +49,11 @@ func build_path_through_nodes() -> PackedVector2Array:
 	var map = get_world_2d().navigation_map
 	var final_path: PackedVector2Array = PackedVector2Array()
 	
-	if nodes[0].global_position.distance_to(nodes[1].global_position) < REMOVE_DISTANCE_TO_NODE:
-		if nodes.size() <= 2:
-			stop_navigation()
-		nodes.remove_at(1)
+	if nodes.size() >= 2:
+		if nodes[0].global_position.distance_to(nodes[1].global_position) < REMOVE_DISTANCE_TO_NODE:
+			if nodes.size() <= 2:
+				stop_navigation()
+			nodes.remove_at(1)
 		
 	for i in range(nodes.size() - 1):
 		var segment = NavigationServer2D.map_get_path(
@@ -71,9 +74,8 @@ func build_path_through_nodes() -> PackedVector2Array:
 		
 	return final_path
 
-func stop_navigation():
+func stop_navigation(side_quest:bool = false):
 	drawer.clear_all()
-	GameManager.stop_navigation.emit()
 	set_process(false)
 
 
@@ -98,7 +100,7 @@ func cache_positions():
 		last_positions.append(node.global_position)
 
 #populate array with nodes to navigate to in quest
-func populate_nodes_array(quest_ind: int):
+func populate_nodes_array(quest_ind: int, side_quest: bool = false):
 	nodes = []
 	# 1. Add the base Pigeon node
 	var pigeon = get_node_or_null("../Pigeon")
@@ -107,9 +109,14 @@ func populate_nodes_array(quest_ind: int):
 		
 	# 2. Get the location node from your dictionary
 
-	var location_node = get_node_or_null(QUEST_LOCATION[quest_ind])
+	var location_node
+	if !side_quest:
+		location_node = get_node_or_null(QUEST_LOCATION[quest_ind])
+	else:
+		location_node = get_node_or_null(SIDEQUSET_LOCATIONS[quest_ind])
+		
+		
 	if location_node:
-		# add all children of that location to the nodes array
 		nodes.append_array(location_node.get_children())
 	else:
 		push_warning("Quest location not found for ID: ", quest_ind)

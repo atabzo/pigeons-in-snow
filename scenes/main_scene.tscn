@@ -1945,3 +1945,11 @@ navigation_polygon = SubResource("NavigationPolygon_xdqt8")
 
 [node name="PathDrawer" type="Node2D" parent="PathsToQuests" unique_id=1270595748]
 script = ExtResource("18_k6f3i")
+
+[node name="SideQuests" type="Node2D" parent="PathsToQuests" unique_id=159888742]
+
+[node name="LoseMinigame" type="Node2D" parent="PathsToQuests/SideQuests" unique_id=1122136937]
+unique_name_in_owner = true
+
+[node name="OwlMarker" type="Marker2D" parent="PathsToQuests/SideQuests/LoseMinigame" unique_id=1502566381]
+position = Vector2(1176, -104)
