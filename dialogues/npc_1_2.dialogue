@@ -14,6 +14,9 @@ Penguin: Better luck next time, sky racer.
 Pigeon: Ha! Victory is mine!
 Penguin: Impossible... how did you beat me?
 
+do GameManager.sidequest_skipped.emit()
+do GameManager.sidequest_skipped.emit()
+
 Pigeon: So... what should I do with my glorious win?
 
 - Celebrate like a champion => res1

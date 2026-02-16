@@ -4,6 +4,7 @@ extends Node
 var dialogue_active := false
 var last_try = false
 var quest_ind = 1
+var sidequest_ind = 1
 var first_start: bool = true
 
 	#minigames
@@ -32,21 +33,23 @@ signal change_npc(npc:int)
 
 signal quest_ui_enable(state:bool)
 signal quest_changed
+signal sidequest_skipped
 
 signal chapter_1_finished
 
 signal start_navigation(quest:int)
-signal stop_navigation
+signal start_sidequest_navigation(sidequest_ind:int)
 
 #funcs
 func _ready() -> void:
 	change_npc.connect(func(npc): npc_ind = npc)
 	minigame_restart_requested.connect(restart_minigame)
 	DialogueManager.dialogue_started.connect(func(_resource): quest_ui_enable.emit(false))
-	npc2_finished.connect(func(): quest_ui_enable.emit(true))
+	npc2_finished.connect(on_npc2_finished)
 	chapter_1_finished.connect(manage_navigation)
 	main_ready.connect(manage_navigation)
-	
+	sidequest_skipped.connect(func(): sidequest_ind += 1)
+	FindManager.find_game_won.connect(manage_sidequests)
 	
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
 	get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
@@ -87,7 +90,18 @@ func restart_minigame():
 		await get_tree().process_frame
 		scene = get_tree().current_scene
 		
+#navigation
 func manage_navigation():
-	print("Manage navigation was called from GM with quest_ind: "  + str(quest_ind))
 	start_navigation.emit(quest_ind)
 	quest_ind += 1
+
+func manage_sidequests():
+	start_sidequest_navigation.emit(sidequest_ind)
+	sidequest_ind += 1
+	
+	
+	
+#npcs
+func on_npc2_finished():
+	quest_ui_enable.emit(true)
+	manage_sidequests()
