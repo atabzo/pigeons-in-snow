@@ -29,8 +29,21 @@ var input_locked = false
 
 func _ready():
 	GameManager.current_minigame = GameManager.MinigameType.Match
-	
+
 	setup_board()
+	
+	'''#ONLY FOR TESTING PURPOSES
+	await get_tree().create_timer(2.0).timeout
+	
+	#test win
+	#GameManager.won_match.emit()
+	
+	#test loose
+	bot_score = 5 
+	player_score = 5
+	game_over()'''
+	
+	
 
 func setup_board():
 	var ids = generate_pairs()
@@ -175,16 +188,12 @@ func game_over():
 	if player_score > bot_score:
 		print("PLAYER WINS")
 		GameManager.last_try = false
-		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "pigeon_wins")
+		GameManager.won_match.emit()
+		#GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "pigeon_wins")
 	elif bot_score > player_score:
-		if GameManager.last_try:
-			GameManager.navigate_to_scene_dialogue("game_over")
-		else:
-			GameManager.last_try = true
-			GameManager.npc_1_dialogue_ind = 2
-			GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "last_chance")
+		GameManager.navigate_to_scene_dialogue("game_over")
 	else:
-		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "draw")
+		GameManager.navigate_to_scene_dialogue("Mazes/Match/main_match")
 
 	# Example hook for dialogue / scene change
 	# GameManager.minigame_finished(player_score, bot_score)

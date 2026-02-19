@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cacmdwfrpi25y"]
+
+[ext_resource type="Texture2D" uid="uid://doo1c3ylsk60e" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_1.png" id="1_1eriv"]
+[ext_resource type="Script" uid="uid://bde6kilpnlklc" path="res://scripts/Chapter2/Npc2/npc_pigeon_prisoner.gd" id="1_m1jys"]
+[ext_resource type="Texture2D" uid="uid://c5o5l8q7dwhxf" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_2.png" id="2_m1jys"]
+[ext_resource type="Texture2D" uid="uid://b5q8r1mvdjgfh" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_3.png" id="3_yeaen"]
+[ext_resource type="Texture2D" uid="uid://bf4but8fcrm5a" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_4.png" id="4_0cpjf"]
+[ext_resource type="Texture2D" uid="uid://cg2tdf0niamc2" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_5.png" id="5_s54yx"]
+[ext_resource type="Texture2D" uid="uid://q2t18ai3jowh" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_6.png" id="6_xe0hd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2pe46"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1eriv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m1jys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yeaen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0cpjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s54yx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xe0hd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mw4pt"]
+radius = 464.0
+height = 928.0
+
+[node name="NPCPigeon" type="Node2D" unique_id=263238670]
+script = ExtResource("1_m1jys")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=147331547]
+sprite_frames = SubResource("SpriteFrames_2pe46")
+frame_progress = 0.45545298
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1802441996]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1603255237]
+position = Vector2(12, 136)
+shape = SubResource("CapsuleShape2D_mw4pt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -2,11 +2,12 @@ extends CanvasLayer
 
 #vars
 var is_active = true
-var current_quest = 1
 
 var QUESTS = {
 	1: "Approach the bird standing nearby",
-	2: "Go north and try to gather as much data to save the flock"
+	2: "Report back to the Penguin",
+	3: "Go to the Northen Prison",
+	4: "Sneak through the guards without being noticed"
 }
 
 #components
@@ -25,7 +26,11 @@ func _on_state_changed(state: bool) -> void:
 	print("Visibility of the task panel is set to: " + str(state))
 	is_active = state
 	task_overlay_ui.visible = state
+	
+	if state:
+		_on_next_quest()
 
 func _on_next_quest():
-	current_quest += 1
-	quest_label.text = QUESTS[current_quest]
+	GameManager.current_task += 1
+	print("Quest count SHOWN: " + str(GameManager.current_task))
+	quest_label.text = QUESTS[GameManager.current_task]

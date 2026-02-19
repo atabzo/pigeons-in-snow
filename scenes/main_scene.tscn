@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://cp3g4deydtjs6" path="res://scenes/Mazes/Find/findable_object.tscn" id="18_7nt27"]
 [ext_resource type="PackedScene" uid="uid://4er6yxt72xl" path="res://scenes/Mazes/Find/ui_overlay_score.tscn" id="18_bcnxi"]
 [ext_resource type="Script" uid="uid://du5q2l1ibhnn3" path="res://scripts/UI/Navigation/path_drawer.gd" id="18_k6f3i"]
+[ext_resource type="PackedScene" uid="uid://bpqqk5tfi26ba" path="res://scenes/Utils/teleportation.tscn" id="19_k6f3i"]
+[ext_resource type="Texture2D" uid="uid://gmj8xo7i5e5i" path="res://images/Chapter2/Design/prison.png" id="20_adb74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gubc5"]
 size = Vector2(5866.7314, 224.5)
@@ -1714,6 +1716,10 @@ vertices = PackedVector2Array(2282.8828, -1949.1094, 2252.1016, 821.03125, -550.
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-591, -1991, -560, 841, 2262, 831, 2293, -1959)])
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdqt8"]
+radius = 28.0
+height = 56.0
+
 [node name="CopyMainScene" type="Node2D" unique_id=1064206985]
 script = ExtResource("1_bcnxi")
 
@@ -1782,7 +1788,7 @@ layer_0/tile_data = PackedInt32Array(1179637, 393217, 6, 1245173, 393217, 7, 111
 [node name="Additional" type="Node2D" parent="Design" unique_id=1576428144]
 
 [node name="Snowman3" parent="Design/Additional" unique_id=2137452198 instance=ExtResource("8_si52b")]
-position = Vector2(2176, -2208)
+position = Vector2(419, -2240)
 scale = Vector2(4, 4)
 
 [node name="Snowman2" parent="Design/Additional" unique_id=1893756783 instance=ExtResource("8_si52b")]
@@ -1844,7 +1850,7 @@ position = Vector2(1845, -1072)
 
 [node name="Pigeon" parent="." unique_id=343280671 instance=ExtResource("4_pu3yx")]
 z_index = 1
-position = Vector2(639, 361)
+position = Vector2(741, 255)
 
 [node name="Camera2D" type="Camera2D" parent="Pigeon" unique_id=934001579]
 
@@ -1953,3 +1959,17 @@ unique_name_in_owner = true
 
 [node name="OwlMarker" type="Marker2D" parent="PathsToQuests/SideQuests/LoseMinigame" unique_id=1502566381]
 position = Vector2(1176, -104)
+
+[node name="Chapter2" type="Node2D" parent="." unique_id=2100988332]
+
+[node name="Teleportation" parent="Chapter2" unique_id=2040223359 instance=ExtResource("19_k6f3i")]
+position = Vector2(1944, -1641)
+DESTINATION_PATH = "Chapter2/chapter_2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chapter2/Teleportation" unique_id=861539128]
+position = Vector2(-1, -1)
+shape = SubResource("CapsuleShape2D_xdqt8")
+
+[node name="Prison" type="Sprite2D" parent="Chapter2" unique_id=1975848278]
+position = Vector2(1943, -1700)
+texture = ExtResource("20_adb74")

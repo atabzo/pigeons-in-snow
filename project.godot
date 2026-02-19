@@ -27,6 +27,7 @@ Transition="*res://scripts/transition.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 GameManager="*uid://yb580btmm4yc"
 FindManager="*uid://cx5rqcposi2ey"
+SceneManager="*uid://bc7ovjnsbetqo"
 
 [dialogue_manager]
 
@@ -88,7 +89,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/npc_1_1.dialogue", "res://dialogues/npc_1_2.dialogue", "res://dialogues/npc_2_1.dialogue", "res://dialogues/npc_1_3.dialogue", "res://dialogues/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/npc_1_1.dialogue", "res://dialogues/npc_1_2.dialogue", "res://dialogues/npc_2_1.dialogue", "res://dialogues/npc_1_3.dialogue", "res://dialogues/test.dialogue", "res://dialogues/Chapter2/npc3_default.dialogue", "res://dialogues/Chapter2/npc4_guard.dialogue")
 
 [layer_names]
 

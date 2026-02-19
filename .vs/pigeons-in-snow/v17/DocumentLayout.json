@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Pigeon\\pigeons-in-snow\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\Chapter2\\outside_prison.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\Chapter2\\outside_prison.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\Utils\\teleportation.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\Utils\\teleportation.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\main_scene.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\main_scene.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\Mazes\\Match\\main_match.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\Mazes\\Match\\main_match.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\Mazes\\TTT\\main_ttt.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\Mazes\\TTT\\main_ttt.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\NPCs\\npc_1_bird.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\NPCs\\npc_1_bird.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\UI\\task_overlay_ui.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\UI\\task_overlay_ui.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\singletons\\GameManager.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\singletons\\GameManager.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -11,8 +39,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:dialogues\\npc_1_2.dialogue||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\main_scene.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\main_scene.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\Mazes\\Find\\ovelay_ui.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\Mazes\\Find\\ovelay_ui.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\scripts\\UI\\Navigation\\navigation_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts\\UI\\Navigation\\navigation_manager.gd||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Pigeon\\pigeons-in-snow\\dialogues\\npc_1_1.dialogue||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -38,46 +70,149 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "main_scene.gd",
-              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\main_scene.gd",
-              "RelativeDocumentMoniker": "scripts\\main_scene.gd",
-              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\main_scene.gd",
-              "RelativeToolTip": "scripts\\main_scene.gd",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "teleportation.gd",
+              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Utils\\teleportation.gd",
+              "RelativeDocumentMoniker": "scripts\\Utils\\teleportation.gd",
+              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Utils\\teleportation.gd",
+              "RelativeToolTip": "scripts\\Utils\\teleportation.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-02-15T22:58:09.2Z",
+              "WhenOpened": "2026-02-19T22:55:24.665Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "outside_prison.gd",
+              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Chapter2\\outside_prison.gd",
+              "RelativeDocumentMoniker": "scripts\\Chapter2\\outside_prison.gd",
+              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Chapter2\\outside_prison.gd",
+              "RelativeToolTip": "scripts\\Chapter2\\outside_prison.gd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-19T22:55:23.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ovelay_ui.gd",
+              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Mazes\\Find\\ovelay_ui.gd",
+              "RelativeDocumentMoniker": "scripts\\Mazes\\Find\\ovelay_ui.gd",
+              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Mazes\\Find\\ovelay_ui.gd",
+              "RelativeToolTip": "scripts\\Mazes\\Find\\ovelay_ui.gd",
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwDgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-19T21:58:06.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "npc_1_bird.gd",
+              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\NPCs\\npc_1_bird.gd",
+              "RelativeDocumentMoniker": "scripts\\NPCs\\npc_1_bird.gd",
+              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\NPCs\\npc_1_bird.gd",
+              "RelativeToolTip": "scripts\\NPCs\\npc_1_bird.gd",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAAB8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-19T21:58:05.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "main_ttt.gd",
+              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Mazes\\TTT\\main_ttt.gd",
+              "RelativeDocumentMoniker": "scripts\\Mazes\\TTT\\main_ttt.gd",
+              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Mazes\\TTT\\main_ttt.gd",
+              "RelativeToolTip": "scripts\\Mazes\\TTT\\main_ttt.gd",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAAHYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-19T21:58:04.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main_match.gd",
+              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Mazes\\Match\\main_match.gd",
+              "RelativeDocumentMoniker": "scripts\\Mazes\\Match\\main_match.gd",
+              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\Mazes\\Match\\main_match.gd",
+              "RelativeToolTip": "scripts\\Mazes\\Match\\main_match.gd",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAALoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-19T21:58:02.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "task_overlay_ui.gd",
+              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\UI\\task_overlay_ui.gd",
+              "RelativeDocumentMoniker": "scripts\\UI\\task_overlay_ui.gd",
+              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\UI\\task_overlay_ui.gd",
+              "RelativeToolTip": "scripts\\UI\\task_overlay_ui.gd",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-17T20:29:43.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "GameManager.gd",
               "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\singletons\\GameManager.gd",
               "RelativeDocumentMoniker": "scripts\\singletons\\GameManager.gd",
               "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\singletons\\GameManager.gd",
               "RelativeToolTip": "scripts\\singletons\\GameManager.gd",
-              "ViewState": "AgIAACEAAAAAAAAAAAAUwC0AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwDgAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-02-15T22:57:19.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "npc_1_2.dialogue",
               "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\dialogues\\npc_1_2.dialogue",
               "RelativeDocumentMoniker": "dialogues\\npc_1_2.dialogue",
               "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\dialogues\\npc_1_2.dialogue",
               "RelativeToolTip": "dialogues\\npc_1_2.dialogue",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAUwFUAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAAAFgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-02-15T22:57:04.579Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "main_scene.gd",
+              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\main_scene.gd",
+              "RelativeDocumentMoniker": "scripts\\main_scene.gd",
+              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\main_scene.gd",
+              "RelativeToolTip": "scripts\\main_scene.gd",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAABMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-15T22:58:09.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "navigation_manager.gd",
+              "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\scripts\\UI\\Navigation\\navigation_manager.gd",
+              "RelativeDocumentMoniker": "scripts\\UI\\Navigation\\navigation_manager.gd",
+              "ToolTip": "C:\\Pigeon\\pigeons-in-snow\\scripts\\UI\\Navigation\\navigation_manager.gd",
+              "RelativeToolTip": "scripts\\UI\\Navigation\\navigation_manager.gd",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAUwHkAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-19T22:00:14.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "npc_1_1.dialogue",
               "DocumentMoniker": "C:\\Pigeon\\pigeons-in-snow\\dialogues\\npc_1_1.dialogue",
               "RelativeDocumentMoniker": "dialogues\\npc_1_1.dialogue",
@@ -85,8 +220,7 @@
               "RelativeToolTip": "dialogues\\npc_1_1.dialogue",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-02-15T22:57:00.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-15T22:57:00.424Z"
             }
           ]
         }

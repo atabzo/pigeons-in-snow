@@ -66,7 +66,7 @@ var tween: Tween
 @onready var click_sound = $\"../../SoundClick\"
 
 # Define the scene you want to switch to
-@export_file(\"*.tscn\") var next_scene: String = \"res://objects/title_animation.tscn\"
+@export_file(\"*.tscn\") var next_scene: String = \"res://\" + GameManager.last_checkpoint + \".tscn\"
 
 func _ready():
 	pivot_offset = size / 2
@@ -106,7 +106,7 @@ func _on_pressed():
 	get_tree().change_scene_to_file(next_scene)
 "
 
-[node name="the-decision" type="Node2D" unique_id=733500016]
+[node name="GameOver" type="Node2D" unique_id=733500016]
 
 [node name="background" type="Sprite2D" parent="." unique_id=1524181779]
 position = Vector2(646.5, 371.5)

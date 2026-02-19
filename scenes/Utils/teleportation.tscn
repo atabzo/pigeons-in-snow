@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bpqqk5tfi26ba"]
+
+[ext_resource type="Script" uid="uid://bi87v3v2rx1s8" path="res://scripts/Utils/teleportation.gd" id="1_v52iq"]
+
+[node name="Teleportation" type="Area2D" unique_id=2040223359]
+script = ExtResource("1_v52iq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
