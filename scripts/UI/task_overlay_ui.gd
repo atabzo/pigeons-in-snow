@@ -6,7 +6,8 @@ var current_quest = 1
 
 var QUESTS = {
 	1: "Approach the bird standing nearby",
-	2: "Go north and try to gather as much data to save the flock"
+	2: "Go north and try to gather as much data to save the flock",
+	3: "Sneak through the guard without being noticed"
 }
 
 #components
@@ -27,5 +28,6 @@ func _on_state_changed(state: bool) -> void:
 	task_overlay_ui.visible = state
 
 func _on_next_quest():
+	print("Quest count will be incremented: " + current_quest + 1)
 	current_quest += 1
 	quest_label.text = QUESTS[current_quest]

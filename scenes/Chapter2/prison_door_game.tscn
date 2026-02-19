@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ct58asautm2wy"]
+
+[ext_resource type="Texture2D" uid="uid://dh28j5kxk8hsc" path="res://images/Chapter2/Design/door.png" id="1_3l7px"]
+[ext_resource type="Script" uid="uid://boklx0aqar7s" path="res://scripts/Chapter2/prison_door_game.gd" id="1_iq23w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iq23w"]
+size = Vector2(706, 1140)
+
+[node name="PrisonDoorGame" type="Node2D" unique_id=1091090257]
+script = ExtResource("1_iq23w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1856288958]
+texture = ExtResource("1_3l7px")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1420139967]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1038424059]
+position = Vector2(19, 23)
+shape = SubResource("RectangleShape2D_iq23w")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

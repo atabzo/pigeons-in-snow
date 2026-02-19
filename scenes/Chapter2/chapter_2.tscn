@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://bnu47vuye3v6j"]
 
 [ext_resource type="Texture2D" uid="uid://dv46focuri7de" path="res://images/Chapter2/BG/snow_template1.jpg" id="1_o2j1w"]
-[ext_resource type="Texture2D" uid="uid://gmj8xo7i5e5i" path="res://images/Chapter2/prison.png" id="2_rvvvv"]
-[ext_resource type="Texture2D" uid="uid://q5onn6skjcxq" path="res://images/Chapter2/wall.png" id="3_m40ix"]
+[ext_resource type="Script" uid="uid://bdcvrob5hbpfj" path="res://scripts/Chapter2/outside_prison.gd" id="1_tb5yw"]
+[ext_resource type="Texture2D" uid="uid://gmj8xo7i5e5i" path="res://images/Chapter2/Design/prison.png" id="2_rvvvv"]
+[ext_resource type="Texture2D" uid="uid://q5onn6skjcxq" path="res://images/Chapter2/Design/wall.png" id="3_m40ix"]
+[ext_resource type="Texture2D" uid="uid://dh28j5kxk8hsc" path="res://images/Chapter2/Design/door.png" id="4_4cr42"]
 [ext_resource type="PackedScene" uid="uid://bc1qrt5i30h4a" path="res://scenes/NPCs/guard.tscn" id="4_jb6eo"]
+[ext_resource type="PackedScene" uid="uid://bpqqk5tfi26ba" path="res://scenes/Utils/teleportation.tscn" id="4_m40ix"]
 [ext_resource type="PackedScene" uid="uid://l8lv3ifmd74t" path="res://scenes/Chapter2/field_of_view.tscn" id="5_4cr42"]
 [ext_resource type="PackedScene" uid="uid://coytmnnqpcdj0" path="res://scenes/pigeon.tscn" id="6_rvvvv"]
+[ext_resource type="PackedScene" uid="uid://0kj6f02xbp1c" path="res://scenes/UI/task_overlay_ui.tscn" id="9_4cr42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb5yw"]
+size = Vector2(230, 227)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tb5yw"]
 
@@ -16,6 +23,7 @@ size = Vector2(105.25, 2446)
 size = Vector2(877, 42.75)
 
 [node name="Chapter2" type="Node2D" unique_id=1789343084]
+script = ExtResource("1_tb5yw")
 
 [node name="Decorations" type="Node2D" parent="." unique_id=1628783142]
 
@@ -95,6 +103,20 @@ position = Vector2(248.5, -1812.5)
 scale = Vector2(0.27441406, 0.27441406)
 texture = ExtResource("3_m40ix")
 
+[node name="DoorOut" type="Node2D" parent="Decorations" unique_id=184650563]
+position = Vector2(459, -1884)
+
+[node name="Sprite2D" type="Sprite2D" parent="Decorations/DoorOut" unique_id=1111022191]
+position = Vector2(186, 22)
+scale = Vector2(0.355, 0.355)
+texture = ExtResource("4_4cr42")
+
+[node name="Teleportation" parent="Decorations/DoorOut" unique_id=2040223359 instance=ExtResource("4_m40ix")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/DoorOut/Teleportation" unique_id=1744569235]
+position = Vector2(193, 109.5)
+shape = SubResource("RectangleShape2D_tb5yw")
+
 [node name="Borders" type="Node2D" parent="." unique_id=1761752726]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=1560681748]
@@ -172,3 +194,14 @@ START_LEFT_TO_RIGHT = false
 position = Vector2(654, 552)
 
 [node name="Camera2D" type="Camera2D" parent="Pigeon" unique_id=357160233]
+
+[node name="Waypoints" type="Node2D" parent="." unique_id=127174910]
+
+[node name="StartMarker2D" type="Marker2D" parent="Waypoints" unique_id=471895631]
+position = Vector2(656, 555)
+
+[node name="Quest" type="Node2D" parent="." unique_id=1858065260]
+
+[node name="UI" type="Node2D" parent="Quest" unique_id=1410865788]
+
+[node name="TaskOverlayUI" parent="Quest/UI" unique_id=1566254443 instance=ExtResource("9_4cr42")]

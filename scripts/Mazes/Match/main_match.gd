@@ -30,6 +30,11 @@ var input_locked = false
 func _ready():
 	GameManager.current_minigame = GameManager.MinigameType.Match
 	
+	#ONLY FOR TESTING PURPOSES
+	'''get_tree().create_timer(5.0)
+	GameManager.won_match.emit()
+	'''
+	
 	setup_board()
 
 func setup_board():
@@ -175,7 +180,9 @@ func game_over():
 	if player_score > bot_score:
 		print("PLAYER WINS")
 		GameManager.last_try = false
-		GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "pigeon_wins")
+		print("From main_match emitting: won_match")
+		GameManager.won_match.emit()
+		#GameManager.navigate_to_scene_dialogue("main_scene", true, "npc_1_2", "pigeon_wins")
 	elif bot_score > player_score:
 		if GameManager.last_try:
 			GameManager.navigate_to_scene_dialogue("game_over")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dd3hcyswxedja"
+path="res://.godot/imported/npc4_guard.dialogue-7987d5b815477d955c9722934ff64b91.tres"
+
+[deps]
+
+source_file="res://dialogues/Chapter2/npc4_guard.dialogue"
+dest_files=["res://.godot/imported/npc4_guard.dialogue-7987d5b815477d955c9722934ff64b91.tres"]
+
+[params]
+
+defaults=true

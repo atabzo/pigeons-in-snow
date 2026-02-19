@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://l8lv3ifmd74t"]
 
 [ext_resource type="Script" uid="uid://dfl8fleigodvu" path="res://scripts/Chapter2/Npc2/field_of_view.gd" id="1_1v4mj"]
-[ext_resource type="Texture2D" uid="uid://fyndsqit4hfr" path="res://images/Chapter2/fov.png" id="1_c1opf"]
+[ext_resource type="Texture2D" uid="uid://fyndsqit4hfr" path="res://images/Chapter2/Design/fov.png" id="1_c1opf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1v4mj"]
 animations = [{
@@ -29,3 +29,5 @@ position = Vector2(242.75, 9)
 position = Vector2(-31.81596, 13.374971)
 scale = Vector2(3.4543908, 2.2500002)
 polygon = PackedVector2Array(-59, -10, 62.765327, -98.83331, 86.79272, -50.83332, 89, 28, 62.475838, 80.27779)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

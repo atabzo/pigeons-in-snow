@@ -19,6 +19,7 @@ var npc_1_dialogue_ind = 1
 var npc_ind = 1
 
 #signals 
+signal main_scene_changed
 signal npc1_finished
 signal npc2_finished
 
@@ -26,6 +27,8 @@ signal main_ready
 
 signal show_game_over
 signal lost_minigame
+signal won_match
+signal won_match_back
 signal minigame_restart_requested	
 signal reload_progress
 
@@ -40,8 +43,10 @@ signal chapter_1_finished
 signal start_navigation(quest:int)
 signal start_sidequest_navigation(sidequest_ind:int)
 
+signal guard_finished
 #funcs
 func _ready() -> void:
+	main_scene_changed.connect(on_main_scene_changed)
 	change_npc.connect(func(npc): npc_ind = npc)
 	minigame_restart_requested.connect(restart_minigame)
 	DialogueManager.dialogue_started.connect(func(_resource): quest_ui_enable.emit(false))
@@ -50,6 +55,9 @@ func _ready() -> void:
 	main_ready.connect(manage_navigation)
 	sidequest_skipped.connect(func(): sidequest_ind += 1)
 	FindManager.find_game_won.connect(manage_sidequests)
+	guard_finished.connect(await on_guard_finished)
+	won_match.connect(await on_won_match)
+	
 	
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
 	get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
@@ -73,6 +81,7 @@ func position_for_dialogue():
 	var scene = get_tree().current_scene
 	var pigeon = scene.get_node("Pigeon")
 	
+	print(npc_ind)
 	pigeon.global_position = scene.get_node("DialogueMarkers/" + str(npc_ind)).global_position
 	pigeon.rotation = 0
 
@@ -89,6 +98,12 @@ func restart_minigame():
 	while scene == null or scene.scene_file_path != "res://scenes/" + SCENE_MAP[current_minigame] + ".tscn":
 		await get_tree().process_frame
 		scene = get_tree().current_scene
+	
+	
+func on_main_scene_changed():
+	npc_ind = 1
+	sidequest_ind = 1
+	quest_ind = 1
 		
 #navigation
 func manage_navigation():
@@ -100,8 +115,16 @@ func manage_sidequests():
 	sidequest_ind += 1
 	
 	
-	
 #npcs
 func on_npc2_finished():
 	quest_ui_enable.emit(true)
 	manage_sidequests()
+	
+func on_guard_finished():
+	await navigate_to_scene_dialogue("main_scene", false)
+
+func on_won_match():
+	await navigate_to_scene_dialogue("Chapter2/inside_prison", true,  "Chapter2/npc4_guard", "start")
+	print("From GM emitting: won_match_back")
+	won_match_back.emit()
+	

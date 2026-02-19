@@ -15,7 +15,6 @@ func _ready() -> void:
 	base_rotation = 0 if START_LEFT_TO_RIGHT else 180
 	rotation_degrees = base_rotation
 
-
 func _process(delta: float) -> void:
 	frame_counter += 1
 	if frame_counter < frame_interval:
@@ -32,3 +31,8 @@ func _process(delta: float) -> void:
 		direction = 1
 
 	rotation_degrees = base_rotation + offset
+	
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		print("Player detected.")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q5onn6skjcxq"
-path="res://.godot/imported/wall.png-605b2becd88a8ed24b348e0281b8c550.ctex"
+uid="uid://gmj8xo7i5e5i"
+path="res://.godot/imported/prison.png-98cfd3908bf521c4d267839471472256.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Chapter2/wall.png"
-dest_files=["res://.godot/imported/wall.png-605b2becd88a8ed24b348e0281b8c550.ctex"]
+source_file="res://images/Chapter2/Design/prison.png"
+dest_files=["res://.godot/imported/prison.png-98cfd3908bf521c4d267839471472256.ctex"]
 
 [params]
 

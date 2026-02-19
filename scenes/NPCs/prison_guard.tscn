@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cryuj6fta8c81"]
+
+[ext_resource type="Script" uid="uid://dexftw5k2srjn" path="res://scripts/NPCs/prison_guard.gd" id="1_13l71"]
+[ext_resource type="Texture2D" uid="uid://csfdqwf4v1nyu" path="res://images/Chapter2/Design/guard.png" id="1_wj3yt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13l71"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wj3yt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PrisonGuard" type="Node2D" unique_id=800789045]
+script = ExtResource("1_13l71")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2019616740]
+sprite_frames = SubResource("SpriteFrames_13l71")

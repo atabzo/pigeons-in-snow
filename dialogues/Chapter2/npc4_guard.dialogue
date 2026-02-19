@@ -1,0 +1,77 @@
+~ start
+Guard: Stop right there. What do you think you're doing?
+
+- Trying to leave.
+- Just passing through.
+- None of your concern.
+
+Guard: I have orders. No one leaves.
+Pigeon: Please… they’re my family.
+Guard: Be grateful they're still alive.
+
+Pigeon: Don’t you dare say that.
+- Watch your tone.
+- You think this is funny?
+- I won’t beg twice.
+- You’re enjoying this, aren’t you?
+
+Guard: Ha! You weren’t even here when they were caught. 
+Guard: Are you really foolish enough to walk into a prison by choice?
+
+- The flock is my family. I would risk everything.
+- A leader never abandons their own.
+- I didn’t come here to turn back.
+- I’m not afraid of you.
+
+Guard: Oh? A hero.
+Pigeon: They’ll freeze in here.
+Guard: And why should that concern me?
+
+- I have something you want.
+- Maybe we can help each other.
+
+Guard: What could you possibly offer? A seed? A feather? A song?
+
+Pigeon: What if I showed you this…
+*The Pigeon reveals a feather glowing with shifting rainbow light.*
+
+Guard: What is that? Some painted trick?
+Guard: You think you can bribe me with a shiny toy?
+
+- It’s not decoration.
+- It can heal.
+- It saved someone once before.
+- You have someone who needs this.
+- Your brother… the Owl.
+
+Guard: Watch your words.
+
+- I know he’s ill.
+- I know he’s fading.
+- I know your side has wounded.
+- You’re running out of time.
+
+Guard: How would you know that?
+
+Pigeon: Because we’re both trapped in this mess.
+Pigeon: This feather heals whoever wears it — but only for a week.
+
+Guard: And why should I trust you?
+
+- Because you don’t have a better option.
+- Because I’m risking everything standing here.
+- Because if I lie, you can hunt me down.
+- Because I don’t want more birds to die.
+- Because deep down, you know I’m telling the truth.
+
+Guard: If this is a trick, I will find you.
+
+- I understand.
+- Then we have a deal.
+- Open the door.
+- Let them go.
+
+do GameManager.guard_finished.emit()
+
+Guard: Run. Fast. I won't repeat.
+=> END

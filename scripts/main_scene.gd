@@ -5,6 +5,10 @@ extends Node2D
 
 #funcs
 func _ready() -> void:
+	if SceneManager.main_first:
+		GameManager.main_scene_changed.emit()
+		SceneManager.main_first = false
+		
 	if GameManager.first_start:
 		GameManager.first_start = false
 		GameManager.main_ready.emit()
