@@ -8,8 +8,5 @@ func _ready() -> void:
 	
 	
 func lost_match():
-	print("From PrisonGuard executing: lost_match")
 	visible = true
-	'''var dialogue_resource = load("res://dialogues/npc_1_1.dialogue")
-	DialogueManager.show_dialogue_balloon(dialogue_resource, "start")'''
 		

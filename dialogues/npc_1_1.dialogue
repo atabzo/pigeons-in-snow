@@ -4,22 +4,7 @@ do GameManager.position_for_dialogue()
 
 
 Narrator: Cold. White. Too quiet...
-Narrator: The snowstorm scattered the flock across the city.
-Narrator: For the first time, you are alone.
 
-Pigeon: …Where is everyone?
-Pigeon: This isn’t our square. This isn’t our sky.
-
-Narrator: A shadow moves against the snow.
-Narrator: Short. Black. Walking instead of flying.
-
-Penguin: Well, well.
-Penguin: A pigeon this far from the rooftops?
-
-Pigeon: A penguin?
-Pigeon: I’ve never seen one up close…
-
-Penguin: You shouldn’t have.
 Penguin: We don’t usually let surface birds wander here.
 
 Narrator: The penguin tilts its head, waiting.
@@ -58,14 +43,8 @@ Penguin: That’s worse.
 
 ~ converge
 Penguin: This city is cold now.
-Penguin: Cold cities need order.
 Penguin: And order needs fewer wings.
 
-Pigeon: …You scattered the flock.
-Pigeon: That was you.
-
-Penguin: Some flew away.
-Penguin: Some hid.
 Penguin: Some learned their place.
 
 - Demand answers => demand
@@ -86,8 +65,6 @@ Penguin: I almost respect that.
 Pigeon: I won’t let you touch them.
 Pigeon: They’re my flock.
 
-Penguin: Brave.
-Penguin: Stupid.
 Penguin: Typical pigeon.
 
 => game_intro
@@ -97,25 +74,6 @@ Penguin: Typical pigeon.
 Narrator: The penguin steps closer.
 Narrator: The air feels heavier. Sharper.
 
-Penguin: Let me teach you something important.
-Penguin: Penguins are not your friends.
-
-Narrator: Snow crunches under your feet.
-Narrator: The penguin blocks your path, staring without blinking.
-
-Penguin: Very well.
-Penguin: We’ll settle this the old way.
-
-Pigeon: …The old way?
-
-Narrator: The penguin pulls a flat board from the snow.
-Narrator: Scratched lines divide it into nine squares.
-
-Penguin: A game.
-Penguin: Simple. Ancient. Final.
-
-Penguin: I place krill.
-Penguin: You place bird seeds.
 Penguin: Three in a row wins.
 	
 - Accept the challenge => accept
@@ -131,10 +89,6 @@ Penguin: Just a bad one.
 ~ accept
 Pigeon: I don’t need wings to win.
 Pigeon: I just need three in a row.
-
-Narrator: The board lies between you.
-Narrator: Krill glisten dark against the ice.
-Narrator: Bird seeds feel warm in your claws.
 
 Penguin: Choose carefully, pigeon.
 Penguin: Every move is a mistake…

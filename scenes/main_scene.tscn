@@ -1850,7 +1850,7 @@ position = Vector2(1845, -1072)
 
 [node name="Pigeon" parent="." unique_id=343280671 instance=ExtResource("4_pu3yx")]
 z_index = 1
-position = Vector2(2091, -1397)
+position = Vector2(741, 255)
 
 [node name="Camera2D" type="Camera2D" parent="Pigeon" unique_id=934001579]
 

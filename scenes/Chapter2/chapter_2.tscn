@@ -112,6 +112,7 @@ scale = Vector2(0.355, 0.355)
 texture = ExtResource("4_4cr42")
 
 [node name="Teleportation" parent="Decorations/DoorOut" unique_id=2040223359 instance=ExtResource("4_m40ix")]
+DESTINATION_PATH = "Chapter2/inside_prison.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/DoorOut/Teleportation" unique_id=1744569235]
 position = Vector2(193, 109.5)

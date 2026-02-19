@@ -7,6 +7,11 @@ var quest_ind = 1
 var sidequest_ind = 1
 var first_start: bool = true
 
+var last_checkpoint = "objects/title_animation"
+
+var current_task = 1
+var sq1_skipped_once = true
+
 	#minigames
 enum MinigameType {TTT, Match}
 # Map
@@ -53,13 +58,14 @@ func _ready() -> void:
 	npc2_finished.connect(on_npc2_finished)
 	chapter_1_finished.connect(manage_navigation)
 	main_ready.connect(manage_navigation)
-	sidequest_skipped.connect(func(): sidequest_ind += 1)
+	sidequest_skipped.connect(on_sidequest_skipped)
 	FindManager.find_game_won.connect(manage_sidequests)
-	guard_finished.connect(await on_guard_finished)
-	won_match.connect(await on_won_match)
-	
+	guard_finished.connect(on_guard_finished)
+	won_match.connect(on_won_match)
+	lost_minigame.connect(func(): sq1_skipped_once = false)
 	
 func navigate_to_scene_dialogue(scene_name: String, is_dialogue: bool = false, dialogue_name: String = "null", trigger: String = "start"):
+	await get_tree().process_frame 
 	get_tree().change_scene_to_file("res://scenes/" + scene_name + ".tscn")
 	
 	var expected_scene_name = scene_name
@@ -102,8 +108,6 @@ func restart_minigame():
 	
 func on_main_scene_changed():
 	npc_ind = 1
-	sidequest_ind = 1
-	quest_ind = 1
 		
 #navigation
 func manage_navigation():
@@ -114,15 +118,22 @@ func manage_sidequests():
 	start_sidequest_navigation.emit(sidequest_ind)
 	sidequest_ind += 1
 	
-	
+func on_sidequest_skipped():
+	sidequest_ind += 1
+	if sq1_skipped_once:
+		current_task += 1
+		print("sq skipped so current_task IS NOW" + str(current_task))
+		sq1_skipped_once = false
+
 #npcs
 func on_npc2_finished():
-	quest_ui_enable.emit(true)
 	manage_sidequests()
 	
 func on_guard_finished():
+	await get_tree().process_frame
 	await navigate_to_scene_dialogue("main_scene", false)
-
+	
+	
 func on_won_match():
 	await navigate_to_scene_dialogue("Chapter2/inside_prison", true,  "Chapter2/npc4_guard", "start")
 	print("From GM emitting: won_match_back")
