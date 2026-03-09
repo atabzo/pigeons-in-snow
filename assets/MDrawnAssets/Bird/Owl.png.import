@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://foesrq6wdmj0"
-path="res://.godot/imported/cross.png-070dc9688dfd79b5703ed8f7537b9014.ctex"
+uid="uid://cdydgs0a5ghv0"
+path="res://.godot/imported/Owl.png-46e52fc2e6feb84393e419fcd0df08ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/TTT/cross.png"
-dest_files=["res://.godot/imported/cross.png-070dc9688dfd79b5703ed8f7537b9014.ctex"]
+source_file="res://assets/MDrawnAssets/Bird/Owl.png"
+dest_files=["res://.godot/imported/Owl.png-46e52fc2e6feb84393e419fcd0df08ee.ctex"]
 
 [params]
 

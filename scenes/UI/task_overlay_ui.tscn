@@ -1,18 +1,22 @@
-[gd_scene format=3 uid="uid://0kj6f02xbp1c"]
+[gd_scene load_steps=3 format=3 uid="uid://0kj6f02xbp1c"]
 
 [ext_resource type="Script" uid="uid://duulao7rd5plk" path="res://scripts/UI/task_overlay_ui.gd" id="1_se5if"]
+[ext_resource type="FontFile" uid="uid://caadw24ufv75i" path="res://fonts/MontaguSlab.ttf" id="2_gcswq"]
 
-[node name="TaskOverlayUI" type="CanvasLayer" unique_id=1566254443]
+[node name="TaskOverlayUI" type="CanvasLayer"]
 script = ExtResource("1_se5if")
 
-[node name="QuestLabel" type="Label" parent="." unique_id=345975679]
+[node name="QuestLabel" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -174.0
-offset_right = 174.0
-offset_bottom = 23.0
+offset_left = -640.0
+offset_top = 648.0
+offset_right = 640.0
+offset_bottom = 687.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_color = Color(0.45085877, 0.62381464, 0.9955428, 1)
+theme_override_fonts/font = ExtResource("2_gcswq")
 theme_override_font_sizes/font_size = 30
 text = "Here will be some directives for user (quests)"
+horizontal_alignment = 1

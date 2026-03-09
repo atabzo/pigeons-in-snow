@@ -130,8 +130,10 @@ func on_npc2_finished():
 	manage_sidequests()
 	
 func on_guard_finished():
+	
 	await get_tree().process_frame
-	await navigate_to_scene_dialogue("main_scene", false)
+	await get_tree().create_timer(5.0).timeout
+	await navigate_to_scene_dialogue("victory", false)
 	
 	
 func on_won_match():

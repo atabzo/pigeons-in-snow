@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://j42j36vsu0de"]
+[gd_scene load_steps=7 format=3 uid="uid://j42j36vsu0de"]
 
 [ext_resource type="Script" uid="uid://bu4iwrilsgbot" path="res://scripts/Mazes/Match/main_match.gd" id="1_btylw"]
 [ext_resource type="PackedScene" uid="uid://ylhfrtmnytr4" path="res://scenes/Mazes/Match/card.tscn" id="2_18kj2"]
@@ -7,36 +7,42 @@
 [ext_resource type="FontFile" uid="uid://cffniahme70vv" path="res://fonts/BitcountPropDoubleInk.ttf" id="5_rbp3r"]
 [ext_resource type="Texture2D" uid="uid://be653fw8gudgw" path="res://images/pegion.png" id="6_5kglx"]
 
-[node name="MainMatch" type="Node2D" unique_id=997986996]
+[node name="MainMatch" type="Node2D"]
 script = ExtResource("1_btylw")
 card_scene = ExtResource("2_18kj2")
 
-[node name="Cards" type="GridContainer" parent="." unique_id=269494910]
+[node name="Cards" type="GridContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 4
 
-[node name="Design" type="Node2D" parent="." unique_id=482783450]
+[node name="Design" type="Node2D" parent="."]
 
-[node name="BG" type="Sprite2D" parent="Design" unique_id=1020395624]
+[node name="BG" type="Sprite2D" parent="Design"]
 z_index = -2
 position = Vector2(735.69165, 311.5)
 scale = Vector2(0.75916666, 0.75916666)
 texture = ExtResource("3_tpxus")
 
-[node name="ScoreBoard" type="Node2D" parent="Design" unique_id=1318050411]
+[node name="ScoreBoard" type="Node2D" parent="Design"]
 
-[node name="Penguin" type="Sprite2D" parent="Design/ScoreBoard" unique_id=1416924792]
+[node name="ColorRect2" type="ColorRect" parent="Design/ScoreBoard"]
+offset_left = 888.0
+offset_top = 496.0
+offset_right = 957.0
+offset_bottom = 552.0
+
+[node name="Penguin" type="Sprite2D" parent="Design/ScoreBoard"]
 position = Vector2(922, 422)
 texture = ExtResource("4_btylw")
 
-[node name="LabelPen" type="Label" parent="Design/ScoreBoard/Penguin" unique_id=1470420610]
-offset_left = -170.0
-offset_top = 112.0
-offset_right = 193.0
-offset_bottom = 165.0
+[node name="LabelPen" type="Label" parent="Design/ScoreBoard/Penguin"]
+offset_left = -178.0
+offset_top = 82.0
+offset_right = 185.0
+offset_bottom = 135.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_rbp3r")
 theme_override_font_sizes/font_size = 36
@@ -44,15 +50,21 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pigeon" type="Sprite2D" parent="Design/ScoreBoard" unique_id=719625134]
+[node name="ColorRect3" type="ColorRect" parent="Design/ScoreBoard"]
+offset_left = 888.0
+offset_top = 216.0
+offset_right = 957.0
+offset_bottom = 272.0
+
+[node name="Pigeon" type="Sprite2D" parent="Design/ScoreBoard"]
 position = Vector2(923, 125)
 texture = ExtResource("6_5kglx")
 
-[node name="LabelPig" type="Label" parent="Design/ScoreBoard/Pigeon" unique_id=723767331]
-offset_left = -176.0
-offset_top = 105.0
-offset_right = 187.0
-offset_bottom = 158.0
+[node name="LabelPig" type="Label" parent="Design/ScoreBoard/Pigeon"]
+offset_left = -179.0
+offset_top = 99.0
+offset_right = 184.0
+offset_bottom = 152.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_rbp3r")
 theme_override_font_sizes/font_size = 36

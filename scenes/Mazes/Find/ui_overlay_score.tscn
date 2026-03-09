@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://4er6yxt72xl"]
+[gd_scene load_steps=36 format=3 uid="uid://4er6yxt72xl"]
 
 [ext_resource type="Script" uid="uid://bjugi2xaya0r1" path="res://scripts/Mazes/Find/ovelay_ui.gd" id="1_65rh0"]
 [ext_resource type="Texture2D" uid="uid://dhifdt5q33no0" path="res://images/Firework.png" id="2_77poi"]
+[ext_resource type="FontFile" uid="uid://caadw24ufv75i" path="res://fonts/MontaguSlab.ttf" id="2_u3a68"]
+[ext_resource type="FontFile" uid="uid://d4fuhudgpl81y" path="res://fonts/Knewave-Regular.ttf" id="4_6vryv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7rsiu"]
 atlas = ExtResource("2_77poi")
@@ -221,54 +223,63 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="UiScoreFind" type="CanvasLayer" unique_id=1058494495]
+[node name="UiScoreFind" type="CanvasLayer"]
 script = ExtResource("1_65rh0")
 
-[node name="Score" type="Control" parent="." unique_id=1230741457]
+[node name="Score" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 8
 
-[node name="ScoreLabel" type="Label" parent="Score" unique_id=1918126735]
+[node name="ScoreLabel" type="Label" parent="Score"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 1200.0
-offset_right = 1240.0
-offset_bottom = 61.0
+offset_left = 1184.0
+offset_top = 640.0
+offset_right = 1224.0
+offset_bottom = 701.0
 grow_horizontal = 0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0.83, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u3a68")
 theme_override_font_sizes/font_size = 44
 text = "0"
 
-[node name="Firework" type="AnimatedSprite2D" parent="." unique_id=69283566]
+[node name="Firework" type="AnimatedSprite2D" parent="."]
 position = Vector2(661, 351)
 sprite_frames = SubResource("SpriteFrames_tkby2")
 frame = 29
 frame_progress = 1.0
 
-[node name="Time" type="Node2D" parent="." unique_id=1361868825]
+[node name="Time" type="Node2D" parent="."]
 
-[node name="Timer" type="Timer" parent="Time" unique_id=479929801]
+[node name="Timer" type="Timer" parent="Time"]
 
-[node name="TimeLabel" type="Label" parent="Time" unique_id=1943485073]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
+[node name="TimeLabel" type="Label" parent="Time"]
+offset_left = 16.0
+offset_top = 664.0
+offset_right = 200.0
+offset_bottom = 713.0
+theme_override_colors/font_color = Color(0.13124135, 0.971185, 0.42668498, 1)
+theme_override_fonts/font = ExtResource("2_u3a68")
 theme_override_font_sizes/font_size = 37
 text = "Time left:"
 
-[node name="TaskLabel" type="Label" parent="." unique_id=1603335740]
+[node name="TaskLabel" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -154.5
-offset_right = 154.5
-offset_bottom = 23.0
+offset_left = -328.0
+offset_top = 16.0
+offset_right = 632.0
+offset_bottom = 76.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 35
-text = "You have 20 seconst to find 5 branches. "
+theme_override_colors/font_color = Color(0.3932868, 0.5822481, 1, 1)
+theme_override_fonts/font = ExtResource("4_6vryv")
+theme_override_font_sizes/font_size = 38
+text = "You have 20 seconds to find 5 branches. "
+horizontal_alignment = 1
+autowrap_mode = 2

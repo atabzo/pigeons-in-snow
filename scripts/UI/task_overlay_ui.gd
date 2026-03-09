@@ -6,7 +6,7 @@ var is_active = true
 var QUESTS = {
 	1: "Approach the bird standing nearby",
 	2: "Report back to the Penguin",
-	3: "Go to the Northen Prison",
+	3: "Go to the Northern Prison",
 	4: "Sneak through the guards without being noticed"
 }
 

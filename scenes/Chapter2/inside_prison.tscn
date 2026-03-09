@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b54gehex35ari"]
+[gd_scene load_steps=12 format=3 uid="uid://b54gehex35ari"]
 
 [ext_resource type="Texture2D" uid="uid://q5onn6skjcxq" path="res://images/Chapter2/Design/wall.png" id="1_5nvp3"]
 [ext_resource type="Script" uid="uid://dqpwps2qw8iie" path="res://scripts/Chapter2/inside_prison.gd" id="1_d01hk"]
@@ -21,111 +21,120 @@ size = Vector2(3227, 190)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8trcx"]
 size = Vector2(2937, 100)
 
-[node name="InsidePrison" type="Node2D" unique_id=475768096]
+[node name="InsidePrison" type="Node2D"]
 script = ExtResource("1_d01hk")
 
-[node name="Decorations" type="Node2D" parent="." unique_id=997461150]
+[node name="Decorations" type="Node2D" parent="."]
 
-[node name="BG" type="Node2D" parent="Decorations" unique_id=2044794737]
+[node name="BG" type="Node2D" parent="Decorations"]
 
-[node name="BG1" type="Sprite2D" parent="Decorations/BG" unique_id=643629873]
+[node name="BG1" type="Sprite2D" parent="Decorations/BG"]
 texture = ExtResource("1_5nvp3")
 
-[node name="BG2" type="Sprite2D" parent="Decorations/BG" unique_id=1665698672]
+[node name="BG2" type="Sprite2D" parent="Decorations/BG"]
 position = Vector2(-1018, 0)
 texture = ExtResource("1_5nvp3")
 
-[node name="BG3" type="Sprite2D" parent="Decorations/BG" unique_id=862847547]
+[node name="BG3" type="Sprite2D" parent="Decorations/BG"]
 position = Vector2(1012, 0)
 texture = ExtResource("1_5nvp3")
 
-[node name="BG4" type="Sprite2D" parent="Decorations/BG" unique_id=386762723]
+[node name="BG4" type="Sprite2D" parent="Decorations/BG"]
 position = Vector2(-1, -1024)
 texture = ExtResource("1_5nvp3")
 
-[node name="BG5" type="Sprite2D" parent="Decorations/BG" unique_id=1006951535]
+[node name="BG5" type="Sprite2D" parent="Decorations/BG"]
 position = Vector2(-1019, -1024)
 texture = ExtResource("1_5nvp3")
 
-[node name="BG6" type="Sprite2D" parent="Decorations/BG" unique_id=805347507]
+[node name="BG6" type="Sprite2D" parent="Decorations/BG"]
 position = Vector2(1011, -1024)
 texture = ExtResource("1_5nvp3")
 
-[node name="BG7" type="Sprite2D" parent="Decorations/BG" unique_id=214851652]
+[node name="BG7" type="Sprite2D" parent="Decorations/BG"]
 position = Vector2(-1, 1024)
 texture = ExtResource("1_5nvp3")
 
-[node name="BG8" type="Sprite2D" parent="Decorations/BG" unique_id=395214732]
+[node name="BG8" type="Sprite2D" parent="Decorations/BG"]
 position = Vector2(-1019, 1024)
 texture = ExtResource("1_5nvp3")
 
-[node name="BG9" type="Sprite2D" parent="Decorations/BG" unique_id=2028622316]
+[node name="BG8" type="Sprite2D" parent="Decorations/BG/BG8"]
+position = Vector2(467, 1008)
+texture = ExtResource("1_5nvp3")
+
+[node name="BG8" type="Sprite2D" parent="Decorations/BG/BG8/BG8"]
+position = Vector2(1008, -8)
+texture = ExtResource("1_5nvp3")
+
+[node name="BG9" type="Sprite2D" parent="Decorations/BG"]
 position = Vector2(1011, 1024)
 texture = ExtResource("1_5nvp3")
 
-[node name="NPCs" type="Node2D" parent="." unique_id=2073938139]
+[node name="NPCs" type="Node2D" parent="."]
 
-[node name="Pigeons" type="Node2D" parent="NPCs" unique_id=780535262]
+[node name="Pigeons" type="Node2D" parent="NPCs"]
 
-[node name="NPCPigeonPrisoner" parent="NPCs/Pigeons" unique_id=263238670 instance=ExtResource("3_h5svy")]
-position = Vector2(-948, 761)
+[node name="NPCPigeonPrisoner" parent="NPCs/Pigeons" instance=ExtResource("3_h5svy")]
+position = Vector2(-568, 176)
 scale = Vector2(0.5, 0.5)
 
-[node name="NPCPigeonPrisoner2" parent="NPCs/Pigeons" unique_id=1960064952 instance=ExtResource("3_h5svy")]
-position = Vector2(-922, -504)
+[node name="NPCPigeonPrisoner2" parent="NPCs/Pigeons" instance=ExtResource("3_h5svy")]
+position = Vector2(-584, -560)
 scale = Vector2(0.5, 0.5)
 
-[node name="NPCPigeonPrisoner4" parent="NPCs/Pigeons" unique_id=1752618005 instance=ExtResource("3_h5svy")]
-position = Vector2(838, -608)
+[node name="NPCPigeonPrisoner4" parent="NPCs/Pigeons" instance=ExtResource("3_h5svy")]
+position = Vector2(472, -576)
 scale = Vector2(0.5, 0.5)
 
-[node name="NPCPigeonPrisoner3" parent="NPCs/Pigeons" unique_id=2019422822 instance=ExtResource("3_h5svy")]
-position = Vector2(908, 732)
+[node name="NPCPigeonPrisoner3" parent="NPCs/Pigeons" instance=ExtResource("3_h5svy")]
+position = Vector2(464, 152)
 scale = Vector2(0.5, 0.5)
 
-[node name="PrisonGuard" parent="NPCs" unique_id=800789045 instance=ExtResource("3_fjc5h")]
+[node name="PrisonGuard" parent="NPCs" instance=ExtResource("3_fjc5h")]
 position = Vector2(484, -1168)
 scale = Vector2(2, 2)
 
-[node name="Borders" type="Node2D" parent="." unique_id=460045855]
+[node name="Borders" type="Node2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Borders" unique_id=886152911]
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
 physics_material_override = SubResource("PhysicsMaterial_fjc5h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D" unique_id=1262941876]
-position = Vector2(-1540.25, 13)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(-984, 16)
 shape = SubResource("RectangleShape2D_d01hk")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Borders" unique_id=1211815901]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Borders"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2" unique_id=1846585212]
-position = Vector2(1563, 49.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(952, 56)
 shape = SubResource("RectangleShape2D_j1ltv")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Borders" unique_id=1153502054]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Borders"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3" unique_id=1685450233]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3"]
 position = Vector2(32.5, 1575)
 shape = SubResource("RectangleShape2D_ggq1g")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Borders" unique_id=1646047280]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Borders"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4" unique_id=1818790860]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D4"]
 position = Vector2(-22.5, -1525)
 shape = SubResource("RectangleShape2D_8trcx")
 
-[node name="PrisonDoorGame" parent="." unique_id=1091090257 instance=ExtResource("3_of61c")]
+[node name="PrisonDoorGame" parent="." instance=ExtResource("3_of61c")]
 position = Vector2(-6.000004, -1391.0001)
 scale = Vector2(0.7, 0.7)
 
-[node name="Pigeon" parent="." unique_id=1748920780 instance=ExtResource("4_h5svy")]
+[node name="Pigeon" parent="." instance=ExtResource("4_h5svy")]
 z_index = 5
 position = Vector2(-7, 1354)
 
-[node name="Camera2D" type="Camera2D" parent="Pigeon" unique_id=1478643658]
+[node name="Camera2D" type="Camera2D" parent="Pigeon"]
+position = Vector2(-1, -2)
 scale = Vector2(0.5, 0.5)
 
-[node name="DialogueMarkers" type="Node2D" parent="." unique_id=344400480]
+[node name="DialogueMarkers" type="Node2D" parent="."]
 
-[node name="1" type="Marker2D" parent="DialogueMarkers" unique_id=246196113]
+[node name="1" type="Marker2D" parent="DialogueMarkers"]
 position = Vector2(811, -1172)
