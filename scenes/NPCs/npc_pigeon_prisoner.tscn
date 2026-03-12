@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cacmdwfrpi25y"]
+[gd_scene load_steps=16 format=3 uid="uid://cacmdwfrpi25y"]
 
 [ext_resource type="Texture2D" uid="uid://doo1c3ylsk60e" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_1.png" id="1_1eriv"]
 [ext_resource type="Script" uid="uid://bde6kilpnlklc" path="res://scripts/Chapter2/Npc2/npc_pigeon_prisoner.gd" id="1_m1jys"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bf4but8fcrm5a" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_4.png" id="4_0cpjf"]
 [ext_resource type="Texture2D" uid="uid://cg2tdf0niamc2" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_5.png" id="5_s54yx"]
 [ext_resource type="Texture2D" uid="uid://q2t18ai3jowh" path="res://assets/Pigeon/Pigeon/Pigeon_fly/Pigeon_fly_6.png" id="6_xe0hd"]
+[ext_resource type="Texture2D" uid="uid://cklbi1r8io88h" path="res://assets/MDrawnAssets/Bird/Pigeon-1.png" id="8_2pe46"]
+[ext_resource type="Texture2D" uid="uid://bm3dt5qtlr2r3" path="res://assets/MDrawnAssets/Bird/Pigeon-2.png" id="9_mw4pt"]
+[ext_resource type="Texture2D" uid="uid://bltq4jvyhsgix" path="res://assets/MDrawnAssets/Bird/Pigeon-3.png" id="10_c6i4i"]
+[ext_resource type="Texture2D" uid="uid://df7yq0rnvnt16" path="res://assets/MDrawnAssets/Bird/Pigeon-4.png" id="11_hhgew"]
+[ext_resource type="Texture2D" uid="uid://dwhfmxi7yd56c" path="res://assets/MDrawnAssets/Bird/Pigeon-5.png" id="12_kgpfw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2pe46"]
 animations = [{
@@ -32,23 +37,50 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2pe46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mw4pt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c6i4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hhgew")
+}],
+"loop": true,
+"name": &"default1",
+"speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mw4pt"]
-radius = 464.0
-height = 928.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_orcyf"]
+atlas = ExtResource("12_kgpfw")
+region = Rect2(0, 0, 256, 268)
 
-[node name="NPCPigeon" type="Node2D" unique_id=263238670]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mw4pt"]
+radius = 112.0
+height = 314.0
+
+[node name="NPCPigeon" type="Node2D"]
 script = ExtResource("1_m1jys")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=147331547]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2pe46")
-frame_progress = 0.45545298
+animation = &"default1"
+frame_progress = 0.46186942
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1802441996]
+[node name="Pigeon5" type="Sprite2D" parent="."]
+position = Vector2(-16, 0)
+texture = SubResource("AtlasTexture_orcyf")
+offset = Vector2(5, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1603255237]
-position = Vector2(12, 136)
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 16)
 shape = SubResource("CapsuleShape2D_mw4pt")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

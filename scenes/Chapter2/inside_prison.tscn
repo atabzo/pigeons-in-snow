@@ -77,19 +77,23 @@ texture = ExtResource("1_5nvp3")
 
 [node name="NPCPigeonPrisoner" parent="NPCs/Pigeons" instance=ExtResource("3_h5svy")]
 position = Vector2(-568, 176)
-scale = Vector2(0.5, 0.5)
+rotation = -0.03505721
+scale = Vector2(1.5, 1.5)
 
 [node name="NPCPigeonPrisoner2" parent="NPCs/Pigeons" instance=ExtResource("3_h5svy")]
-position = Vector2(-584, -560)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-568, -544)
+rotation = -0.044612166
+scale = Vector2(1.5, 1.5)
 
 [node name="NPCPigeonPrisoner4" parent="NPCs/Pigeons" instance=ExtResource("3_h5svy")]
 position = Vector2(472, -576)
-scale = Vector2(0.5, 0.5)
+rotation = -0.029600209
+scale = Vector2(1.5, 1.5)
 
 [node name="NPCPigeonPrisoner3" parent="NPCs/Pigeons" instance=ExtResource("3_h5svy")]
-position = Vector2(464, 152)
-scale = Vector2(0.5, 0.5)
+position = Vector2(465, 171)
+rotation = -0.0026362923
+scale = Vector2(1.5, 1.5)
 
 [node name="PrisonGuard" parent="NPCs" instance=ExtResource("3_fjc5h")]
 position = Vector2(484, -1168)
@@ -113,7 +117,7 @@ shape = SubResource("RectangleShape2D_j1ltv")
 [node name="StaticBody2D3" type="StaticBody2D" parent="Borders"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D3"]
-position = Vector2(32.5, 1575)
+position = Vector2(30, 1099)
 shape = SubResource("RectangleShape2D_ggq1g")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Borders"]
@@ -128,10 +132,11 @@ scale = Vector2(0.7, 0.7)
 
 [node name="Pigeon" parent="." instance=ExtResource("4_h5svy")]
 z_index = 5
-position = Vector2(-7, 1354)
+position = Vector2(8, 888)
+scale = Vector2(1.2, 1.2)
 
 [node name="Camera2D" type="Camera2D" parent="Pigeon"]
-position = Vector2(-1, -2)
+position = Vector2(-1, -62)
 scale = Vector2(0.5, 0.5)
 
 [node name="DialogueMarkers" type="Node2D" parent="."]

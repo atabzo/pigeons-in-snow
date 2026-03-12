@@ -132,7 +132,7 @@ func on_npc2_finished():
 func on_guard_finished():
 	
 	await get_tree().process_frame
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.5).timeout
 	await navigate_to_scene_dialogue("victory", false)
 	
 	

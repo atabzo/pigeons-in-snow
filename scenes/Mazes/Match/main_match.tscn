@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bu4iwrilsgbot" path="res://scripts/Mazes/Match/main_match.gd" id="1_btylw"]
 [ext_resource type="PackedScene" uid="uid://ylhfrtmnytr4" path="res://scenes/Mazes/Match/card.tscn" id="2_18kj2"]
 [ext_resource type="Texture2D" uid="uid://djpjn32ioj7wi" path="res://images/backdrop.jpg" id="3_tpxus"]
-[ext_resource type="Texture2D" uid="uid://bj1nst6l3ddtw" path="res://images/Penguin_1.png" id="4_btylw"]
+[ext_resource type="Texture2D" uid="uid://2skh6cawujen" path="res://assets/MDrawnAssets/Bird/CopPenguin.png" id="4_btylw"]
 [ext_resource type="FontFile" uid="uid://cffniahme70vv" path="res://fonts/BitcountPropDoubleInk.ttf" id="5_rbp3r"]
 [ext_resource type="Texture2D" uid="uid://be653fw8gudgw" path="res://images/pegion.png" id="6_5kglx"]
 
@@ -35,14 +35,14 @@ offset_right = 957.0
 offset_bottom = 552.0
 
 [node name="Penguin" type="Sprite2D" parent="Design/ScoreBoard"]
-position = Vector2(922, 422)
+position = Vector2(920, 392)
 texture = ExtResource("4_btylw")
 
 [node name="LabelPen" type="Label" parent="Design/ScoreBoard/Penguin"]
-offset_left = -178.0
-offset_top = 82.0
-offset_right = 185.0
-offset_bottom = 135.0
+offset_left = -176.0
+offset_top = 112.0
+offset_right = 187.0
+offset_bottom = 165.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_rbp3r")
 theme_override_font_sizes/font_size = 36
