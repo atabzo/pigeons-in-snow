@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://by254vh7k2vev"]
+
+[ext_resource type="Script" uid="uid://owtt7rys4ka8" path="res://scenes/opening_scene.gd" id="1_525qg"]
+
+[sub_resource type="Animation" id="Animation_60xhg"]
+resource_name = "OpeningScene"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.6028365, 0.7241149, 1, 1), Color(0.6, 0.71999997, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x7dql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.6028365, 0.7241149, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n0ess"]
+_data = {
+&"OpeningScene": SubResource("Animation_60xhg"),
+&"RESET": SubResource("Animation_x7dql")
+}
+
+[node name="OpeningScene" type="Node2D"]
+script = ExtResource("1_525qg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n0ess")
+}
+
+[node name="ColorRect" type="ColorRect" parent="AnimationPlayer"]
+offset_left = -1586.0
+offset_top = -1139.0
+offset_right = -66.0
+offset_bottom = -183.0
+scale = Vector2(3, 3)
+color = Color(0.6028365, 0.7241149, 1, 1)

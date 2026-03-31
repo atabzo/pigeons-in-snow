@@ -28,6 +28,7 @@ InteractionManager="*res://interaction/InteractionManager.tscn"
 GameManager="*uid://yb580btmm4yc"
 FindManager="*uid://cx5rqcposi2ey"
 SceneManager="*uid://bc7ovjnsbetqo"
+Global="*res://global.gd"
 
 [dialogue_manager]
 

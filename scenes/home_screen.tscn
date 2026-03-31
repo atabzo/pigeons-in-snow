@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b8ccqoaqpig3t"]
+[gd_scene load_steps=13 format=3 uid="uid://b8ccqoaqpig3t"]
 
 [ext_resource type="FontFile" uid="uid://dmuvcngp2i13b" path="res://fonts/CaesarDressing-Regular.ttf" id="1_ked1l"]
 [ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://audio/sound-click.mp3" id="2_b02wa"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://djbmb4upyko1a" path="res://images/sun.png" id="4_airqx"]
 [ext_resource type="Texture2D" uid="uid://b5n8jvxvvjlts" path="res://images/flower.png" id="5_ii2s2"]
 [ext_resource type="Texture2D" uid="uid://bj355114nkqdk" path="res://images/home-screen/Titletext.png" id="6_f8xo1"]
+[ext_resource type="Texture2D" uid="uid://dyt065tvpv45c" path="res://assets/TTT/circle.png" id="7_b02wa"]
+[ext_resource type="Script" uid="uid://dnjnw1tdv6k88" path="res://scenes/customize_character.gd" id="8_15ihl"]
 
 [sub_resource type="GDScript" id="GDScript_xe7vm"]
 script/source = "extends Sprite2D
@@ -178,18 +180,18 @@ func _process(delta):
 	# and use: position.y = original_y + bob
 "
 
-[node name="home-screen" type="Node2D" unique_id=1384278619]
+[node name="home-screen" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1220393726]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_top = -1.0
 offset_right = 1296.0
 offset_bottom = 735.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1369041254]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 centered = false
 script = SubResource("GDScript_xe7vm")
 
-[node name="Label" type="Label" parent="." unique_id=261997033]
+[node name="Label" type="Label" parent="."]
 visible = false
 offset_left = 422.0
 offset_top = 361.0
@@ -201,10 +203,10 @@ theme_override_font_sizes/font_size = 110
 text = "Save the Pigeons!"
 autowrap_mode = 2
 
-[node name="SoundClick" type="AudioStreamPlayer" parent="." unique_id=1694119071]
+[node name="SoundClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b02wa")
 
-[node name="Button2" type="Button" parent="." unique_id=41771514]
+[node name="Button2" type="Button" parent="."]
 offset_left = 622.0
 offset_top = 562.0
 offset_right = 879.0
@@ -214,13 +216,13 @@ theme_override_font_sizes/font_size = 43
 text = "NEVERMIND"
 script = SubResource("GDScript_fm0op")
 
-[node name="Sun" type="Sprite2D" parent="." unique_id=94495204]
+[node name="Sun" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1115, 184)
 scale = Vector2(0.59650004, 0.6140001)
 texture = ExtResource("4_airqx")
 
-[node name="Button" type="Button" parent="." unique_id=1300348391]
+[node name="Button" type="Button" parent="."]
 offset_left = 939.0
 offset_top = 562.0
 offset_right = 1205.0
@@ -230,12 +232,22 @@ theme_override_font_sizes/font_size = 43
 text = "LETS GOOO"
 script = SubResource("GDScript_outur")
 
-[node name="Flower" type="Sprite2D" parent="." unique_id=1126175749]
+[node name="Flower" type="Sprite2D" parent="."]
 position = Vector2(1176, 120)
 scale = Vector2(0.38, 0.374)
 texture = ExtResource("5_ii2s2")
 script = SubResource("GDScript_gf7oa")
 
-[node name="Titletext" type="Sprite2D" parent="." unique_id=1148812738]
+[node name="Titletext" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
 texture = ExtResource("6_f8xo1")
+
+[node name="CustomizeCharacter" type="TextureButton" parent="."]
+offset_left = 493.0
+offset_top = 538.0
+offset_right = 613.0
+offset_bottom = 658.0
+texture_normal = ExtResource("7_b02wa")
+script = ExtResource("8_15ihl")
+
+[connection signal="pressed" from="CustomizeCharacter" to="CustomizeCharacter" method="_on_pressed"]

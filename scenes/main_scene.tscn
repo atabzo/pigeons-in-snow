@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dfqs2b855xwsv"]
+[gd_scene load_steps=30 format=3 uid="uid://dfqs2b855xwsv"]
 
 [ext_resource type="Texture2D" uid="uid://dci1vgsovxr3d" path="res://assets/BG/bg1.jpg" id="1_7ykc4"]
 [ext_resource type="Script" uid="uid://cl73fyqi4yu35" path="res://scripts/main_scene.gd" id="1_bcnxi"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://du5q2l1ibhnn3" path="res://scripts/UI/Navigation/path_drawer.gd" id="18_k6f3i"]
 [ext_resource type="PackedScene" uid="uid://bpqqk5tfi26ba" path="res://scenes/Utils/teleportation.tscn" id="19_k6f3i"]
 [ext_resource type="Texture2D" uid="uid://gmj8xo7i5e5i" path="res://images/Chapter2/Design/prison.png" id="20_adb74"]
+[ext_resource type="PackedScene" uid="uid://by254vh7k2vev" path="res://scenes/opening_scene.tscn" id="21_xdqt8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gubc5"]
 size = Vector2(5866.7314, 224.5)
@@ -1980,3 +1981,8 @@ shape = SubResource("CapsuleShape2D_xdqt8")
 [node name="Prison" type="Sprite2D" parent="Chapter2"]
 position = Vector2(1943, -1700)
 texture = ExtResource("20_adb74")
+
+[node name="OpeningScene" parent="." instance=ExtResource("21_xdqt8")]
+top_level = true
+z_index = 100
+position = Vector2(1083, 291)
