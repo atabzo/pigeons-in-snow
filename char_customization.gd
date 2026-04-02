@@ -1,12 +1,13 @@
 extends Node2D
 @onready var clickSound := $SoundClick
-@onready var animated_sprite := $AnimatedSprite2D
 @onready var crown := $penguin/crown
 @onready var flower := $penguin/flower
 @onready var flowerCrown := $penguin/flowerCrown
 @onready var cape := $penguin/cape
 
 func _ready() -> void:
+	print(str(self))
+	print(name)
 	checkGlobal()
 	
 func _process(delta: float) -> void:

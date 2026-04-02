@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://epe3qjiemxnn"]
+[gd_scene format=3 uid="uid://epe3qjiemxnn"]
 
 [ext_resource type="Texture2D" uid="uid://cwf3v3daujlff" path="res://assets/MDrawnAssets/Bird/Idle/Idle_Animationleft-1.png" id="1_dtjaw"]
 [ext_resource type="Script" uid="uid://crw7yg7dr6j80" path="res://char_customization.gd" id="1_el0g1"]
@@ -39,17 +39,17 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="charCustomization" type="Node2D"]
+[node name="charCustomization" type="Node2D" unique_id=1523647515]
 script = ExtResource("1_el0g1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=190308860]
 offset_right = 1280.0
 offset_bottom = 720.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.7158294, 0.8370105, 1, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=2091993144]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,18 +57,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer" unique_id=1762616945]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/MarginContainer" unique_id=489108586]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/MarginContainer/MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/MarginContainer/MarginContainer" unique_id=1260744708]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect"]
+[node name="GridContainer" type="GridContainer" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect" unique_id=1243660417]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,14 +85,14 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 2
 
-[node name="Panel" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Panel" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=737556722]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_bcrnw")
 
-[node name="Button" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel"]
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel" unique_id=352570162]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -102,16 +102,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8784314, 0.8784314, 0.8784314, 0)
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel"]
+[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel" unique_id=1653861755]
 position = Vector2(101, 98)
 texture = ExtResource("2_snndj")
 
-[node name="Panel2" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Panel2" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=1409103589]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dtjaw")
 
-[node name="Button1" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel2"]
+[node name="Button1" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel2" unique_id=720729431]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -120,16 +120,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel2"]
+[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel2" unique_id=1669765300]
 position = Vector2(101, 98)
 texture = ExtResource("2_snndj")
 
-[node name="Panel3" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Panel3" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=704356194]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_to31a")
 
-[node name="Button2" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel3"]
+[node name="Button2" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel3" unique_id=26319652]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -138,16 +138,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel3"]
+[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel3" unique_id=142373307]
 position = Vector2(101, 98)
 texture = ExtResource("2_snndj")
 
-[node name="Panel4" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Panel4" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=1381928874]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_el0g1")
 
-[node name="Button3" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel4"]
+[node name="Button3" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel4" unique_id=413287185]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -156,16 +156,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel4"]
+[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel4" unique_id=991232785]
 position = Vector2(101, 98)
 texture = ExtResource("2_snndj")
 
-[node name="Panel5" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Panel5" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=893438604]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fkpf6")
 
-[node name="Button4" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5"]
+[node name="Button4" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5" unique_id=1254937375]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -174,17 +174,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5"]
+[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5" unique_id=1732172870]
 modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(101, 98)
 texture = ExtResource("2_snndj")
 
-[node name="Panel6" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Panel6" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=39351592]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nsahk")
 
-[node name="Button5" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6"]
+[node name="Button5" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6" unique_id=79855107]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -193,12 +193,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6"]
+[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6" unique_id=1529635275]
 modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(101, 98)
 texture = ExtResource("2_snndj")
 
-[node name="backButton" type="TextureButton" parent="ColorRect"]
+[node name="backButton" type="TextureButton" parent="ColorRect" unique_id=1622267246]
 layout_mode = 0
 offset_left = 1144.0
 offset_top = 584.0
@@ -206,43 +206,42 @@ offset_right = 1264.0
 offset_bottom = 704.0
 texture_normal = ExtResource("2_fkpf6")
 
-[node name="penguin" type="AnimatedSprite2D" parent="."]
+[node name="penguin" type="AnimatedSprite2D" parent="." unique_id=1568893669]
 position = Vector2(896, 368.00003)
 rotation = -0.034906585
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_el0g1")
 frame_progress = 0.1567158
-script = ExtResource("1_el0g1")
 
-[node name="crown" type="Sprite2D" parent="penguin"]
+[node name="crown" type="Sprite2D" parent="penguin" unique_id=330603076]
 visible = false
 position = Vector2(-5.063568, -84.228035)
 rotation = 0.034906585
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_snndj")
 
-[node name="flower" type="Sprite2D" parent="penguin"]
+[node name="flower" type="Sprite2D" parent="penguin" unique_id=378187084]
 visible = false
 position = Vector2(-35.127815, -54.259003)
 rotation = 0.034906585
 scale = Vector2(0.2100003, 0.19000007)
 texture = ExtResource("2_snndj")
 
-[node name="flowerCrown" type="Sprite2D" parent="penguin"]
+[node name="flowerCrown" type="Sprite2D" parent="penguin" unique_id=1421003941]
 visible = false
 position = Vector2(-5.0635676, -84.22804)
 rotation = 0.034906585
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_snndj")
 
-[node name="cape" type="Sprite2D" parent="penguin"]
+[node name="cape" type="Sprite2D" parent="penguin" unique_id=1205677352]
 visible = false
 position = Vector2(-7.7159348, -8.274338)
 rotation = 0.034906585
 scale = Vector2(1.13, 0.10509079)
 texture = ExtResource("2_snndj")
 
-[node name="SoundClick" type="AudioStreamPlayer" parent="."]
+[node name="SoundClick" type="AudioStreamPlayer" parent="." unique_id=278006792]
 stream = ExtResource("6_bjv4g")
 
 [connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel/Button" to="." method="_on_button_pressed"]
