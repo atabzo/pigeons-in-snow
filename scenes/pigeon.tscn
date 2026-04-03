@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://coytmnnqpcdj0"]
+[gd_scene load_steps=13 format=3 uid="uid://coytmnnqpcdj0"]
 
 [ext_resource type="Script" uid="uid://rtm1vxly7ybc" path="res://scripts/pigeon.gd" id="1_mi3ta"]
 [ext_resource type="Texture2D" uid="uid://cwf3v3daujlff" path="res://assets/MDrawnAssets/Bird/Idle/Idle_Animationleft-1.png" id="2_3vycv"]
 [ext_resource type="Texture2D" uid="uid://6fg7o05mw1mj" path="res://assets/MDrawnAssets/Bird/Idle_Animationleft.png" id="2_ga46t"]
 [ext_resource type="Texture2D" uid="uid://cvibrx4eh2jc6" path="res://assets/MDrawnAssets/Bird/Idle/Idle_Animationleft-2.png" id="3_oh15e"]
+[ext_resource type="Texture2D" uid="uid://bbdmo3qqmj6lt" path="res://assets/MDrawnAssets/accessories/crownS.png" id="5_jdx28"]
+[ext_resource type="Texture2D" uid="uid://cb82khnmhs2sf" path="res://assets/MDrawnAssets/accessories/flowerS.png" id="6_cj7ct"]
+[ext_resource type="Texture2D" uid="uid://tu7ymjutde2q" path="res://assets/MDrawnAssets/accessories/flowerCrownS.png" id="7_dvbny"]
+[ext_resource type="Texture2D" uid="uid://dghg2blfi0mrm" path="res://assets/MDrawnAssets/accessories/capeS.png" id="8_14xdm"]
+[ext_resource type="Texture2D" uid="uid://dv2dslienv6ou" path="res://assets/MDrawnAssets/accessories/capeF.png" id="9_hq2ed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2so0f"]
 size = Vector2(64, 77)
@@ -30,6 +35,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi3ta"]
+atlas = ExtResource("5_jdx28")
+
 [node name="Pigeon" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_mi3ta")
 
@@ -42,8 +50,38 @@ shape = SubResource("RectangleShape2D_2so0f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_d47kj")
-animation = &"idle"
+animation = &"fly"
 autoplay = "idle"
+
+[node name="crown" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+texture = SubResource("AtlasTexture_mi3ta")
+
+[node name="flower" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(-9.999999, 1.9073486e-06)
+texture = ExtResource("6_cj7ct")
+
+[node name="flowerCrown" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(4.999996, -7.6293945e-06)
+texture = ExtResource("7_dvbny")
+
+[node name="cape" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(2.842171e-14, -2.7105054e-20)
+texture = ExtResource("8_14xdm")
+
+[node name="flowerCrown2" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(-5, 0)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("7_dvbny")
+
+[node name="cape2" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(2.842171e-14, -2.7105054e-20)
+texture = ExtResource("9_hq2ed")
 
 [node name="IdleAnimationleft" type="Sprite2D" parent="."]
 visible = false

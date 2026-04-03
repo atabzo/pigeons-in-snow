@@ -1,26 +1,75 @@
-[gd_scene load_steps=14 format=3 uid="uid://epe3qjiemxnn"]
+[gd_scene load_steps=33 format=3 uid="uid://epe3qjiemxnn"]
 
 [ext_resource type="Texture2D" uid="uid://cwf3v3daujlff" path="res://assets/MDrawnAssets/Bird/Idle/Idle_Animationleft-1.png" id="1_dtjaw"]
 [ext_resource type="Script" uid="uid://crw7yg7dr6j80" path="res://char_customization.gd" id="1_el0g1"]
+[ext_resource type="Texture2D" uid="uid://crrb5yp5qoijb" path="res://assets/MDrawnAssets/accessories/crownF.png" id="2_e7jm1"]
 [ext_resource type="Texture2D" uid="uid://dyt065tvpv45c" path="res://assets/TTT/circle.png" id="2_fkpf6"]
-[ext_resource type="Texture2D" uid="uid://2skh6cawujen" path="res://assets/MDrawnAssets/Bird/CopPenguin.png" id="2_snndj"]
 [ext_resource type="Texture2D" uid="uid://cvibrx4eh2jc6" path="res://assets/MDrawnAssets/Bird/Idle/Idle_Animationleft-2.png" id="2_to31a"]
+[ext_resource type="Texture2D" uid="uid://1j55ayxtaeco" path="res://assets/MDrawnAssets/accessories/flowerF.png" id="3_81xla"]
+[ext_resource type="Texture2D" uid="uid://bhyyj64rcn20f" path="res://assets/MDrawnAssets/accessories/flowerCrownF.png" id="4_e2dlv"]
+[ext_resource type="Texture2D" uid="uid://dv2dslienv6ou" path="res://assets/MDrawnAssets/accessories/capeF.png" id="5_5nedl"]
 [ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://audio/sound-click.mp3" id="6_bjv4g"]
+[ext_resource type="Texture2D" uid="uid://lop4vojxgle2" path="res://assets/MDrawnAssets/accessories/Customizebutton.png" id="6_e7jm1"]
+[ext_resource type="Texture2D" uid="uid://tu7ymjutde2q" path="res://assets/MDrawnAssets/accessories/flowerCrownS.png" id="10_0ov2c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcrnw"]
-bg_color = Color(0.86, 0.91833335, 1, 1)
+bg_color = Color(0.85882354, 0.91764706, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7jm1"]
+bg_color = Color(0.86, 0.91833335, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81xla"]
+bg_color = Color(0.6, 0.76862746, 1, 0.77254903)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpibl"]
+atlas = ExtResource("2_e7jm1")
+region = Rect2(47, 0, 81, 44)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtjaw"]
 bg_color = Color(0.86, 0.91833335, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2dlv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nedl"]
+bg_color = Color(0.6, 0.76862746, 1, 0.77254903)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vbyu"]
+atlas = ExtResource("3_81xla")
+region = Rect2(67, 44, 38, 35)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to31a"]
 bg_color = Color(0.86, 0.91833335, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ov2c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpibl"]
+bg_color = Color(0.6, 0.76862746, 1, 0.77254903)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv65l"]
+atlas = ExtResource("4_e2dlv")
+region = Rect2(80, 42, 68, 29)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_el0g1"]
 bg_color = Color(0.86, 0.91833335, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vbyu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bv65l"]
+bg_color = Color(0.6, 0.76862746, 1, 0.77254903)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d570j"]
+atlas = ExtResource("5_5nedl")
+region = Rect2(41, 100, 143, 39)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkpf6"]
 bg_color = Color(0.86, 0.91833335, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2dlv"]
+atlas = ExtResource("6_e7jm1")
+region = Rect2(548, 307, 105, 107)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsahk"]
 bg_color = Color(0.86, 0.91833335, 1, 1)
@@ -38,6 +87,10 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch1a0"]
+atlas = ExtResource("2_e7jm1")
+region = Rect2(47, 0, 81, 44)
 
 [node name="charCustomization" type="Node2D"]
 script = ExtResource("1_el0g1")
@@ -85,15 +138,14 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 2
 
-[node name="Panel" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Crown" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_bcrnw")
 
-[node name="Button" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel"]
-modulate = Color(1, 1, 1, 0)
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Crown"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,64 +153,74 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8784314, 0.8784314, 0.8784314, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e7jm1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_81xla")
+theme_override_styles/hover = SubResource("StyleBoxFlat_81xla")
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel"]
+[node name="Crown" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Crown"]
 position = Vector2(101, 98)
-texture = ExtResource("2_snndj")
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_vpibl")
 
-[node name="Panel2" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Flower" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dtjaw")
 
-[node name="Button1" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel2"]
-modulate = Color(1, 1, 1, 0)
+[node name="Button1" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Flower"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_e2dlv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5nedl")
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel2"]
+[node name="Flower" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Flower"]
 position = Vector2(101, 98)
-texture = ExtResource("2_snndj")
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_3vbyu")
 
-[node name="Panel3" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="FlowerCrown" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_to31a")
 
-[node name="Button2" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel3"]
-modulate = Color(1, 1, 1, 0)
+[node name="Button2" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/FlowerCrown"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ov2c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vpibl")
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel3"]
+[node name="FlowerC" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/FlowerCrown"]
 position = Vector2(101, 98)
-texture = ExtResource("2_snndj")
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_bv65l")
 
-[node name="Panel4" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Cape" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_el0g1")
 
-[node name="Button3" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel4"]
-modulate = Color(1, 1, 1, 0)
+[node name="Button3" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Cape"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3vbyu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bv65l")
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel4"]
+[node name="Cape" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Cape"]
 position = Vector2(101, 98)
-texture = ExtResource("2_snndj")
+scale = Vector2(1.2, 1.2)
+texture = SubResource("AtlasTexture_d570j")
 
 [node name="Panel5" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
@@ -174,10 +236,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5"]
+[node name="empty" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5"]
 modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(101, 98)
-texture = ExtResource("2_snndj")
+texture = SubResource("AtlasTexture_e2dlv")
 
 [node name="Panel6" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
@@ -193,10 +255,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CopPenguin" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6"]
+[node name="empty" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6"]
 modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(101, 98)
-texture = ExtResource("2_snndj")
+texture = SubResource("AtlasTexture_e2dlv")
 
 [node name="backButton" type="TextureButton" parent="ColorRect"]
 layout_mode = 0
@@ -206,49 +268,44 @@ offset_right = 1264.0
 offset_bottom = 704.0
 texture_normal = ExtResource("2_fkpf6")
 
-[node name="penguin" type="AnimatedSprite2D" parent="."]
+[node name="pigeon" type="AnimatedSprite2D" parent="."]
 position = Vector2(896, 368.00003)
 rotation = -0.034906585
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_el0g1")
 frame_progress = 0.1567158
-script = ExtResource("1_el0g1")
 
-[node name="crown" type="Sprite2D" parent="penguin"]
+[node name="crown" type="Sprite2D" parent="pigeon"]
 visible = false
-position = Vector2(-5.063568, -84.228035)
+position = Vector2(1.3737762, -67.993484)
 rotation = 0.034906585
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_snndj")
+texture = SubResource("AtlasTexture_ch1a0")
 
-[node name="flower" type="Sprite2D" parent="penguin"]
+[node name="flower" type="Sprite2D" parent="pigeon"]
 visible = false
-position = Vector2(-35.127815, -54.259003)
+position = Vector2(0.39500046, 3.0156174)
 rotation = 0.034906585
-scale = Vector2(0.2100003, 0.19000007)
-texture = ExtResource("2_snndj")
+texture = ExtResource("3_81xla")
 
-[node name="flowerCrown" type="Sprite2D" parent="penguin"]
+[node name="flowerCrown" type="Sprite2D" parent="pigeon"]
 visible = false
-position = Vector2(-5.0635676, -84.22804)
+position = Vector2(-4.444908, -1.6561501)
 rotation = 0.034906585
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_snndj")
+texture = ExtResource("10_0ov2c")
 
-[node name="cape" type="Sprite2D" parent="penguin"]
+[node name="cape" type="Sprite2D" parent="pigeon"]
 visible = false
-position = Vector2(-7.7159348, -8.274338)
+position = Vector2(1.5514317, -1.4467521)
 rotation = 0.034906585
-scale = Vector2(1.13, 0.10509079)
-texture = ExtResource("2_snndj")
+texture = ExtResource("5_5nedl")
 
 [node name="SoundClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_bjv4g")
 
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel2/Button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel3/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel4/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Crown/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Flower/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/FlowerCrown/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Cape/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="ColorRect/backButton" to="." method="_on_back_button_pressed"]

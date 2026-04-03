@@ -13,6 +13,9 @@ var height := 0.0
 
 @onready var animated_sprite := $AnimatedSprite2D
 
+func _ready() -> void:
+	idleAccessories()
+	
 #funcs	
 func _physics_process(delta):
 	
@@ -56,9 +59,36 @@ func _physics_process(delta):
 	# ANIMATIONS
 	if height > 10:
 		animated_sprite.play("fly")
+		flyingAccessories()
 	elif forward < 1:
 		animated_sprite.play("idle")
+		idleAccessories()
 	else:
 		animated_sprite.play("fly")
+		flyingAccessories()
 
 	move_and_slide()
+
+func idleAccessories():
+	if Global.crown == true:
+		$AnimatedSprite2D/crown.visible = true
+	if Global.flower == true:
+		$AnimatedSprite2D/flower.visible = true
+	if Global.flowerCrown == true:
+		$AnimatedSprite2D/flowerCrown.visible = true
+		$AnimatedSprite2D/flowerCrown2.visible = false
+	if Global.cape == true:
+		$AnimatedSprite2D/cape.visible = true
+		$AnimatedSprite2D/cape2.visible = false
+
+func flyingAccessories():
+	if Global.flower == true:
+		$AnimatedSprite2D/flower.visible = true
+	if Global.crown == true:
+		$AnimatedSprite2D/crown.visible = true
+	if Global.flowerCrown == true:
+		$AnimatedSprite2D/flowerCrown.visible = false
+		$AnimatedSprite2D/flowerCrown2.visible = true
+	if Global.cape == true:
+		$AnimatedSprite2D/cape.visible = false
+		$AnimatedSprite2D/cape2.visible = true

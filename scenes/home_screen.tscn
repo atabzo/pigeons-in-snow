@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8ccqoaqpig3t"]
+[gd_scene load_steps=16 format=3 uid="uid://b8ccqoaqpig3t"]
 
 [ext_resource type="FontFile" uid="uid://dmuvcngp2i13b" path="res://fonts/CaesarDressing-Regular.ttf" id="1_ked1l"]
 [ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://audio/sound-click.mp3" id="2_b02wa"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://djbmb4upyko1a" path="res://images/sun.png" id="4_airqx"]
 [ext_resource type="Texture2D" uid="uid://b5n8jvxvvjlts" path="res://images/flower.png" id="5_ii2s2"]
 [ext_resource type="Texture2D" uid="uid://bj355114nkqdk" path="res://images/home-screen/Titletext.png" id="6_f8xo1"]
-[ext_resource type="Texture2D" uid="uid://dyt065tvpv45c" path="res://assets/TTT/circle.png" id="7_b02wa"]
+[ext_resource type="Texture2D" uid="uid://dhi6ffuv5cspy" path="res://assets/MDrawnAssets/accessories/CustomizebuttonNotSelected.png" id="7_airqx"]
 [ext_resource type="Script" uid="uid://dnjnw1tdv6k88" path="res://scenes/customize_character.gd" id="8_15ihl"]
+[ext_resource type="Texture2D" uid="uid://lop4vojxgle2" path="res://assets/MDrawnAssets/accessories/Customizebutton.png" id="8_ii2s2"]
 
 [sub_resource type="GDScript" id="GDScript_xe7vm"]
 script/source = "extends Sprite2D
@@ -180,6 +181,14 @@ func _process(delta):
 	# and use: position.y = original_y + bob
 "
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8xo1"]
+atlas = ExtResource("7_airqx")
+region = Rect2(548, 307, 105, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4lmq"]
+atlas = ExtResource("8_ii2s2")
+region = Rect2(548, 307, 105, 107)
+
 [node name="home-screen" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -243,11 +252,13 @@ position = Vector2(640, 360)
 texture = ExtResource("6_f8xo1")
 
 [node name="CustomizeCharacter" type="TextureButton" parent="."]
-offset_left = 493.0
-offset_top = 538.0
-offset_right = 613.0
-offset_bottom = 658.0
-texture_normal = ExtResource("7_b02wa")
+offset_left = 503.0
+offset_top = 546.0
+offset_right = 623.0
+offset_bottom = 666.0
+texture_normal = SubResource("AtlasTexture_f8xo1")
+texture_pressed = SubResource("AtlasTexture_j4lmq")
+texture_hover = SubResource("AtlasTexture_j4lmq")
 script = ExtResource("8_15ihl")
 
 [connection signal="pressed" from="CustomizeCharacter" to="CustomizeCharacter" method="_on_pressed"]
