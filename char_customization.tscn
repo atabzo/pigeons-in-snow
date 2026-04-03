@@ -95,14 +95,14 @@ region = Rect2(47, 0, 81, 44)
 [node name="charCustomization" type="Node2D"]
 script = ExtResource("1_el0g1")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=190308860]
 offset_right = 1280.0
 offset_bottom = 720.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.7158294, 0.8370105, 1, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=2091993144]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,18 +110,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer" unique_id=1762616945]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/MarginContainer" unique_id=489108586]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/MarginContainer/MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/MarginContainer/MarginContainer" unique_id=1260744708]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect"]
+[node name="GridContainer" type="GridContainer" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect" unique_id=1243660417]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -222,12 +222,12 @@ position = Vector2(101, 98)
 scale = Vector2(1.2, 1.2)
 texture = SubResource("AtlasTexture_d570j")
 
-[node name="Panel5" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Panel5" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=893438604]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fkpf6")
 
-[node name="Button4" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5"]
+[node name="Button4" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5" unique_id=1254937375]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -241,12 +241,12 @@ modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(101, 98)
 texture = SubResource("AtlasTexture_e2dlv")
 
-[node name="Panel6" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Panel6" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=39351592]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nsahk")
 
-[node name="Button5" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6"]
+[node name="Button5" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6" unique_id=79855107]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -260,7 +260,7 @@ modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(101, 98)
 texture = SubResource("AtlasTexture_e2dlv")
 
-[node name="backButton" type="TextureButton" parent="ColorRect"]
+[node name="backButton" type="TextureButton" parent="ColorRect" unique_id=1622267246]
 layout_mode = 0
 offset_left = 1144.0
 offset_top = 584.0
@@ -299,7 +299,7 @@ position = Vector2(1.5514317, -1.4467521)
 rotation = 0.034906585
 texture = ExtResource("5_5nedl")
 
-[node name="SoundClick" type="AudioStreamPlayer" parent="."]
+[node name="SoundClick" type="AudioStreamPlayer" parent="." unique_id=278006792]
 stream = ExtResource("6_bjv4g")
 
 [connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Crown/Button" to="." method="_on_button_pressed"]

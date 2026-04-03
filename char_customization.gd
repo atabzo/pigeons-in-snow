@@ -6,6 +6,8 @@ extends Node2D
 @onready var cape := $pigeon/cape
 
 func _ready() -> void:
+	print(str(self))
+	print(name)
 	checkGlobal()
 	
 func _process(delta: float) -> void:
