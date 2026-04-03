@@ -33,4 +33,6 @@ func _on_state_changed(state: bool) -> void:
 func _on_next_quest():
 	GameManager.current_task += 1
 	print("Quest count SHOWN: " + str(GameManager.current_task))
+	if GameManager.current_task > 4:
+		GameManager.current_task = 4
 	quest_label.text = QUESTS[GameManager.current_task]

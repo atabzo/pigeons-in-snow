@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b8ccqoaqpig3t"]
+[gd_scene load_steps=18 format=3 uid="uid://b8ccqoaqpig3t"]
 
 [ext_resource type="FontFile" uid="uid://dmuvcngp2i13b" path="res://fonts/CaesarDressing-Regular.ttf" id="1_ked1l"]
 [ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://audio/sound-click.mp3" id="2_b02wa"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dhi6ffuv5cspy" path="res://assets/MDrawnAssets/accessories/CustomizebuttonNotSelected.png" id="7_airqx"]
 [ext_resource type="Script" uid="uid://dnjnw1tdv6k88" path="res://scenes/customize_character.gd" id="8_15ihl"]
 [ext_resource type="Texture2D" uid="uid://lop4vojxgle2" path="res://assets/MDrawnAssets/accessories/Customizebutton.png" id="8_ii2s2"]
+[ext_resource type="Texture2D" uid="uid://caotqpdsaat78" path="res://assets/MDrawnAssets/Customizebutton 2.png" id="10_f8xo1"]
+[ext_resource type="FontFile" uid="uid://caadw24ufv75i" path="res://fonts/MontaguSlab.ttf" id="11_f8xo1"]
 
 [sub_resource type="GDScript" id="GDScript_xe7vm"]
 script/source = "extends Sprite2D
@@ -260,5 +262,19 @@ texture_normal = SubResource("AtlasTexture_f8xo1")
 texture_pressed = SubResource("AtlasTexture_j4lmq")
 texture_hover = SubResource("AtlasTexture_j4lmq")
 script = ExtResource("8_15ihl")
+
+[node name="Customizebutton2" type="Sprite2D" parent="."]
+position = Vector2(598, 602)
+texture = ExtResource("10_f8xo1")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 581.0
+offset_top = 500.0
+offset_right = 885.0
+offset_bottom = 533.0
+theme_override_colors/font_color = Color(0.32800004, 0.45386657, 0.8, 1)
+theme_override_fonts/font = ExtResource("11_f8xo1")
+theme_override_font_sizes/font_size = 25
+text = "Customize your pigeon!"
 
 [connection signal="pressed" from="CustomizeCharacter" to="CustomizeCharacter" method="_on_pressed"]
