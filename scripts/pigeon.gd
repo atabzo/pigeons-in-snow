@@ -80,8 +80,20 @@ func idleAccessories():
 	if Global.cape == true:
 		$AnimatedSprite2D/cape.visible = true
 		$AnimatedSprite2D/cape2.visible = false
+	if Global.bow == true:
+		$AnimatedSprite2D/bow.visible = true
+	if Global.angry == true:
+		$AnimatedSprite2D/angry.visible = true
+	if Global.stars == true:
+		$AnimatedSprite2D/stars.visible = true
 
 func flyingAccessories():
+	if Global.bow == true:
+		$AnimatedSprite2D/bow.visible = true
+	if Global.angry == true:
+		$AnimatedSprite2D/angry.visible = true
+	if Global.stars == true:
+		$AnimatedSprite2D/stars.visible = true
 	if Global.flower == true:
 		$AnimatedSprite2D/flower.visible = true
 	if Global.crown == true:

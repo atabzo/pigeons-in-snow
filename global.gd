@@ -3,6 +3,9 @@ var crown = false
 var flower = false
 var flowerCrown = false
 var cape = false
+var angry = false
+var bow = false
+var stars = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

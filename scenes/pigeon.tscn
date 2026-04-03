@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://coytmnnqpcdj0"]
+[gd_scene load_steps=16 format=3 uid="uid://coytmnnqpcdj0"]
 
 [ext_resource type="Script" uid="uid://rtm1vxly7ybc" path="res://scripts/pigeon.gd" id="1_mi3ta"]
 [ext_resource type="Texture2D" uid="uid://cwf3v3daujlff" path="res://assets/MDrawnAssets/Bird/Idle/Idle_Animationleft-1.png" id="2_3vycv"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://tu7ymjutde2q" path="res://assets/MDrawnAssets/accessories/flowerCrownS.png" id="7_dvbny"]
 [ext_resource type="Texture2D" uid="uid://dghg2blfi0mrm" path="res://assets/MDrawnAssets/accessories/capeS.png" id="8_14xdm"]
 [ext_resource type="Texture2D" uid="uid://dv2dslienv6ou" path="res://assets/MDrawnAssets/accessories/capeF.png" id="9_hq2ed"]
+[ext_resource type="Texture2D" uid="uid://c1hiy2gqpyphp" path="res://assets/MDrawnAssets/starsAccessory.png" id="10_hq2ed"]
+[ext_resource type="Texture2D" uid="uid://bbfesrpkpocs6" path="res://assets/MDrawnAssets/angry.png" id="11_d47kj"]
+[ext_resource type="Texture2D" uid="uid://d1tu5aq7720jx" path="res://assets/MDrawnAssets/bow.png" id="12_2so0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2so0f"]
 size = Vector2(64, 77)
@@ -82,6 +85,19 @@ texture = ExtResource("7_dvbny")
 visible = false
 position = Vector2(2.842171e-14, -2.7105054e-20)
 texture = ExtResource("9_hq2ed")
+
+[node name="stars" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+texture = ExtResource("10_hq2ed")
+
+[node name="angry" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+texture = ExtResource("11_d47kj")
+
+[node name="bow" type="Sprite2D" parent="AnimatedSprite2D"]
+visible = false
+position = Vector2(0, -4.9999995)
+texture = ExtResource("12_2so0f")
 
 [node name="IdleAnimationleft" type="Sprite2D" parent="."]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://epe3qjiemxnn"]
+[gd_scene load_steps=45 format=3 uid="uid://epe3qjiemxnn"]
 
 [ext_resource type="Texture2D" uid="uid://cwf3v3daujlff" path="res://assets/MDrawnAssets/Bird/Idle/Idle_Animationleft-1.png" id="1_dtjaw"]
 [ext_resource type="Script" uid="uid://crw7yg7dr6j80" path="res://char_customization.gd" id="1_el0g1"]
@@ -8,8 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://1j55ayxtaeco" path="res://assets/MDrawnAssets/accessories/flowerF.png" id="3_81xla"]
 [ext_resource type="Texture2D" uid="uid://bhyyj64rcn20f" path="res://assets/MDrawnAssets/accessories/flowerCrownF.png" id="4_e2dlv"]
 [ext_resource type="Texture2D" uid="uid://dv2dslienv6ou" path="res://assets/MDrawnAssets/accessories/capeF.png" id="5_5nedl"]
+[ext_resource type="Texture2D" uid="uid://bbfesrpkpocs6" path="res://assets/MDrawnAssets/angry.png" id="6_5nedl"]
 [ext_resource type="AudioStream" uid="uid://cy6qgibifn0ig" path="res://audio/sound-click.mp3" id="6_bjv4g"]
 [ext_resource type="Texture2D" uid="uid://lop4vojxgle2" path="res://assets/MDrawnAssets/accessories/Customizebutton.png" id="6_e7jm1"]
+[ext_resource type="Texture2D" uid="uid://d1tu5aq7720jx" path="res://assets/MDrawnAssets/bow.png" id="7_0ov2c"]
+[ext_resource type="Texture2D" uid="uid://c1hiy2gqpyphp" path="res://assets/MDrawnAssets/starsAccessory.png" id="8_vpibl"]
 [ext_resource type="Texture2D" uid="uid://tu7ymjutde2q" path="res://assets/MDrawnAssets/accessories/flowerCrownS.png" id="10_0ov2c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcrnw"]
@@ -67,12 +70,42 @@ region = Rect2(41, 100, 143, 39)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkpf6"]
 bg_color = Color(0.86, 0.91833335, 1, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e2dlv"]
-atlas = ExtResource("6_e7jm1")
-region = Rect2(548, 307, 105, 107)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xq07s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cw1qa"]
+bg_color = Color(0.6, 0.76862746, 1, 0.77254903)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq07s"]
+atlas = ExtResource("6_5nedl")
+region = Rect2(124, 53, 31, 28)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsahk"]
 bg_color = Color(0.86, 0.91833335, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d570j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ch1a0"]
+bg_color = Color(0.6, 0.76862746, 1, 0.77254903)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw1qa"]
+atlas = ExtResource("7_0ov2c")
+region = Rect2(59, 47, 54, 60)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_komwr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wdip"]
+bg_color = Color(0.6, 0.76862746, 1, 0.77254903)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_komwr"]
+atlas = ExtResource("8_vpibl")
+region = Rect2(76, 39, 35, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2dlv"]
+atlas = ExtResource("6_e7jm1")
+region = Rect2(548, 307, 105, 107)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_el0g1"]
 animations = [{
@@ -95,14 +128,14 @@ region = Rect2(47, 0, 81, 44)
 [node name="charCustomization" type="Node2D"]
 script = ExtResource("1_el0g1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=190308860]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.7158294, 0.8370105, 1, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=2091993144]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,42 +143,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer" unique_id=1762616945]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/MarginContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/MarginContainer" unique_id=489108586]
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/MarginContainer/MarginContainer" unique_id=1260744708]
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/MarginContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect" unique_id=1243660417]
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -202.0
-offset_top = -304.0
-offset_right = 202.0
-offset_bottom = 304.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -20.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 2
 
-[node name="Crown" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Crown" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_bcrnw")
 
-[node name="Button" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Crown"]
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Crown"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -157,17 +194,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_e7jm1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_81xla")
 theme_override_styles/hover = SubResource("StyleBoxFlat_81xla")
 
-[node name="Crown" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Crown"]
+[node name="Crown" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Crown"]
 position = Vector2(101, 98)
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_vpibl")
 
-[node name="Flower" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Flower" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dtjaw")
 
-[node name="Button1" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Flower"]
+[node name="Button1" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Flower"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -177,17 +214,17 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_e2dlv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5nedl")
 
-[node name="Flower" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Flower"]
+[node name="Flower" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Flower"]
 position = Vector2(101, 98)
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_3vbyu")
 
-[node name="FlowerCrown" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="FlowerCrown" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_to31a")
 
-[node name="Button2" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/FlowerCrown"]
+[node name="Button2" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/FlowerCrown"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,17 +234,17 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_0ov2c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vpibl")
 
-[node name="FlowerC" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/FlowerCrown"]
+[node name="FlowerC" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/FlowerCrown"]
 position = Vector2(101, 98)
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_bv65l")
 
-[node name="Cape" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer"]
+[node name="Cape" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_el0g1")
 
-[node name="Button3" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Cape"]
+[node name="Button3" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Cape"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -217,36 +254,77 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_3vbyu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bv65l")
 
-[node name="Cape" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Cape"]
+[node name="Cape" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Cape"]
 position = Vector2(101, 98)
 scale = Vector2(1.2, 1.2)
 texture = SubResource("AtlasTexture_d570j")
 
-[node name="Panel5" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=893438604]
+[node name="Panel5" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fkpf6")
 
-[node name="Button4" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5" unique_id=1254937375]
-modulate = Color(1, 1, 1, 0)
+[node name="Button5" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xq07s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cw1qa")
 
-[node name="empty" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5"]
-modulate = Color(1, 1, 1, 0.39215687)
+[node name="angry" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel5"]
 position = Vector2(101, 98)
-texture = SubResource("AtlasTexture_e2dlv")
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_xq07s")
 
-[node name="Panel6" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer" unique_id=39351592]
+[node name="Panel6" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nsahk")
 
-[node name="Button5" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6" unique_id=79855107]
+[node name="Button6" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_d570j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ch1a0")
+
+[node name="bow" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel6"]
+position = Vector2(101, 98)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_cw1qa")
+
+[node name="Panel7" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nsahk")
+
+[node name="Button7" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_komwr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4wdip")
+
+[node name="stars" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel7"]
+position = Vector2(101, 98)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_komwr")
+
+[node name="Panel8" type="Panel" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nsahk")
+
+[node name="Button5" type="Button" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel8"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -255,12 +333,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="empty" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6"]
+[node name="empty" type="Sprite2D" parent="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel8"]
 modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(101, 98)
 texture = SubResource("AtlasTexture_e2dlv")
 
-[node name="backButton" type="TextureButton" parent="ColorRect" unique_id=1622267246]
+[node name="backButton" type="TextureButton" parent="ColorRect"]
 layout_mode = 0
 offset_left = 1144.0
 offset_top = 584.0
@@ -299,13 +377,29 @@ position = Vector2(1.5514317, -1.4467521)
 rotation = 0.034906585
 texture = ExtResource("5_5nedl")
 
-[node name="SoundClick" type="AudioStreamPlayer" parent="." unique_id=278006792]
+[node name="Angry" type="Sprite2D" parent="pigeon"]
+visible = false
+position = Vector2(-7.6293945e-06, -2.2888184e-05)
+texture = ExtResource("6_5nedl")
+
+[node name="Bow" type="Sprite2D" parent="pigeon"]
+visible = false
+position = Vector2(-3.7183647, -8.134735)
+texture = ExtResource("7_0ov2c")
+
+[node name="StarsAccessory" type="Sprite2D" parent="pigeon"]
+visible = false
+position = Vector2(-12.411514, 11.573868)
+texture = ExtResource("8_vpibl")
+
+[node name="SoundClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_bjv4g")
 
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Crown/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Flower/Button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/FlowerCrown/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Cape/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel5/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/GridContainer/Panel6/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Crown/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Flower/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/FlowerCrown/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Cape/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel5/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel6/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/MarginContainer/NinePatchRect/ScrollContainer/GridContainer/Panel7/Button7" to="." method="_on_button_7_pressed"]
 [connection signal="pressed" from="ColorRect/backButton" to="." method="_on_back_button_pressed"]
