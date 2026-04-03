@@ -42,7 +42,9 @@ func _process(delta):
 
 func update_path():
 	var path = build_path_through_nodes()
-	drawer.set_path(path)
+	print("Nodes:", nodes.size())
+	print("Path size:", path.size())
+	drawer.draw_stars(path)
 
 #get path for n nodes
 func build_path_through_nodes() -> PackedVector2Array:

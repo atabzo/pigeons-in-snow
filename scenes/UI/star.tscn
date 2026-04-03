@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c6gpqu4i34f3r"]
+
+[ext_resource type="Texture2D" uid="uid://d12hvj7xl7eak" path="res://images/blue_icon_star__1_-removebg-preview.png" id="1_i63xq"]
+
+[node name="Star" type="Node2D" unique_id=222421444]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=329102117]
+position = Vector2(-1.9073486e-06, -1.0000019)
+scale = Vector2(0.15625001, 0.15625001)
+texture = ExtResource("1_i63xq")
