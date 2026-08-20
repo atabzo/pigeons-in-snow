@@ -12,7 +12,7 @@
 [click here to play!](https://atabzo.itch.io/save-the-pigeons)
 
 <samp>
-<h1> made with love by the team pigeons at overglade singapore! </h1>
+<h2> made with love by team pigeons at overglade singapore! </h2>
 
 <p> this game was a group project made at hackclub's overglade hackathon held in singapore where we secured the sixth spot! we worked with godot plus all the assets except the flowers are hand drawn! :D</p> </samp>
 
